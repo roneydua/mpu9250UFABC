@@ -25,4 +25,4 @@ então, em uma função do tipo `loop()` pode-se chamar a função `imu.readSens
 
 # Nota
 
-Esta biblioteca foi inspirada no trabalho do grupo [bolderflight](https://github.com/bolderflight) disponível em  https://github.com/bolderflight/MPU9250
+Esta biblioteca foi inspirada no trabalho do grupo [bolderflight](https://github.com/bolderflight) disponível em  [](https://github.com/bolderflight/MPU9250)
