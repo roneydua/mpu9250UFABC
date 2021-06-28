@@ -1,5 +1,6 @@
 #include <IMU.h>
-#include <Eigen/Dense>
+// #include <Eigen/Dense>
+#include <Eigen/Core>
 // #include <eigen3/Eigen/Dense>
 #include <Arduino.h>
 

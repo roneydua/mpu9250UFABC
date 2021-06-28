@@ -1,5 +1,7 @@
 -I/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/include
 -I/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src
+-I/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/lib/IMU
+-I/home/roney/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src
 -I/usr/local/include/eigen3
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/app_trace
@@ -64,7 +66,6 @@
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/fb_gfx
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/cores/esp32
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/variants/lolin32
--I/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/lib/IMU
 -I/home/roney/.platformio/lib/NeoSWSerial/src
 -I/home/roney/.platformio/lib/elapsedMillis_ID1002
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src
@@ -94,7 +95,6 @@
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src
 -I/home/roney/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src
--I/home/roney/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src
 -I/home/roney/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include/c++/5.2.0
 -I/home/roney/.platformio/packages/toolchain-xtensa32/xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf
 -I/home/roney/.platformio/packages/toolchain-xtensa32/lib/gcc/xtensa-esp32-elf/5.2.0/include
