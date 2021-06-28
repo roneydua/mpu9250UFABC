@@ -1,0 +1,13 @@
+digraph "lib/GRUPO_QUAT/GRUPO_QUAT.h"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node3 [label="lib/GRUPO_QUAT/GRUPO\l_QUAT.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="lib/EKF/EKF.cpp",height=0.2,width=0.4,color="black",URL="$EKF_8cpp.html",tooltip="Classe que implementa o filtro de Kalman estendido. "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="lib/GRUPO_QUAT/GRUPO\l_QUAT.cpp",height=0.2,width=0.4,color="black",URL="$GRUPO__QUAT_8cpp.html",tooltip="Cabecalho com funcoes de quaternion. "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="src/main.cpp",height=0.2,width=0.4,color="black",URL="$main_8cpp.html"];
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>lib/EKF/EKF.cpp</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/802.html'>lib</a>/<a href='../files/803.html'>EKF</a>/EKF.cpp</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L30'>[^]</a><a href='#L238'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L30' title='Defined at 30.'>begin</a></li>
+<li><a href='#L52' title='Defined at 52.'>loopEKF</a></li>
+<li><a href='#L82' title='Defined at 82.'>statesUpdate</a></li>
+<li><a href='#L129' title='Defined at 129.'>updateOfMeasurements</a></li>
+<li><a href='#L167' title='Defined at 167.'>updateF_G</a></li>
+<li><a href='#L186' title='Defined at 186.'>updatefi</a></li>
+<li><a href='#L197' title='Defined at 197.'>updateH</a></li>
+<li><a href='#L221' title='Defined at 221.'>integrationOfStates</a></li>
+<li><a href='#L238' title='Defined at 238.'>calibrationMethods</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='comment'>/**</em>
+<a id='L2' name='L2'></a>   2 <em class='comment'>* @file EKF.cpp</em>
+<a id='L3' name='L3'></a>   3 <em class='comment'>* @author Roney D da Silva</em>
+<a id='L4' name='L4'></a>   4 <em class='comment'>* @date 7 Apr 2021</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'>* @copyright 2021 Roney D da Silva</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'>         Email: roneyddasilva@gmail.com</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'>* @brief Classe que implementa o filtro de Kalman estendido</em>
+<a id='L8' name='L8'></a>   8 <em class='comment'>*/</em>
+<a id='L9' name='L9'></a>   9 <em class='sharp'>#include</em> "<a href='16.html'>EKF.h</a>"
+<a id='L10' name='L10'></a>  10 <em class='sharp'>#include</em> "<a href='17.html'>GPS.h</a>"
+<a id='L11' name='L11'></a>  11 <em class='sharp'>#include</em> "<a href='12.html'>GRUPO_QUAT.h</a>"
+<a id='L12' name='L12'></a>  12 <em class='sharp'>#include</em> "<a href='7.html'>TIME.h</a>"
+<a id='L13' name='L13'></a>  13 <em class='sharp'>#include</em> &lt;<a href='8.html'>IMU.h</a>&gt;
+<a id='L14' name='L14'></a>  14 
+<a id='L15' name='L15'></a>  15 <em class='sharp'>#include</em> &lt;Arduino.h&gt;
+<a id='L16' name='L16'></a>  16 
+<a id='L17' name='L17'></a>  17 <strong class='reserved'>namespace</strong> <a href='../R/55.html' title='Multiple referred from 6 places.'>ekf</a> <em class='brace'>{</em>
+<a id='L18' name='L18'></a>  18 <em class='comment'>/**</em>
+<a id='L19' name='L19'></a>  19 <em class='comment'> * Classe do filtro de Kalman.</em>
+<a id='L20' name='L20'></a>  20 <em class='comment'> */</em>
+<a id='L21' name='L21'></a>  21 <a href='../S/9.html#L8' title='Defined at 8 in lib/IMU/IMU.cpp.'>IMU</a> <a href='../Y/257.html' title='Multiple used in 6 places.'>imu</a>(Wire, 0x68);
+<a id='L22' name='L22'></a>  22 <a href='../S/6.html#L17' title='Defined at 17 in lib/TIME/TIME.cpp.'>TIME</a> <a href='../Y/360.html' title='Multiple used in 5 places.'>timeClass</a>;
+<a id='L23' name='L23'></a>  23 <a href='../R/13.html' title='Multiple referred from 14 places.'>EKF</a>::<a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>() <em class='brace'>{</em><em class='brace'>}</em>
+<a id='L24' name='L24'></a>  24 <em class='comment'>/**</em>
+<a id='L25' name='L25'></a>  25 <em class='comment'> * @brief Inicializacao do filtro de Kalman</em>
+<a id='L26' name='L26'></a>  26 <em class='comment'> * @details Inicializa e configura:o GPS, a classe timeClass, instancia os</em>
+<a id='L27' name='L27'></a>  27 <em class='comment'> * sensores #accel, #gyro e #mag; e Configura os valores padrões da matrizes #F,</em>
+<a id='L28' name='L28'></a>  28 <em class='comment'> * #G e #H.</em>
+<a id='L29' name='L29'></a>  29 <em class='comment'> */</em>
+<a id='L30' name='L30'></a>  30 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/44.html' title='Multiple referred from 12 places.'>begin</a>() <em class='brace'>{</em>
+<a id='L31' name='L31'></a>  31   <a href='../S/17.html#L142' title='Defined at 142 in lib/EKF/GPS.h.'>gpsSetup</a>();
+<a id='L32' name='L32'></a>  32   <a href='../Y/360.html' title='Multiple used in 5 places.'>timeClass</a>.<a href='../D/59.html' title='Multiple defined in 4 places.'>begin</a>();
+<a id='L33' name='L33'></a>  33   <em class='comment'>// Instancia o vetor de medidas na biblioteca da IMU.</em>
+<a id='L34' name='L34'></a>  34   <em class='comment'>/*!HACK: @hack #accel, #gyro e #mag são ponteiros. Quando as medidas são</em>
+<a id='L35' name='L35'></a>  35 <em class='comment'>   * atualizadas na biblioteca IMU, o vetor é modificado na EKF. */</em>
+<a id='L36' name='L36'></a>  36   <a href='../Y/257.html' title='Multiple used in 6 places.'>imu</a>.<a href='../D/59.html' title='Multiple defined in 4 places.'>begin</a>(<a href='../Y/173.html' title='Multiple used in 5 places.'>accel</a>, <a href='../Y/244.html' title='Multiple used in 7 places.'>gyro</a>, <a href='../Y/274.html' title='Multiple used in 8 places.'>mag</a>);
+<a id='L37' name='L37'></a>  37   <em class='comment'>// Atualiza valor do bias do giroscópio com uma média de amostras</em>
+<a id='L38' name='L38'></a>  38   <em class='comment'>// valores constantes das matriz F</em>
+<a id='L39' name='L39'></a>  39   <a href='../Y/36.html' title='Multiple used in 5 places.'>F</a>.<a href='../Y/187.html' title='Multiple used in 8 places.'>block</a>&lt;3, 3&gt;(0, 3) = -0.5f * <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>();
+<a id='L40' name='L40'></a>  40   <em class='comment'>// Valores constantes da matriz G</em>
+<a id='L41' name='L41'></a>  41   <a href='../Y/37.html' title='Multiple used in 7 places.'>G</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(3, 3) = -0.5f * <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>();
+<a id='L42' name='L42'></a>  42   <a href='../Y/37.html' title='Multiple used in 7 places.'>G</a>.<a href='../Y/187.html' title='Multiple used in 8 places.'>block</a>&lt;3, 3&gt;(3, 3) = <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>();
+<a id='L43' name='L43'></a>  43   <a href='../Y/37.html' title='Multiple used in 7 places.'>G</a>.<a href='../Y/190.html' title='Multiple used in 2 places.'>bottomRightCorner</a>(3, 3) = <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>();
+<a id='L44' name='L44'></a>  44   <em class='comment'>// Valores constantes da matriz H</em>
+<a id='L45' name='L45'></a>  45   <a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/187.html' title='Multiple used in 8 places.'>block</a>&lt;3, 3&gt;(6, 6) = <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>();
+<a id='L46' name='L46'></a>  46   <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a> = 6;
+<a id='L47' name='L47'></a>  47 <em class='brace'>}</em>
+<a id='L48' name='L48'></a>  48 
+<a id='L49' name='L49'></a>  49 <em class='comment'>/**</em>
+<a id='L50' name='L50'></a>  50 <em class='comment'> * Loop do Filtro de Kalaman</em>
+<a id='L51' name='L51'></a>  51 <em class='comment'> */</em>
+<a id='L52' name='L52'></a>  52 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/60.html' title='Multiple referred from 2 places.'>loopEKF</a>() <em class='brace'>{</em>
+<a id='L53' name='L53'></a>  53   <em class='comment'>// Faz a leitura dos sensores da MARG atualizando os vetores #accel, #gyro e</em>
+<a id='L54' name='L54'></a>  54   <em class='comment'>// #mag.</em>
+<a id='L55' name='L55'></a>  55   <a href='../Y/257.html' title='Multiple used in 6 places.'>imu</a>.<a href='../S/9.html#L277' title='Defined at 277 in lib/IMU/IMU.cpp.'>readSensor</a>();
+<a id='L56' name='L56'></a>  56   <em class='comment'>// tempo decorrido entre medidas a medida anterior e a atual.</em>
+<a id='L57' name='L57'></a>  57   <a href='../Y/222.html' title='Multiple used in 8 places.'>dt</a> = <a href='../Y/360.html' title='Multiple used in 5 places.'>timeClass</a>.<a href='../S/6.html#L32' title='Defined at 32 in lib/TIME/TIME.cpp.'>computeElapsedTime</a>();
+<a id='L58' name='L58'></a>  58   <em class='comment'>// Esta de predição.</em>
+<a id='L59' name='L59'></a>  59   <a href='../Y/359.html' title='Multiple used in 3 places.'>temporalPrediction</a>();
+<a id='L60' name='L60'></a>  60 
+<a id='L61' name='L61'></a>  61   <a href='../S/18.html#L197' title='Defined at 197 in lib/EKF/EKF.cpp.'>updateH</a>();
+<a id='L62' name='L62'></a>  62   <em class='comment'>// Ganha de Kalman</em>
+<a id='L63' name='L63'></a>  63   <a href='../Y/77.html' title='Multiple used in 3 places.'>K</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) = <a href='../Y/96.html' title='Multiple used in 6 places.'>P</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>) *
+<a id='L64' name='L64'></a>  64                           <a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>).<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>() *
+<a id='L65' name='L65'></a>  65                           (<a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>) * <a href='../Y/96.html' title='Multiple used in 6 places.'>P</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>) *
+<a id='L66' name='L66'></a>  66                                (<a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>)).<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>() +
+<a id='L67' name='L67'></a>  67                            <a href='../Y/103.html' title='Multiple used in 2 places.'>R</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>))
+<a id='L68' name='L68'></a>  68                               .<a href='../Y/262.html' title='Multiple used in 2 places.'>inverse</a>();
+<a id='L69' name='L69'></a>  69   <em class='comment'>// Atualiza a matriz de covariância.</em>
+<a id='L70' name='L70'></a>  70   <a href='../Y/96.html' title='Multiple used in 6 places.'>P</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>) = (<a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/85.html' title='Multiple used in 19 places.'>MatrixXf</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>) -
+<a id='L71' name='L71'></a>  71                            <a href='../Y/77.html' title='Multiple used in 3 places.'>K</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) * <a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>)) *
+<a id='L72' name='L72'></a>  72                           <a href='../Y/96.html' title='Multiple used in 6 places.'>P</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>, <a href='../Y/293.html' title='Multiple used in 16 places.'>n</a>);
+<a id='L73' name='L73'></a>  73   <em class='comment'>// Serial.println("deltaYObs.head(p)================");</em>
+<a id='L74' name='L74'></a>  74   <em class='comment'>// printEigen(deltaYObs.head(p));</em>
+<a id='L75' name='L75'></a>  75   <em class='comment'>// deltaChi.head(p) = K.topLeftCorner(p, p) * deltaYObs.head(p);</em>
+<a id='L76' name='L76'></a>  76   <em class='comment'>// Corrige os estados com deltaChi.</em>
+<a id='L77' name='L77'></a>  77   <a href='../S/18.html#L82' title='Defined at 82 in lib/EKF/EKF.cpp.'>statesUpdate</a>();
+<a id='L78' name='L78'></a>  78 <em class='brace'>}</em>
+<a id='L79' name='L79'></a>  79 <em class='comment'>/**</em>
+<a id='L80' name='L80'></a>  80 <em class='comment'> * Atualiza os estados predidos com os erros estimados.</em>
+<a id='L81' name='L81'></a>  81 <em class='comment'> */</em>
+<a id='L82' name='L82'></a>  82 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/74.html' title='Multiple referred from 2 places.'>statesUpdate</a>() <em class='brace'>{</em>
+<a id='L83' name='L83'></a>  83   <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/119.html' title='Multiple used in 16 places.'>Vector4f</a> <a href='../Y/216.html' title='Multiple used in 4 places.'>deltaq</a>;
+<a id='L84' name='L84'></a>  84   <a href='../Y/216.html' title='Multiple used in 4 places.'>deltaq</a>(0) = sqrtf(1.0f - <a href='../Y/214.html' title='Multiple used in 7 places.'>deltaChi</a>.<a href='../Y/247.html' title='Multiple used in 4 places.'>head</a>(3).<a href='../Y/300.html' title='Multiple used in 2 places.'>norm</a>());
+<a id='L85' name='L85'></a>  85   <a href='../Y/216.html' title='Multiple used in 4 places.'>deltaq</a>.<a href='../Y/357.html' title='Multiple used in 4 places.'>tail</a>&lt;3&gt;() = <a href='../Y/214.html' title='Multiple used in 7 places.'>deltaChi</a>.<a href='../Y/247.html' title='Multiple used in 4 places.'>head</a>(3);
+<a id='L86' name='L86'></a>  86   <em class='comment'>// Atualiza a orientação.</em>
+<a id='L87' name='L87'></a>  87   <a href='../Y/324.html' title='Multiple used in 31 places.'>q</a> = <a href='../D/79.html' title='Multiple defined in 2 places.'>multiplyQuaternions</a>(<a href='../Y/324.html' title='Multiple used in 31 places.'>q</a>, <a href='../Y/216.html' title='Multiple used in 4 places.'>deltaq</a>);
+<a id='L88' name='L88'></a>  88   <a href='../S/9.html#L8' title='Defined at 8 in lib/IMU/IMU.cpp.'>IMU</a>.<a href='../Y/142.html' title='Multiple used in 6 places.'>_biasGyro</a> += <a href='../Y/214.html' title='Multiple used in 7 places.'>deltaChi</a>.<a href='../Y/338.html' title='Multiple used in 7 places.'>segment</a>(3, 6);
+<a id='L89' name='L89'></a>  89   <em class='comment'>// Verifica se as medidas do GPS foram utilizadas</em>
+<a id='L90' name='L90'></a>  90   <strong class='reserved'>if</strong> (<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a> &gt; 6) <em class='brace'>{</em>
+<a id='L91' name='L91'></a>  91     <em class='comment'>// Corrige a velocidade de translacao.</em>
+<a id='L92' name='L92'></a>  92     <a href='../Y/325.html' title='Multiple used in 6 places.'>r</a> += <a href='../Y/214.html' title='Multiple used in 7 places.'>deltaChi</a>.<a href='../Y/338.html' title='Multiple used in 7 places.'>segment</a>(6, 3);
+<a id='L93' name='L93'></a>  93     <em class='comment'>// corrige o bias do acelerometro.</em>
+<a id='L94' name='L94'></a>  94     <a href='../S/9.html#L8' title='Defined at 8 in lib/IMU/IMU.cpp.'>IMU</a>.<a href='../Y/141.html' title='Multiple used in 2 places.'>_biasAcel</a> += <a href='../Y/214.html' title='Multiple used in 7 places.'>deltaChi</a>.<a href='../Y/357.html' title='Multiple used in 4 places.'>tail</a>(3);
+<a id='L95' name='L95'></a>  95   <em class='brace'>}</em>
+<a id='L96' name='L96'></a>  96   <em class='comment'>// computa a matriz de atitude</em>
+<a id='L97' name='L97'></a>  97   <a href='../S/11.html#L114' title='Defined at 114 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>quaternion2Euler</a>(<a href='../Y/231.html' title='Multiple used in 4 places.'>euler</a>, <a href='../Y/324.html' title='Multiple used in 31 places.'>q</a>);
+<a id='L98' name='L98'></a>  98   <a href='../Y/217.html' title='Multiple used in 5 places.'>deltar</a> = -<a href='../Y/299.html' title='Multiple used in 4 places.'>navegationGravity</a> + <a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a> * ()
+<a id='L99' name='L99'></a>  99 <em class='brace'>}</em>
+<a id='L100' name='L100'></a> 100 
+<a id='L101' name='L101'></a> 101 <em class='comment'>/**</em>
+<a id='L102' name='L102'></a> 102 <em class='comment'> *  Integra os estados e a matriz de covariancia a priori do filtro.</em>
+<a id='L103' name='L103'></a> 103 <em class='comment'> */</em>
+<a id='L104' name='L104'></a> 104 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../Y/359.html' title='Multiple used in 3 places.'>temporalPrediction</a>() <em class='brace'>{</em>
+<a id='L105' name='L105'></a> 105   <em class='comment'>/*! @attention dcm é uma referência. */</em>
+<a id='L106' name='L106'></a> 106   <em class='comment'>// Atualiza matriz de rotação com a ultima atitude q_{k-1}</em>
+<a id='L107' name='L107'></a> 107   <a href='../Y/110.html' title='Multiple used in 9 places.'>Serial</a>.<a href='../Y/318.html' title='Multiple used in 5 places.'>println</a>("================== entrou na predicao ================== ");
+<a id='L108' name='L108'></a> 108   <a href='../S/11.html#L48' title='Defined at 48 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>computeMcdFromQuaternion</a>(<a href='../Y/324.html' title='Multiple used in 31 places.'>q</a>, <a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>);
+<a id='L109' name='L109'></a> 109   <em class='comment'>// updateOfMeasurements();</em>
+<a id='L110' name='L110'></a> 110   <a href='../Y/110.html' title='Multiple used in 9 places.'>Serial</a>.<a href='../Y/317.html' title='Multiple used in 5 places.'>printf</a>("Tempo \t%f\n", <a href='../Y/222.html' title='Multiple used in 8 places.'>dt</a>);
+<a id='L111' name='L111'></a> 111   <a href='../Y/270.html' title='Multiple used in 4 places.'>localGravity</a> = -<a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>.<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>() * <a href='../Y/217.html' title='Multiple used in 5 places.'>deltar</a> + <a href='../Y/173.html' title='Multiple used in 5 places.'>accel</a>;
+<a id='L112' name='L112'></a> 112   <a href='../Y/275.html' title='Multiple used in 4 places.'>magOrthogonalGrav</a> = <a href='../S/11.html#L72' title='Defined at 72 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>computeVectorProjection</a>(<a href='../Y/274.html' title='Multiple used in 8 places.'>mag</a>, <a href='../Y/270.html' title='Multiple used in 4 places.'>localGravity</a>);
+<a id='L113' name='L113'></a> 113   <em class='comment'>// atualiza as matrizes F, fi e G  com os estados atuais.</em>
+<a id='L114' name='L114'></a> 114   <a href='../S/18.html#L186' title='Defined at 186 in lib/EKF/EKF.cpp.'>updatefi</a>();
+<a id='L115' name='L115'></a> 115   <em class='comment'>// Integracao dos estados</em>
+<a id='L116' name='L116'></a> 116   <a href='../S/18.html#L221' title='Defined at 221 in lib/EKF/EKF.cpp.'>integrationOfStates</a>();
+<a id='L117' name='L117'></a> 117   <em class='comment'>// atualiza a matriz de covariâncias</em>
+<a id='L118' name='L118'></a> 118   <a href='../Y/96.html' title='Multiple used in 6 places.'>P</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) = <a href='../Y/232.html' title='Multiple used in 4 places.'>fi</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) * <a href='../Y/96.html' title='Multiple used in 6 places.'>P</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) *
+<a id='L119' name='L119'></a> 119                               <a href='../Y/232.html' title='Multiple used in 4 places.'>fi</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>).<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>() +
+<a id='L120' name='L120'></a> 120                           <a href='../Y/222.html' title='Multiple used in 8 places.'>dt</a> * <a href='../Y/37.html' title='Multiple used in 7 places.'>G</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) * <a href='../Y/102.html' title='Multiple used in 2 places.'>Q</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) *
+<a id='L121' name='L121'></a> 121                               <a href='../Y/37.html' title='Multiple used in 7 places.'>G</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>).<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>();
+<a id='L122' name='L122'></a> 122 <em class='brace'>}</em>
+<a id='L123' name='L123'></a> 123 <em class='comment'>/**</em>
+<a id='L124' name='L124'></a> 124 <em class='comment'> * @brief Atualiza a medicao a partir dos sensores da unidade Margin e GPS.</em>
+<a id='L125' name='L125'></a> 125 <em class='comment'> * @details Faz a leitura dos sensores da MARG atualizando os vetores #accel,</em>
+<a id='L126' name='L126'></a> 126 <em class='comment'> * #gyro e #mag e ElaspsedTime #dt.</em>
+<a id='L127' name='L127'></a> 127 <em class='comment'> * @attention ubxMessage.navVelned possui as medidas em centimetros</em>
+<a id='L128' name='L128'></a> 128 <em class='comment'> */</em>
+<a id='L129' name='L129'></a> 129 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../S/16.html#L63' title='Referred from 63 in lib/EKF/EKF.h.'>updateOfMeasurements</a>() <em class='brace'>{</em>
+<a id='L130' name='L130'></a> 130 
+<a id='L131' name='L131'></a> 131   <em class='comment'>// verifica se há medidas novas a partir do GPS.</em>
+<a id='L132' name='L132'></a> 132   <em class='comment'>// MT_NONE, MT_NAV_POSLLH, MT_NAV_VELNED, MT_NAV_PVT</em>
+<a id='L133' name='L133'></a> 133   <a href='../Y/283.html' title='Multiple used in 5 places.'>messageGPS</a> = <a href='../S/17.html#L264' title='Defined at 264 in lib/EKF/GPS.h.'>processGPS</a>();
+<a id='L134' name='L134'></a> 134   <em class='comment'>/*! @note MT_NONE é avalidado primeiro uma vez que a frequência do GPS é</em>
+<a id='L135' name='L135'></a> 135 <em class='comment'>  menor que a da MARG.*/</em>
+<a id='L136' name='L136'></a> 136   <em class='comment'>/*! @todo É possível que essas contas sejam realizadas no</em>
+<a id='L137' name='L137'></a> 137 <em class='comment'>   * cabeçalho, eliminando-se alguns condicionais abaixo.*/</em>
+<a id='L138' name='L138'></a> 138   <strong class='reserved'>if</strong> (<a href='../Y/283.html' title='Multiple used in 5 places.'>messageGPS</a> == <a href='../S/17.html#L138' title='Defined at 138 in lib/EKF/GPS.h.'>MT_NONE</a>) <em class='brace'>{</em>
+<a id='L139' name='L139'></a> 139     <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a> = 6;
+<a id='L140' name='L140'></a> 140   <em class='brace'>}</em>
+<a id='L141' name='L141'></a> 141 <em class='sharp'>#ifdef</em> <a href='../S/17.html#L25' title='Defined at 25 in lib/EKF/GPS.h.'>NAV_VELNED</a>
+<a id='L142' name='L142'></a> 142   <strong class='reserved'>else</strong>
+<a id='L143' name='L143'></a> 143 <em class='sharp'>  #ifdef</em> <a href='../Y/88.html' title='Multiple used in 8 places.'>NAV_POSLLH</a>
+<a id='L144' name='L144'></a> 144       <strong class='reserved'>if</strong> (<a href='../Y/283.html' title='Multiple used in 5 places.'>messageGPS</a> == <a href='../S/17.html#L138' title='Defined at 138 in lib/EKF/GPS.h.'>MT_NAV_VELNED</a>)
+<a id='L145' name='L145'></a> 145 <em class='sharp'>  #endif</em>
+<a id='L146' name='L146'></a> 146   <em class='brace'>{</em>
+<a id='L147' name='L147'></a> 147     <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a> = 9;
+<a id='L148' name='L148'></a> 148     <em class='comment'>// Atualiza o erro de medida na velocidade linear</em>
+<a id='L149' name='L149'></a> 149     <a href='../Y/215.html' title='Multiple used in 6 places.'>deltaYObs</a>(6) = (<strong class='reserved'>float</strong>)<a href='../Y/368.html' title='Multiple used in 13 places.'>ubxMessage</a>.<a href='../Y/298.html' title='Multiple used in 5 places.'>navVelned</a>.<a href='../Y/381.html' title='Multiple used in 4 places.'>velN</a> / 100.0f - <a href='../Y/325.html' title='Multiple used in 6 places.'>r</a>(0);
+<a id='L150' name='L150'></a> 150     <a href='../Y/215.html' title='Multiple used in 6 places.'>deltaYObs</a>(7) = (<strong class='reserved'>float</strong>)<a href='../Y/368.html' title='Multiple used in 13 places.'>ubxMessage</a>.<a href='../Y/298.html' title='Multiple used in 5 places.'>navVelned</a>.<a href='../Y/380.html' title='Multiple used in 4 places.'>velE</a> / 100.0f - <a href='../Y/325.html' title='Multiple used in 6 places.'>r</a>(1);
+<a id='L151' name='L151'></a> 151     <a href='../Y/215.html' title='Multiple used in 6 places.'>deltaYObs</a>(8) = (<strong class='reserved'>float</strong>)<a href='../Y/368.html' title='Multiple used in 13 places.'>ubxMessage</a>.<a href='../Y/298.html' title='Multiple used in 5 places.'>navVelned</a>.<a href='../Y/379.html' title='Multiple used in 5 places.'>velD</a> / 100.0f - <a href='../Y/325.html' title='Multiple used in 6 places.'>r</a>(2);
+<a id='L152' name='L152'></a> 152     <em class='comment'>// lon = ubxMessage.navPosllh.lon;</em>
+<a id='L153' name='L153'></a> 153   <em class='brace'>}</em>
+<a id='L154' name='L154'></a> 154 <em class='sharp'>#endif</em>
+<a id='L155' name='L155'></a> 155 <em class='sharp'>#ifdef</em> <a href='../Y/88.html' title='Multiple used in 8 places.'>NAV_POSLLH</a>
+<a id='L156' name='L156'></a> 156   <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/283.html' title='Multiple used in 5 places.'>messageGPS</a> == <a href='../S/17.html#L138' title='Defined at 138 in lib/EKF/GPS.h.'>MT_NAV_POSLLH</a>) <em class='brace'>{</em>
+<a id='L157' name='L157'></a> 157     <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a> = 12;
+<a id='L158' name='L158'></a> 158     <a href='../Y/312.html' title='Multiple used in 4 places.'>position</a>(0) = 1e-7 * (<strong class='reserved'>float</strong>)<a href='../Y/368.html' title='Multiple used in 13 places.'>ubxMessage</a>.<a href='../Y/297.html' title='Multiple used in 6 places.'>navPosllh</a>.<a href='../Y/267.html' title='Multiple used in 6 places.'>lat</a>;
+<a id='L159' name='L159'></a> 159     <a href='../Y/312.html' title='Multiple used in 4 places.'>position</a>(1) = 1e-7 * (<strong class='reserved'>float</strong>)<a href='../Y/368.html' title='Multiple used in 13 places.'>ubxMessage</a>.<a href='../Y/297.html' title='Multiple used in 6 places.'>navPosllh</a>.<a href='../Y/271.html' title='Multiple used in 6 places.'>lon</a>;
+<a id='L160' name='L160'></a> 160     <a href='../Y/312.html' title='Multiple used in 4 places.'>position</a>(2) = 1e-3 * (<strong class='reserved'>float</strong>)<a href='../Y/368.html' title='Multiple used in 13 places.'>ubxMessage</a>.<a href='../Y/297.html' title='Multiple used in 6 places.'>navPosllh</a>.<a href='../Y/246.html' title='Multiple used in 3 places.'>hMSL</a>;
+<a id='L161' name='L161'></a> 161   <em class='brace'>}</em>
+<a id='L162' name='L162'></a> 162 <em class='sharp'>#endif</em>
+<a id='L163' name='L163'></a> 163 <em class='brace'>}</em>
+<a id='L164' name='L164'></a> 164 <em class='comment'>/**</em>
+<a id='L165' name='L165'></a> 165 <em class='comment'> * @brief Atualiza matrix lineariza de estados #F e a matrix #G.</em>
+<a id='L166' name='L166'></a> 166 <em class='comment'> */</em>
+<a id='L167' name='L167'></a> 167 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/75.html' title='Multiple referred from 2 places.'>updateF_G</a>() <em class='brace'>{</em>
+<a id='L168' name='L168'></a> 168   <em class='comment'>/*! \HACK @hack Apenas parte da matrix é atualizada*/</em>
+<a id='L169' name='L169'></a> 169   <a href='../Y/36.html' title='Multiple used in 5 places.'>F</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(3, 3) = -<a href='../S/11.html#L22' title='Defined at 22 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>skew</a>(<a href='../Y/244.html' title='Multiple used in 7 places.'>gyro</a>);
+<a id='L170' name='L170'></a> 170   <em class='comment'>/*! @TODO A matriz GQG* tem apenas uma parte modificada em cada</em>
+<a id='L171' name='L171'></a> 171 <em class='comment'>   * iteração e é usada apenas na propagação da covariância. Pode-se otimizar</em>
+<a id='L172' name='L172'></a> 172 <em class='comment'>   * gerando apenas uma matriz e reduzindo o numero de multiplicações.*/</em>
+<a id='L173' name='L173'></a> 173   <strong class='reserved'>if</strong> (<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a> &gt; 6) <em class='brace'>{</em>
+<a id='L174' name='L174'></a> 174     <em class='comment'>/*! @note A única parte atulizada da matriz é o bloco 3x3  quando há</em>
+<a id='L175' name='L175'></a> 175 <em class='comment'>     * medidas do gps apenas.*/</em>
+<a id='L176' name='L176'></a> 176 
+<a id='L177' name='L177'></a> 177     <a href='../Y/37.html' title='Multiple used in 7 places.'>G</a>.<a href='../Y/190.html' title='Multiple used in 2 places.'>bottomRightCorner</a>(3, 3) = -<a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>;
+<a id='L178' name='L178'></a> 178     <a href='../Y/36.html' title='Multiple used in 5 places.'>F</a>.bottomLeftCorner(3, 3) = -2.0 * <a href='../S/11.html#L22' title='Defined at 22 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>skew</a>(<a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a> * <a href='../Y/173.html' title='Multiple used in 5 places.'>accel</a>);
+<a id='L179' name='L179'></a> 179   <em class='brace'>}</em>
+<a id='L180' name='L180'></a> 180 <em class='brace'>}</em>
+<a id='L181' name='L181'></a> 181 <em class='comment'>/**</em>
+<a id='L182' name='L182'></a> 182 <em class='comment'> * @brief</em>
+<a id='L183' name='L183'></a> 183 <em class='comment'> * \TODO @todo Oportunidade de otimização. Talves, na programação, a matrix F</em>
+<a id='L184' name='L184'></a> 184 <em class='comment'> * não precise existir e seja absorvida pela matrix fi.</em>
+<a id='L185' name='L185'></a> 185 <em class='comment'> */</em>
+<a id='L186' name='L186'></a> 186 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/78.html' title='Multiple referred from 2 places.'>updatefi</a>() <em class='brace'>{</em>
+<a id='L187' name='L187'></a> 187   <a href='../S/18.html#L167' title='Defined at 167 in lib/EKF/EKF.cpp.'>updateF_G</a>();
+<a id='L188' name='L188'></a> 188   <em class='comment'>// fi = I+dt * F</em>
+<a id='L189' name='L189'></a> 189   <a href='../Y/232.html' title='Multiple used in 4 places.'>fi</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) =
+<a id='L190' name='L190'></a> 190       <a href='../Y/85.html' title='Multiple used in 19 places.'>MatrixXf</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) + <a href='../Y/36.html' title='Multiple used in 5 places.'>F</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(<a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>, <a href='../Y/303.html' title='Multiple used in 37 places.'>p</a>) * <a href='../Y/222.html' title='Multiple used in 8 places.'>dt</a>;
+<a id='L191' name='L191'></a> 191 <em class='brace'>}</em>
+<a id='L192' name='L192'></a> 192 <em class='comment'>/**</em>
+<a id='L193' name='L193'></a> 193 <em class='comment'> * Atualiza matrix de sessitividade #H.</em>
+<a id='L194' name='L194'></a> 194 <em class='comment'> * @param g Vetor gravitacional predito.</em>
+<a id='L195' name='L195'></a> 195 <em class='comment'> * @param m Campo magnético predito.</em>
+<a id='L196' name='L196'></a> 196 <em class='comment'> */</em>
+<a id='L197' name='L197'></a> 197 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/76.html' title='Multiple referred from 2 places.'>updateH</a>() <em class='brace'>{</em>
+<a id='L198' name='L198'></a> 198   <em class='comment'>/*! @warning Multiplicado apenas a respectiva coluna da matrix #dcm</em>
+<a id='L199' name='L199'></a> 199 <em class='comment'>    @todo Esta parte pode ser otimizada.</em>
+<a id='L200' name='L200'></a> 200 <em class='comment'>  */</em>
+<a id='L201' name='L201'></a> 201   <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> <a href='../Y/315.html' title='Multiple used in 3 places.'>predictedGravityField</a> =
+<a id='L202' name='L202'></a> 202       <a href='../Y/299.html' title='Multiple used in 4 places.'>navegationGravity</a>(2) * (<a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>.<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>()).<a href='../Y/202.html' title='Multiple used in 11 places.'>col</a>(2);
+<a id='L203' name='L203'></a> 203 
+<a id='L204' name='L204'></a> 204   <strong class='reserved'>float</strong> <a href='../Y/386.html' title='Multiple used in 2 places.'>xy</a> = <a href='../Y/275.html' title='Multiple used in 4 places.'>magOrthogonalGrav</a>.<a href='../Y/247.html' title='Multiple used in 4 places.'>head</a>(2).<a href='../Y/300.html' title='Multiple used in 2 places.'>norm</a>();
+<a id='L205' name='L205'></a> 205 
+<a id='L206' name='L206'></a> 206   <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>::<a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> <a href='../Y/316.html' title='Multiple used in 3 places.'>predictedMagneticField</a> =
+<a id='L207' name='L207'></a> 207       <a href='../Y/386.html' title='Multiple used in 2 places.'>xy</a> * (<a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>.<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>()).<a href='../Y/202.html' title='Multiple used in 11 places.'>col</a>(0) +
+<a id='L208' name='L208'></a> 208       <a href='../Y/275.html' title='Multiple used in 4 places.'>magOrthogonalGrav</a>(2) * (<a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>.<a href='../Y/365.html' title='Multiple used in 9 places.'>transpose</a>()).<a href='../Y/202.html' title='Multiple used in 11 places.'>col</a>(2);
+<a id='L209' name='L209'></a> 209 
+<a id='L210' name='L210'></a> 210   <a href='../Y/215.html' title='Multiple used in 6 places.'>deltaYObs</a>.<a href='../Y/247.html' title='Multiple used in 4 places.'>head</a>(3) = <a href='../Y/270.html' title='Multiple used in 4 places.'>localGravity</a> - <a href='../Y/315.html' title='Multiple used in 3 places.'>predictedGravityField</a>;
+<a id='L211' name='L211'></a> 211   <a href='../Y/215.html' title='Multiple used in 6 places.'>deltaYObs</a>.<a href='../Y/338.html' title='Multiple used in 7 places.'>segment</a>(3, 3) = <a href='../Y/274.html' title='Multiple used in 8 places.'>mag</a> - <a href='../Y/316.html' title='Multiple used in 3 places.'>predictedMagneticField</a>;
+<a id='L212' name='L212'></a> 212   <em class='comment'>/*! @note</em>
+<a id='L213' name='L213'></a> 213 <em class='comment'>  Atualiza as 6 primeiras linas das três primeiras colunas.</em>
+<a id='L214' name='L214'></a> 214 <em class='comment'>  */</em>
+<a id='L215' name='L215'></a> 215   <a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/364.html' title='Multiple used in 17 places.'>topLeftCorner</a>(3, 3) = 2.0f * <a href='../S/11.html#L22' title='Defined at 22 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>skew</a>(<a href='../Y/315.html' title='Multiple used in 3 places.'>predictedGravityField</a>);
+<a id='L216' name='L216'></a> 216   <a href='../Y/58.html' title='Multiple used in 16 places.'>H</a>.<a href='../Y/187.html' title='Multiple used in 8 places.'>block</a>&lt;3, 3&gt;(3, 0) = 2.0f * <a href='../S/11.html#L22' title='Defined at 22 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>skew</a>(<a href='../Y/316.html' title='Multiple used in 3 places.'>predictedMagneticField</a>);
+<a id='L217' name='L217'></a> 217 <em class='brace'>}</em>
+<a id='L218' name='L218'></a> 218 <em class='comment'>/**</em>
+<a id='L219' name='L219'></a> 219 <em class='comment'> * Integra os estado #chi;.</em>
+<a id='L220' name='L220'></a> 220 <em class='comment'> */</em>
+<a id='L221' name='L221'></a> 221 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/59.html' title='Multiple referred from 2 places.'>integrationOfStates</a>() <em class='brace'>{</em>
+<a id='L222' name='L222'></a> 222   <em class='comment'>// Quatérnio com Euler de primeira ordem</em>
+<a id='L223' name='L223'></a> 223   <a href='../Y/324.html' title='Multiple used in 31 places.'>q</a> += 0.5 * <a href='../Y/222.html' title='Multiple used in 8 places.'>dt</a> * <a href='../D/79.html' title='Multiple defined in 2 places.'>multiplyQuaternions</a>(<a href='../Y/324.html' title='Multiple used in 31 places.'>q</a>, <a href='../Y/244.html' title='Multiple used in 7 places.'>gyro</a>);
+<a id='L224' name='L224'></a> 224   <em class='comment'>// atualiza matriz de rotação com o quaternio predito</em>
+<a id='L225' name='L225'></a> 225   <a href='../S/11.html#L48' title='Defined at 48 in lib/GRUPO_QUAT/GRUPO_QUAT.cpp.'>computeMcdFromQuaternion</a>(<a href='../Y/324.html' title='Multiple used in 31 places.'>q</a>, <a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a>);
+<a id='L226' name='L226'></a> 226   <em class='comment'>// Bias do giroscópio.</em>
+<a id='L227' name='L227'></a> 227   <em class='comment'>/*!  @warning Modifica-se o bias da classe imu.*/</em>
+<a id='L228' name='L228'></a> 228   <a href='../Y/257.html' title='Multiple used in 6 places.'>imu</a>.<a href='../Y/142.html' title='Multiple used in 6 places.'>_biasGyro</a> += <a href='../Y/214.html' title='Multiple used in 7 places.'>deltaChi</a>.<a href='../Y/338.html' title='Multiple used in 7 places.'>segment</a>(3, 3);
+<a id='L229' name='L229'></a> 229   <em class='comment'>// Acelacao linear</em>
+<a id='L230' name='L230'></a> 230   <a href='../Y/217.html' title='Multiple used in 5 places.'>deltar</a> = -<a href='../Y/299.html' title='Multiple used in 4 places.'>navegationGravity</a> + <a href='../Y/279.html' title='Multiple used in 14 places.'>mcd</a> * <a href='../Y/173.html' title='Multiple used in 5 places.'>accel</a>;
+<a id='L231' name='L231'></a> 231   <em class='comment'>// Velocidade linear</em>
+<a id='L232' name='L232'></a> 232   <a href='../Y/325.html' title='Multiple used in 6 places.'>r</a> += <a href='../Y/222.html' title='Multiple used in 8 places.'>dt</a> * <a href='../Y/217.html' title='Multiple used in 5 places.'>deltar</a>;
+<a id='L233' name='L233'></a> 233 <em class='brace'>}</em>
+<a id='L234' name='L234'></a> 234 <em class='comment'>/**</em>
+<a id='L235' name='L235'></a> 235 <em class='comment'> * Metodos de calibracao</em>
+<a id='L236' name='L236'></a> 236 <em class='comment'> * @param _porta_led [description]</em>
+<a id='L237' name='L237'></a> 237 <em class='comment'> */</em>
+<a id='L238' name='L238'></a> 238 <strong class='reserved'>void</strong> <a href='../S/18.html#L23' title='Defined at 23 in lib/EKF/EKF.cpp.'>EKF</a>::<a href='../R/48.html' title='Multiple referred from 2 places.'>calibrationMethods</a>(<a href='../Y/243.html' title='Multiple used in 3 places.'>gpio_num_t</a> &amp;<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>) <em class='brace'>{</em>
+<a id='L239' name='L239'></a> 239   <a href='../Y/219.html' title='Multiple used in 8 places.'>digitalWrite</a>(<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>, <a href='../Y/78.html' title='Multiple used in 4 places.'>LOW</a>);
+<a id='L240' name='L240'></a> 240   <a href='../Y/257.html' title='Multiple used in 6 places.'>imu</a>.<a href='../S/9.html#L330' title='Defined at 330 in lib/IMU/IMU.cpp.'>calibraGyro</a>(100);
+<a id='L241' name='L241'></a> 241   <strong class='reserved'>for</strong> (<a href='../Y/347.html' title='Multiple used in 7 places.'>size_t</a> <a href='../Y/254.html' title='Multiple used in 23 places.'>i</a> = 0; <a href='../Y/254.html' title='Multiple used in 23 places.'>i</a> &lt; 10; <a href='../Y/254.html' title='Multiple used in 23 places.'>i</a>++) <em class='brace'>{</em>
+<a id='L242' name='L242'></a> 242     <a href='../Y/219.html' title='Multiple used in 8 places.'>digitalWrite</a>(<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>, <a href='../Y/59.html' title='Multiple used in 4 places.'>HIGH</a>);
+<a id='L243' name='L243'></a> 243     <a href='../Y/213.html' title='Multiple used in 15 places.'>delay</a>(200);
+<a id='L244' name='L244'></a> 244     <a href='../Y/219.html' title='Multiple used in 8 places.'>digitalWrite</a>(<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>, <a href='../Y/78.html' title='Multiple used in 4 places.'>LOW</a>);
+<a id='L245' name='L245'></a> 245   <em class='brace'>}</em>
+<a id='L246' name='L246'></a> 246 <em class='sharp'>#if</em> 0
+<a id='L247' name='L247'></a> 247   <strong class='reserved'>while</strong> (<a href='../Y/257.html' title='Multiple used in 6 places.'>imu</a>.<a href='../S/9.html#L438' title='Defined at 438 in lib/IMU/IMU.cpp.'>calibracaoMagnetometro</a>(22.8908f) &lt; 0) <em class='brace'>{</em>
+<a id='L248' name='L248'></a> 248     <a href='../Y/219.html' title='Multiple used in 8 places.'>digitalWrite</a>(<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>, <a href='../Y/59.html' title='Multiple used in 4 places.'>HIGH</a>);
+<a id='L249' name='L249'></a> 249     <a href='../Y/219.html' title='Multiple used in 8 places.'>digitalWrite</a>(<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>, <a href='../Y/78.html' title='Multiple used in 4 places.'>LOW</a>);
+<a id='L250' name='L250'></a> 250   <em class='brace'>}</em>
+<a id='L251' name='L251'></a> 251 <em class='sharp'>#endif</em>
+<a id='L252' name='L252'></a> 252   <a href='../Y/219.html' title='Multiple used in 8 places.'>digitalWrite</a>(<a href='../Y/164.html' title='Multiple used in 8 places.'>_porta_led</a>, <a href='../Y/59.html' title='Multiple used in 4 places.'>HIGH</a>);
+<a id='L253' name='L253'></a> 253   <a href='../Y/360.html' title='Multiple used in 5 places.'>timeClass</a>.<a href='../S/6.html#L32' title='Defined at 32 in lib/TIME/TIME.cpp.'>computeElapsedTime</a>();
+<a id='L254' name='L254'></a> 254   <a href='../Y/360.html' title='Multiple used in 5 places.'>timeClass</a>.<a href='../S/6.html#L32' title='Defined at 32 in lib/TIME/TIME.cpp.'>computeElapsedTime</a>();
+<a id='L255' name='L255'></a> 255 <em class='brace'>}</em>
+<a id='L256' name='L256'></a> 256 
+<a id='L257' name='L257'></a> 257 <em class='brace'>}</em> <em class='comment'>// namespace ekf</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L30'>[^]</a><a href='#L238'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

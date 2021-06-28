@@ -1,0 +1,12 @@
+digraph "ekf::EKF::statesUpdate"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node53 [label="ekf::EKF::statesUpdate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node53 -> Node54 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node54 [label="ekf::multiplyQuaternions",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#aebcb4259d74954e6d5b117101bbec4ca",tooltip="Produto de quaternions. "];
+  Node53 -> Node55 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node55 [label="ekf::quaternion2Euler",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a7a798898cf7aa6db9b57d53dcf93d185"];
+}

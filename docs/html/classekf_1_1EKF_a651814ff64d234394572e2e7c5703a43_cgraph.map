@@ -1,0 +1,17 @@
+<map id="ekf::EKF::loopEKF" name="ekf::EKF::loopEKF">
+<area shape="rect" id="node2" href="$classekf_1_1EKF.html#ae27545818f775f4aa6b999e012a851e3" title="ekf::EKF::predictionStage" alt="" coords="212,77,409,101"/>
+<area shape="rect" id="node6" href="$classekf_1_1EKF.html#a94bc601335d20c0a058e8e8600d912e7" title="ekf::EKF::updateH" alt="" coords="240,149,381,173"/>
+<area shape="rect" id="node7" href="$classekf_1_1EKF.html#a84048d25ebfb6431d7b1372b7315a7a3" title="Atualiza a medicao a partir dos sensores da unidade Margin e GPS. " alt="" coords="195,197,427,221"/>
+<area shape="rect" id="node15" href="$classekf_1_1EKF.html#ad4c19d26e9735c356dc8767793939efb" title="ekf::EKF::updateStage" alt="" coords="226,269,395,293"/>
+<area shape="rect" id="node3" href="$classekf_1_1EKF.html#ae6c0295a32e90b9594ad10bb1061b62b" title="Atualiza matrix lineariza de estados F e a matrix G. " alt="" coords="510,5,665,29"/>
+<area shape="rect" id="node4" href="$classekf_1_1EKF.html#ad5949e9e8eae2938a332af03a8ec353b" title="ekf::EKF::updatefi" alt="" coords="513,53,661,77"/>
+<area shape="rect" id="node5" href="$classekf_1_1EKF.html#a4bd0d4a6ec2787cf1c690fcf154a43c5" title="ekf::EKF::integrationOfStates" alt="" coords="475,101,700,125"/>
+<area shape="rect" id="node8" href="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title="IMU::readSensor" alt="" coords="524,149,651,173"/>
+<area shape="rect" id="node10" href="$classTIME.html#a51b6020daf09773ef3948cf6b9ccd736" title="Retorna o valor do tempo decorrido desde a última requisição. " alt="" coords="492,197,683,221"/>
+<area shape="rect" id="node11" href="$GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title="processGPS" alt="" coords="541,245,633,269"/>
+<area shape="rect" id="node9" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title="IMU::readRegisters" alt="" coords="748,149,896,173"/>
+<area shape="rect" id="node12" href="$GPS_8h.html#aa2fac937d6e192633f020459321241e7" title="calcChecksum" alt="" coords="769,197,875,221"/>
+<area shape="rect" id="node13" href="$GPS_8h.html#aecde093c7427cc661daceaa118cf4455" title="compareMsgHeader" alt="" coords="755,245,889,269"/>
+<area shape="rect" id="node14" href="$GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6" title="GPSSERIAL" alt="" coords="779,293,865,317"/>
+<area shape="rect" id="node16" href="$classekf_1_1EKF.html#a7bcbdc98c071241367a17d698624a5a1" title="ekf::EKF::updateStates" alt="" coords="499,293,675,317"/>
+</map>

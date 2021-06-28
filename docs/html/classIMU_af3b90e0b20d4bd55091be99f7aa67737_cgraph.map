@@ -1,0 +1,5 @@
+<map id="IMU::writeAK8963Register" name="IMU::writeAK8963Register">
+<area shape="rect" id="node2" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title="IMU::readAK8963Registers" alt="" coords="244,5,435,29"/>
+<area shape="rect" id="node4" href="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title="IMU::writeRegister" alt="" coords="483,55,631,79"/>
+<area shape="rect" id="node3" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title="IMU::readRegisters" alt="" coords="679,31,827,55"/>
+</map>

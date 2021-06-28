@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>payloadSize</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/17.html#L269'>payloadSize</a>       269 lib/EKF/GPS.h    static int payloadSize = sizeof(UBXMessage);</span>
+<span class='curline'><a href='../S/17.html#L292'>payloadSize</a>       292 lib/EKF/GPS.h        if ((fpos - 2) &lt; payloadSize)</span>
+<span class='curline'><a href='../S/17.html#L303'>payloadSize</a>       303 lib/EKF/GPS.h            payloadSize = sizeof(NAV_POSLLH_STRUCT);</span>
+<span class='curline'><a href='../S/17.html#L309'>payloadSize</a>       309 lib/EKF/GPS.h            payloadSize = sizeof(NAV_VELNED_STRUCT);</span>
+<span class='curline'><a href='../S/17.html#L319'>payloadSize</a>       319 lib/EKF/GPS.h        if (fpos == (payloadSize + 2)) {</span>
+<span class='curline'><a href='../S/17.html#L322'>payloadSize</a>       322 lib/EKF/GPS.h          calcChecksum(checksum, payloadSize);</span>
+<span class='curline'><a href='../S/17.html#L323'>payloadSize</a>       323 lib/EKF/GPS.h        } else if (fpos == (payloadSize + 3)) {</span>
+<span class='curline'><a href='../S/17.html#L330'>payloadSize</a>       330 lib/EKF/GPS.h        } else if (fpos == (payloadSize + 4)) {</span>
+<span class='curline'><a href='../S/17.html#L339'>payloadSize</a>       339 lib/EKF/GPS.h        } else if (fpos &gt; (payloadSize + 4)) {</span>
+</pre>
+</body>
+</html>

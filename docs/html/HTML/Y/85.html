@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>MatrixXf</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L70'>MatrixXf</a>           70 lib/EKF/EKF.cpp   P.topLeftCorner(n, n) = (Eigen::MatrixXf::Identity(n, n) -</span>
+<span class='curline'><a href='../S/18.html#L190'>MatrixXf</a>          190 lib/EKF/EKF.cpp       MatrixXf::Identity(p, p) + F.topLeftCorner(p, p) * dt;</span>
+<span class='curline'><a href='../S/16.html#L84'>MatrixXf</a>           84 lib/EKF/EKF.h    const Eigen::MatrixXf Q =</span>
+<span class='curline'><a href='../S/16.html#L91'>MatrixXf</a>           91 lib/EKF/EKF.h    const Eigen::MatrixXf R =</span>
+<span class='curline'><a href='../S/16.html#L98'>MatrixXf</a>           98 lib/EKF/EKF.h    Eigen::MatrixXf F = Eigen::MatrixXf::Zero(n, n);</span>
+<span class='curline'><a href='../S/16.html#L100'>MatrixXf</a>          100 lib/EKF/EKF.h    Eigen::MatrixXf fi = Eigen::MatrixXf::Zero(n, n);</span>
+<span class='curline'><a href='../S/16.html#L102'>MatrixXf</a>          102 lib/EKF/EKF.h    Eigen::MatrixXf G = Eigen::MatrixXf::Zero(n, n);</span>
+<span class='curline'><a href='../S/16.html#L104'>MatrixXf</a>          104 lib/EKF/EKF.h    Eigen::MatrixXf P = 100000.0f * Eigen::MatrixXf::Identity(n, n);</span>
+<span class='curline'><a href='../S/16.html#L106'>MatrixXf</a>          106 lib/EKF/EKF.h    Eigen::MatrixXf H = Eigen::MatrixXf::Zero(p, n);</span>
+<span class='curline'><a href='../S/16.html#L108'>MatrixXf</a>          108 lib/EKF/EKF.h    Eigen::MatrixXf K = Eigen::MatrixXf::Identity(n, p);</span>
+<span class='curline'><a href='../S/11.html#L53'>MatrixXf</a>           53 lib/GRUPO_QUAT/GRUPO_QUAT.cpp void printEigen(const Eigen::MatrixXf &amp;m) {</span>
+<span class='curline'><a href='../S/12.html#L20'>MatrixXf</a>           20 lib/GRUPO_QUAT/GRUPO_QUAT.h void printEigen(const Eigen::MatrixXf &amp;m);</span>
+<span class='curline'><a href='../S/9.html#L443'>MatrixXf</a>          443 lib/IMU/IMU.cpp   MatrixXf medidas = MatrixXf::Zero(3, N);</span>
+<span class='curline'><a href='../S/10.html#L38'>MatrixXf</a>           38 lib/IMU/METODOSCALIBRACAO.h   int calibracaoGeometrica(MatrixXf &amp;data, Matrix3f &amp;sF, Vector3f &amp;bias,</span>
+<span class='curline'><a href='../S/10.html#L48'>MatrixXf</a>           48 lib/IMU/METODOSCALIBRACAO.h     MatrixXf H = MatrixXf::Ones(N, 6);</span>
+<span class='curline'><a href='../S/10.html#L98'>MatrixXf</a>           98 lib/IMU/METODOSCALIBRACAO.h   int calibracaoAcelerometro(Matrix3f &amp;sF, int16_t (&amp;bias)[3], MatrixXf data) {</span>
+<span class='curline'><a href='../S/10.html#L105'>MatrixXf</a>          105 lib/IMU/METODOSCALIBRACAO.h     MatrixXf Y = MatrixXf::Zero(N, 3);</span>
+<span class='curline'><a href='../S/10.html#L106'>MatrixXf</a>          106 lib/IMU/METODOSCALIBRACAO.h     MatrixXf w = MatrixXf::Ones(N, 4);</span>
+<span class='curline'><a href='../S/10.html#L107'>MatrixXf</a>          107 lib/IMU/METODOSCALIBRACAO.h     MatrixXf X = MatrixXf::Zero(4, 3);</span>
+</pre>
+</body>
+</html>

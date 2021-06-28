@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>_i2c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/9.html#L9'>_i2c</a>                9 lib/IMU/IMU.cpp   _i2c = &amp;bus;</span>
+<span class='curline'><a href='../S/9.html#L26'>_i2c</a>               26 lib/IMU/IMU.cpp   _i2c-&gt;begin(21, 22);</span>
+<span class='curline'><a href='../S/9.html#L29'>_i2c</a>               29 lib/IMU/IMU.cpp   _i2c-&gt;setClock(_i2cRate);</span>
+<span class='curline'><a href='../S/9.html#L383'>_i2c</a>              383 lib/IMU/IMU.cpp   _i2c-&gt;beginTransmission(_address); // open the device</span>
+<span class='curline'><a href='../S/9.html#L384'>_i2c</a>              384 lib/IMU/IMU.cpp   _i2c-&gt;write(subAddress);           // write the register address</span>
+<span class='curline'><a href='../S/9.html#L385'>_i2c</a>              385 lib/IMU/IMU.cpp   _i2c-&gt;write(data);                 // write the data</span>
+<span class='curline'><a href='../S/9.html#L386'>_i2c</a>              386 lib/IMU/IMU.cpp   _i2c-&gt;endTransmission();</span>
+<span class='curline'><a href='../S/9.html#L405'>_i2c</a>              405 lib/IMU/IMU.cpp   _i2c-&gt;beginTransmission(_address);</span>
+<span class='curline'><a href='../S/9.html#L406'>_i2c</a>              406 lib/IMU/IMU.cpp   _i2c-&gt;write(subAddress);</span>
+<span class='curline'><a href='../S/9.html#L407'>_i2c</a>              407 lib/IMU/IMU.cpp   _i2c-&gt;endTransmission(false);</span>
+<span class='curline'><a href='../S/9.html#L408'>_i2c</a>              408 lib/IMU/IMU.cpp   _numBytes = _i2c-&gt;requestFrom(_address, count);</span>
+<span class='curline'><a href='../S/9.html#L411'>_i2c</a>              411 lib/IMU/IMU.cpp       dest[i] = _i2c-&gt;read();</span>
+<span class='curline'><a href='../S/8.html#L105'>_i2c</a>              105 lib/IMU/IMU.h    TwoWire *_i2c;</span>
+</pre>
+</body>
+</html>

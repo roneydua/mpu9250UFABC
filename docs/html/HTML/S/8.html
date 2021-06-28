@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>lib/IMU/IMU.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/802.html'>lib</a>/<a href='../files/805.html'>IMU</a>/IMU.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/7.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='comment'>/**</em>
+<a id='L2' name='L2'></a>   2 <em class='comment'> * @Author: roney</em>
+<a id='L3' name='L3'></a>   3 <em class='comment'> * @Date:   2021-05-03T16:29:30-03:00</em>
+<a id='L4' name='L4'></a>   4 <em class='comment'> * @Email:  roneyddasilva@gmail.com</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'> * @Filename: IMU.h</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'> * @Last modified by:   roney</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'> * @Last modified time: 2021-05-24T10:36:51-03:00</em>
+<a id='L8' name='L8'></a>   8 <em class='comment'> * @details biblioteca criada com base na biblioteca dinivel no GitHub :</em>
+<a id='L9' name='L9'></a>   9 <em class='comment'> https://github.com/bolderflight/MPU9250</em>
+<a id='L10' name='L10'></a>  10 <em class='comment'> */</em>
+<a id='L11' name='L11'></a>  11 
+<a id='L12' name='L12'></a>  12 <em class='sharp'>#ifndef</em> <a href='../S/8.html#L13' title='Defined at 13 in lib/IMU/IMU.h.'>IMU_h</a>
+<a id='L13' name='L13'></a>  13 <em class='sharp'>  #define</em> <a href='../S/8.html#L12' title='Referred from 12 in lib/IMU/IMU.h.'>IMU_h</a>
+<a id='L14' name='L14'></a>  14 <em class='sharp'>  #include</em> "Eigen/Dense"
+<a id='L15' name='L15'></a>  15 <em class='sharp'>  #include</em> "<a href='10.html'>METODOSCALIBRACAO.h</a>"
+<a id='L16' name='L16'></a>  16 <em class='sharp'>  #include</em> &lt;Arduino.h&gt;
+<a id='L17' name='L17'></a>  17 <em class='sharp'>  #include</em> "Wire.h"
+<a id='L18' name='L18'></a>  18 
+<a id='L19' name='L19'></a>  19 <a href='../Y/373.html' title='Multiple used in 3 places.'>using</a> <a href='../Y/294.html' title='Multiple used in 5 places.'>namespace</a> <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>;
+<a id='L20' name='L20'></a>  20 
+<a id='L21' name='L21'></a>  21 <a href='../Y/200.html' title='Multiple used in 6 places.'>class</a> <a href='../S/9.html#L8' title='Defined at 8 in lib/IMU/IMU.cpp.'>IMU</a> <em class='brace'>{</em>
+<a id='L22' name='L22'></a>  22 <a href='../Y/322.html' title='Multiple used in 6 places.'>public</a>:
+<a id='L23' name='L23'></a>  23   <strong class='reserved'>enum</strong> <a href='../R/21.html' title='Multiple referred from 3 places.'>GyroRange</a> <em class='brace'>{</em>
+<a id='L24' name='L24'></a>  24     <a href='../S/9.html#L158' title='Referred from 158 in lib/IMU/IMU.cpp.'>GYRO_RANGE_250DPS</a>,
+<a id='L25' name='L25'></a>  25     <a href='../S/9.html#L166' title='Referred from 166 in lib/IMU/IMU.cpp.'>GYRO_RANGE_500DPS</a>,
+<a id='L26' name='L26'></a>  26     <a href='../S/9.html#L174' title='Referred from 174 in lib/IMU/IMU.cpp.'>GYRO_RANGE_1000DPS</a>,
+<a id='L27' name='L27'></a>  27     <a href='../R/18.html' title='Multiple referred from 2 places.'>GYRO_RANGE_2000DPS</a>
+<a id='L28' name='L28'></a>  28   <em class='brace'>}</em>;
+<a id='L29' name='L29'></a>  29   <strong class='reserved'>enum</strong> <a href='../R/5.html' title='Multiple referred from 3 places.'>AccelRange</a> <em class='brace'>{</em>
+<a id='L30' name='L30'></a>  30     <a href='../S/9.html#L114' title='Referred from 114 in lib/IMU/IMU.cpp.'>ACCEL_RANGE_2G</a>,
+<a id='L31' name='L31'></a>  31     <a href='../S/9.html#L122' title='Referred from 122 in lib/IMU/IMU.cpp.'>ACCEL_RANGE_4G</a>,
+<a id='L32' name='L32'></a>  32     <a href='../S/9.html#L130' title='Referred from 130 in lib/IMU/IMU.cpp.'>ACCEL_RANGE_8G</a>,
+<a id='L33' name='L33'></a>  33     <a href='../R/1.html' title='Multiple referred from 2 places.'>ACCEL_RANGE_16G</a>
+<a id='L34' name='L34'></a>  34   <em class='brace'>}</em>;
+<a id='L35' name='L35'></a>  35   <strong class='reserved'>enum</strong> <a href='../R/12.html' title='Multiple referred from 3 places.'>DlpfBandwidth</a> <em class='brace'>{</em>
+<a id='L36' name='L36'></a>  36     <a href='../S/9.html#L202' title='Referred from 202 in lib/IMU/IMU.cpp.'>DLPF_BANDWIDTH_184HZ</a>,
+<a id='L37' name='L37'></a>  37     <a href='../R/11.html' title='Multiple referred from 2 places.'>DLPF_BANDWIDTH_92HZ</a>,
+<a id='L38' name='L38'></a>  38     <a href='../S/9.html#L224' title='Referred from 224 in lib/IMU/IMU.cpp.'>DLPF_BANDWIDTH_41HZ</a>,
+<a id='L39' name='L39'></a>  39     <a href='../S/9.html#L235' title='Referred from 235 in lib/IMU/IMU.cpp.'>DLPF_BANDWIDTH_20HZ</a>,
+<a id='L40' name='L40'></a>  40     <a href='../S/9.html#L246' title='Referred from 246 in lib/IMU/IMU.cpp.'>DLPF_BANDWIDTH_10HZ</a>,
+<a id='L41' name='L41'></a>  41     <a href='../S/9.html#L257' title='Referred from 257 in lib/IMU/IMU.cpp.'>DLPF_BANDWIDTH_5HZ</a>
+<a id='L42' name='L42'></a>  42   <em class='brace'>}</em>;
+<a id='L43' name='L43'></a>  43   <strong class='reserved'>enum</strong> LpAccelOdr <em class='brace'>{</em>
+<a id='L44' name='L44'></a>  44     LP_ACCEL_ODR_0_24HZ = 0,
+<a id='L45' name='L45'></a>  45     LP_ACCEL_ODR_0_49HZ = 1,
+<a id='L46' name='L46'></a>  46     LP_ACCEL_ODR_0_98HZ = 2,
+<a id='L47' name='L47'></a>  47     LP_ACCEL_ODR_1_95HZ = 3,
+<a id='L48' name='L48'></a>  48     LP_ACCEL_ODR_3_91HZ = 4,
+<a id='L49' name='L49'></a>  49     LP_ACCEL_ODR_7_81HZ = 5,
+<a id='L50' name='L50'></a>  50     LP_ACCEL_ODR_15_63HZ = 6,
+<a id='L51' name='L51'></a>  51     LP_ACCEL_ODR_31_25HZ = 7,
+<a id='L52' name='L52'></a>  52     LP_ACCEL_ODR_62_50HZ = 8,
+<a id='L53' name='L53'></a>  53     LP_ACCEL_ODR_125HZ = 9,
+<a id='L54' name='L54'></a>  54     LP_ACCEL_ODR_250HZ = 10,
+<a id='L55' name='L55'></a>  55     LP_ACCEL_ODR_500HZ = 11
+<a id='L56' name='L56'></a>  56   <em class='brace'>}</em>;
+<a id='L57' name='L57'></a>  57   <em class='comment'>/*! Ponteiro das medidas do acelerômetro */</em>
+<a id='L58' name='L58'></a>  58   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> *<a href='../Y/133.html' title='Multiple used in 5 places.'>_acel</a>;
+<a id='L59' name='L59'></a>  59   <em class='comment'>/*! Ponteiro das medidas do giroscópio */</em>
+<a id='L60' name='L60'></a>  60   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> *<a href='../Y/150.html' title='Multiple used in 6 places.'>_gyro</a>;
+<a id='L61' name='L61'></a>  61   <em class='comment'>/*! Ponteiro das medidas do Magnetômetro*/</em>
+<a id='L62' name='L62'></a>  62   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> *<a href='../Y/159.html' title='Multiple used in 3 places.'>_mag</a>;
+<a id='L63' name='L63'></a>  63   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> <a href='../Y/276.html' title='Multiple used in 4 places.'>magTemp</a>;
+<a id='L64' name='L64'></a>  64   <strong class='reserved'>float</strong> _t;
+<a id='L65' name='L65'></a>  65 
+<a id='L66' name='L66'></a>  66   <em class='comment'>/*! Matriz fator de escala do acelerometro. */</em>
+<a id='L67' name='L67'></a>  67   <em class='comment'>// const Matrix3f sFAccel =</em>
+<a id='L68' name='L68'></a>  68   <em class='comment'>//     (Matrix3f() &lt;&lt; 0.00478163, 2.78981e-05, -3.08181e-05, -6.91099e-06,</em>
+<a id='L69' name='L69'></a>  69   <em class='comment'>//      0.00477048, -0.000407344, 3.03476e-05, 0.000423673, 0.00473929)</em>
+<a id='L70' name='L70'></a>  70   <em class='comment'>//         .finished();</em>
+<a id='L71' name='L71'></a>  71   <em class='comment'>//</em>
+<a id='L72' name='L72'></a>  72   <em class='comment'>/*! Vetor bias do acelerometro.</em>
+<a id='L73' name='L73'></a>  73 <em class='comment'>  @todo A MARG eh capaz de registrar os bias/Offset nos resgistradores. Feito</em>
+<a id='L74' name='L74'></a>  74 <em class='comment'>  isso as medidas  */</em>
+<a id='L75' name='L75'></a>  75   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> <a href='../Y/141.html' title='Multiple used in 2 places.'>_biasAcel</a> = <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a>::<a href='../Y/128.html' title='Multiple used in 22 places.'>Zero</a>();
+<a id='L76' name='L76'></a>  76   <em class='comment'>// const int16_t _biasAccel[3]{50, 17, -19};</em>
+<a id='L77' name='L77'></a>  77   <em class='comment'>/*! Bias do Giroscópio. */</em>
+<a id='L78' name='L78'></a>  78   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> <a href='../Y/142.html' title='Multiple used in 6 places.'>_biasGyro</a> = <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a>::<a href='../Y/128.html' title='Multiple used in 22 places.'>Zero</a>();
+<a id='L79' name='L79'></a>  79   <em class='comment'>/*! Bias do Magnetômetro. */</em>
+<a id='L80' name='L80'></a>  80   <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> <a href='../Y/143.html' title='Multiple used in 3 places.'>_biasMag</a> = <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a>::<a href='../Y/128.html' title='Multiple used in 22 places.'>Zero</a>();
+<a id='L81' name='L81'></a>  81   <em class='comment'>/*! Matriz fator de escala. */</em>
+<a id='L82' name='L82'></a>  82   <a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a> <a href='../Y/167.html' title='Multiple used in 3 places.'>_sM</a> = <a href='../Y/83.html' title='Multiple used in 16 places.'>Matrix3f</a>::<a href='../Y/76.html' title='Multiple used in 14 places.'>Identity</a>();
+<a id='L83' name='L83'></a>  83   <a href='../S/9.html#L8' title='Defined at 8 in lib/IMU/IMU.cpp.'>IMU</a>(<a href='../Y/113.html' title='Multiple used in 3 places.'>TwoWire</a> &amp;<a href='../Y/192.html' title='Multiple used in 3 places.'>bus</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/175.html' title='Multiple used in 3 places.'>address</a>);
+<a id='L84' name='L84'></a>  84   <strong class='reserved'>int</strong> <a href='../D/59.html' title='Multiple defined in 4 places.'>begin</a>(<a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> &amp;<a href='../Y/174.html' title='Multiple used in 4 places.'>acel</a>, <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> &amp;<a href='../Y/244.html' title='Multiple used in 7 places.'>gyro</a>, <a href='../Y/118.html' title='Multiple used in 34 places.'>Vector3f</a> &amp;<a href='../Y/274.html' title='Multiple used in 8 places.'>mag</a>);
+<a id='L85' name='L85'></a>  85   <strong class='reserved'>int</strong> <a href='../S/9.html#L277' title='Defined at 277 in lib/IMU/IMU.cpp.'>readSensor</a>();
+<a id='L86' name='L86'></a>  86   <strong class='reserved'>int</strong> <a href='../S/9.html#L200' title='Defined at 200 in lib/IMU/IMU.cpp.'>setDlpfBandwidth</a>(<a href='../S/8.html#L35' title='Defined at 35 in lib/IMU/IMU.h.'>DlpfBandwidth</a> <a href='../Y/184.html' title='Multiple used in 4 places.'>bandwidth</a>);
+<a id='L87' name='L87'></a>  87   <strong class='reserved'>int</strong> <a href='../S/9.html#L156' title='Defined at 156 in lib/IMU/IMU.cpp.'>setGyroRange</a>(<a href='../S/8.html#L23' title='Defined at 23 in lib/IMU/IMU.h.'>GyroRange</a> <a href='../Y/326.html' title='Multiple used in 8 places.'>range</a>);
+<a id='L88' name='L88'></a>  88   <strong class='reserved'>int</strong> <a href='../S/9.html#L112' title='Defined at 112 in lib/IMU/IMU.cpp.'>setAccelRange</a>(<a href='../S/8.html#L29' title='Defined at 29 in lib/IMU/IMU.h.'>AccelRange</a> <a href='../Y/326.html' title='Multiple used in 8 places.'>range</a>);
+<a id='L89' name='L89'></a>  89 
+<a id='L90' name='L90'></a>  90   <strong class='reserved'>void</strong> <a href='../S/9.html#L330' title='Defined at 330 in lib/IMU/IMU.cpp.'>calibraGyro</a>(<strong class='reserved'>int</strong> <a href='../Y/86.html' title='Multiple used in 14 places.'>N</a> = 100);
+<a id='L91' name='L91'></a>  91   <strong class='reserved'>int</strong> <a href='../S/9.html#L438' title='Defined at 438 in lib/IMU/IMU.cpp.'>calibracaoMagnetometro</a>(<strong class='reserved'>float</strong> <a href='../Y/287.html' title='Multiple used in 5 places.'>moduloCampo</a>);
+<a id='L92' name='L92'></a>  92 
+<a id='L93' name='L93'></a>  93 <a href='../Y/320.html' title='Multiple used in 2 places.'>protected</a>:
+<a id='L94' name='L94'></a>  94   <em class='comment'>/*! buffer de leitura do sensor */</em>
+<a id='L95' name='L95'></a>  95   <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/145.html' title='Multiple used in 25 places.'>_buffer</a>[21];
+<a id='L96' name='L96'></a>  96   <em class='comment'>//@{</em>
+<a id='L97' name='L97'></a>  97   <em class='comment'>/*! Contadores para leitura das medidas. */</em>
+<a id='L98' name='L98'></a>  98   <a href='../Y/260.html' title='Multiple used in 17 places.'>int16_t</a> <a href='../Y/135.html' title='Multiple used in 3 places.'>_axcounts</a>, <a href='../Y/136.html' title='Multiple used in 3 places.'>_aycounts</a>, <a href='../Y/137.html' title='Multiple used in 3 places.'>_azcounts</a>;
+<a id='L99' name='L99'></a>  99   <a href='../Y/260.html' title='Multiple used in 17 places.'>int16_t</a> <a href='../Y/148.html' title='Multiple used in 3 places.'>_gxcounts</a>, <a href='../Y/149.html' title='Multiple used in 3 places.'>_gycounts</a>, <a href='../Y/153.html' title='Multiple used in 3 places.'>_gzcounts</a>;
+<a id='L100' name='L100'></a> 100   <a href='../Y/260.html' title='Multiple used in 17 places.'>int16_t</a> <a href='../Y/154.html' title='Multiple used in 3 places.'>_hxcounts</a>, <a href='../Y/155.html' title='Multiple used in 3 places.'>_hycounts</a>, <a href='../Y/156.html' title='Multiple used in 3 places.'>_hzcounts</a>;
+<a id='L101' name='L101'></a> 101   <a href='../Y/260.html' title='Multiple used in 17 places.'>int16_t</a> _tcounts;
+<a id='L102' name='L102'></a> 102   <em class='comment'>//@}</em>
+<a id='L103' name='L103'></a> 103   <em class='comment'>// vetores de leitura</em>
+<a id='L104' name='L104'></a> 104   <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/134.html' title='Multiple used in 5 places.'>_address</a>;
+<a id='L105' name='L105'></a> 105   <a href='../Y/113.html' title='Multiple used in 3 places.'>TwoWire</a> *<a href='../Y/157.html' title='Multiple used in 13 places.'>_i2c</a>;
+<a id='L106' name='L106'></a> 106   <em class='comment'>//! numero de bytes para leitura funcao readRegisters</em>
+<a id='L107' name='L107'></a> 107   <a href='../Y/347.html' title='Multiple used in 7 places.'>size_t</a> <a href='../Y/163.html' title='Multiple used in 3 places.'>_numBytes</a>;
+<a id='L108' name='L108'></a> 108 
+<a id='L109' name='L109'></a> 109   <em class='comment'>// frequencia do i2c;</em>
+<a id='L110' name='L110'></a> 110   <strong class='reserved'>const</strong> uint32_t <a href='../Y/158.html' title='Multiple used in 2 places.'>_i2cRate</a> = 400000;
+<a id='L111' name='L111'></a> 111   <em class='comment'>// verificacao de sucesso na comunicacao com sensor</em>
+<a id='L112' name='L112'></a> 112   <strong class='reserved'>int</strong> <a href='../Y/169.html' title='Multiple used in 3 places.'>_status</a>;
+<a id='L113' name='L113'></a> 113   <em class='comment'>// constantes</em>
+<a id='L114' name='L114'></a> 114   <strong class='reserved'>const</strong> <strong class='reserved'>float</strong> <a href='../Y/240.html' title='Multiple used in 5 places.'>gG</a> = 9.80665f;
+<a id='L115' name='L115'></a> 115   <strong class='reserved'>const</strong> <strong class='reserved'>float</strong> <a href='../Y/146.html' title='Multiple used in 5 places.'>_d2r</a> = 3.14159265359 / 180.0;
+<a id='L116' name='L116'></a> 116   <em class='comment'>// escalas e faixa de trabalho</em>
+<a id='L117' name='L117'></a> 117   <strong class='reserved'>float</strong> <a href='../Y/132.html' title='Multiple used in 6 places.'>_accelScale</a>;
+<a id='L118' name='L118'></a> 118   <strong class='reserved'>float</strong> <a href='../Y/152.html' title='Multiple used in 6 places.'>_gyroScale</a>;
+<a id='L119' name='L119'></a> 119   <strong class='reserved'>float</strong> <a href='../Y/160.html' title='Multiple used in 4 places.'>_magScaleX</a>, <a href='../Y/161.html' title='Multiple used in 2 places.'>_magScaleY</a>, <a href='../Y/162.html' title='Multiple used in 2 places.'>_magScaleZ</a>;
+<a id='L120' name='L120'></a> 120   <a href='../S/8.html#L29' title='Defined at 29 in lib/IMU/IMU.h.'>AccelRange</a> <a href='../Y/131.html' title='Multiple used in 2 places.'>_accelRange</a>;
+<a id='L121' name='L121'></a> 121   <a href='../S/8.html#L23' title='Defined at 23 in lib/IMU/IMU.h.'>GyroRange</a> <a href='../Y/151.html' title='Multiple used in 2 places.'>_gyroRange</a>;
+<a id='L122' name='L122'></a> 122   <em class='comment'>// configuracoes das faixas de trabalho</em>
+<a id='L123' name='L123'></a> 123   <em class='comment'>// AccelRange  ACCEL_FS_SEL_16G</em>
+<a id='L124' name='L124'></a> 124   <em class='comment'>// GyroRange GYRO_FS_SEL_2000DPS;</em>
+<a id='L125' name='L125'></a> 125   <a href='../S/8.html#L35' title='Defined at 35 in lib/IMU/IMU.h.'>DlpfBandwidth</a> <a href='../Y/138.html' title='Multiple used in 4 places.'>_bandwidth</a>;
+<a id='L126' name='L126'></a> 126   <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/168.html' title='Multiple used in 2 places.'>_srd</a>;
+<a id='L127' name='L127'></a> 127   <em class='comment'>// char _buf[32];</em>
+<a id='L128' name='L128'></a> 128   <em class='comment'>// MPU9250 registers</em>
+<a id='L129' name='L129'></a> 129   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/15.html' title='Multiple used in 2 places.'>ACCEL_OUT</a> = 0x3B;
+<a id='L130' name='L130'></a> 130   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> GYRO_OUT = 0x43;
+<a id='L131' name='L131'></a> 131   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> TEMP_OUT = 0x41;
+<a id='L132' name='L132'></a> 132   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/34.html' title='Multiple used in 2 places.'>EXT_SENS_DATA_00</a> = 0x49;
+<a id='L133' name='L133'></a> 133   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/1.html' title='Multiple used in 5 places.'>ACCEL_CONFIG</a> = 0x1C;
+<a id='L134' name='L134'></a> 134   <em class='comment'>/* Quanto menor a faixa que o acelerometro trabalho maior sua</em>
+<a id='L135' name='L135'></a> 135 <em class='comment'>sensibilidade. Com o intuido de reduzir a quantidade de ruidos</em>
+<a id='L136' name='L136'></a> 136 <em class='comment'>usaremos as maiores escalas */</em>
+<a id='L137' name='L137'></a> 137   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/10.html' title='Multiple used in 2 places.'>ACCEL_FS_SEL_2G</a> = 0x00;
+<a id='L138' name='L138'></a> 138   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/11.html' title='Multiple used in 2 places.'>ACCEL_FS_SEL_4G</a> = 0x08;
+<a id='L139' name='L139'></a> 139   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/12.html' title='Multiple used in 2 places.'>ACCEL_FS_SEL_8G</a> = 0x10;
+<a id='L140' name='L140'></a> 140   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/9.html' title='Multiple used in 2 places.'>ACCEL_FS_SEL_16G</a> = 0x18;
+<a id='L141' name='L141'></a> 141   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/40.html' title='Multiple used in 5 places.'>GYRO_CONFIG</a> = 0x1B;
+<a id='L142' name='L142'></a> 142   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/49.html' title='Multiple used in 2 places.'>GYRO_FS_SEL_250DPS</a> = 0x00;
+<a id='L143' name='L143'></a> 143   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/50.html' title='Multiple used in 2 places.'>GYRO_FS_SEL_500DPS</a> = 0x08;
+<a id='L144' name='L144'></a> 144   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/47.html' title='Multiple used in 2 places.'>GYRO_FS_SEL_1000DPS</a> = 0x10;
+<a id='L145' name='L145'></a> 145   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/48.html' title='Multiple used in 2 places.'>GYRO_FS_SEL_2000DPS</a> = 0x18;
+<a id='L146' name='L146'></a> 146   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/2.html' title='Multiple used in 7 places.'>ACCEL_CONFIG2</a> = 0x1D;
+<a id='L147' name='L147'></a> 147   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/4.html' title='Multiple used in 2 places.'>ACCEL_DLPF_184</a> = 0x01;
+<a id='L148' name='L148'></a> 148   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/8.html' title='Multiple used in 2 places.'>ACCEL_DLPF_92</a> = 0x02;
+<a id='L149' name='L149'></a> 149   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/6.html' title='Multiple used in 2 places.'>ACCEL_DLPF_41</a> = 0x03;
+<a id='L150' name='L150'></a> 150   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/5.html' title='Multiple used in 2 places.'>ACCEL_DLPF_20</a> = 0x04;
+<a id='L151' name='L151'></a> 151   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/3.html' title='Multiple used in 2 places.'>ACCEL_DLPF_10</a> = 0x05;
+<a id='L152' name='L152'></a> 152   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/7.html' title='Multiple used in 2 places.'>ACCEL_DLPF_5</a> = 0x06;
+<a id='L153' name='L153'></a> 153   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/30.html' title='Multiple used in 7 places.'>CONFIG</a> = 0x1A;
+<a id='L154' name='L154'></a> 154   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/42.html' title='Multiple used in 2 places.'>GYRO_DLPF_184</a> = 0x01;
+<a id='L155' name='L155'></a> 155   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/46.html' title='Multiple used in 2 places.'>GYRO_DLPF_92</a> = 0x02;
+<a id='L156' name='L156'></a> 156   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/44.html' title='Multiple used in 2 places.'>GYRO_DLPF_41</a> = 0x03;
+<a id='L157' name='L157'></a> 157   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/43.html' title='Multiple used in 2 places.'>GYRO_DLPF_20</a> = 0x04;
+<a id='L158' name='L158'></a> 158   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/41.html' title='Multiple used in 2 places.'>GYRO_DLPF_10</a> = 0x05;
+<a id='L159' name='L159'></a> 159   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/45.html' title='Multiple used in 2 places.'>GYRO_DLPF_5</a> = 0x06;
+<a id='L160' name='L160'></a> 160   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/109.html' title='Multiple used in 2 places.'>SMPDIV</a> = 0x19;
+<a id='L161' name='L161'></a> 161   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> INT_PIN_CFG = 0x37;
+<a id='L162' name='L162'></a> 162   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> INT_ENABLE = 0x38;
+<a id='L163' name='L163'></a> 163   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> INT_DISABLE = 0x00;
+<a id='L164' name='L164'></a> 164   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> INT_PULSE_50US = 0x00;
+<a id='L165' name='L165'></a> 165   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> INT_WOM_EN = 0x40;
+<a id='L166' name='L166'></a> 166   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> INT_RAW_RDY_EN = 0x01;
+<a id='L167' name='L167'></a> 167   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/99.html' title='Multiple used in 5 places.'>PWR_MGMNT_1</a> = 0x6B;
+<a id='L168' name='L168'></a> 168   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> PWR_CYCLE = 0x20;
+<a id='L169' name='L169'></a> 169   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/101.html' title='Multiple used in 2 places.'>PWR_RESET</a> = 0x80;
+<a id='L170' name='L170'></a> 170   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/29.html' title='Multiple used in 4 places.'>CLOCK_SEL_PLL</a> = 0x01;
+<a id='L171' name='L171'></a> 171   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/100.html' title='Multiple used in 2 places.'>PWR_MGMNT_2</a> = 0x6C;
+<a id='L172' name='L172'></a> 172   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/107.html' title='Multiple used in 2 places.'>SEN_ENABLE</a> = 0x00;
+<a id='L173' name='L173'></a> 173   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> DIS_GYRO = 0x07;
+<a id='L174' name='L174'></a> 174   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/116.html' title='Multiple used in 3 places.'>USER_CTRL</a> = 0x6A;
+<a id='L175' name='L175'></a> 175   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/63.html' title='Multiple used in 3 places.'>I2C_MST_EN</a> = 0x20;
+<a id='L176' name='L176'></a> 176   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/61.html' title='Multiple used in 3 places.'>I2C_MST_CLK</a> = 0x0D;
+<a id='L177' name='L177'></a> 177   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/62.html' title='Multiple used in 3 places.'>I2C_MST_CTRL</a> = 0x24;
+<a id='L178' name='L178'></a> 178   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/65.html' title='Multiple used in 3 places.'>I2C_SLV0_ADDR</a> = 0x25;
+<a id='L179' name='L179'></a> 179   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/69.html' title='Multiple used in 3 places.'>I2C_SLV0_REG</a> = 0x26;
+<a id='L180' name='L180'></a> 180   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/67.html' title='Multiple used in 2 places.'>I2C_SLV0_DO</a> = 0x63;
+<a id='L181' name='L181'></a> 181   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/66.html' title='Multiple used in 3 places.'>I2C_SLV0_CTRL</a> = 0x27;
+<a id='L182' name='L182'></a> 182   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/68.html' title='Multiple used in 3 places.'>I2C_SLV0_EN</a> = 0x80;
+<a id='L183' name='L183'></a> 183   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/64.html' title='Multiple used in 2 places.'>I2C_READ_FLAG</a> = 0x80;
+<a id='L184' name='L184'></a> 184   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> MOT_DETECT_CTRL = 0x69;
+<a id='L185' name='L185'></a> 185   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> ACCEL_INTEL_EN = 0x80;
+<a id='L186' name='L186'></a> 186   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> ACCEL_INTEL_MODE = 0x40;
+<a id='L187' name='L187'></a> 187   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> LP_ACCEL_ODR = 0x1E;
+<a id='L188' name='L188'></a> 188   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> WOM_THR = 0x1F;
+<a id='L189' name='L189'></a> 189   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/121.html' title='Multiple used in 2 places.'>WHO_AM_I</a> = 0x75;
+<a id='L190' name='L190'></a> 190   <em class='comment'>// const uint8_t FIFO_EN = 0x23;</em>
+<a id='L191' name='L191'></a> 191   <em class='comment'>// const uint8_t FIFO_TEMP = 0x80;</em>
+<a id='L192' name='L192'></a> 192   <em class='comment'>// const uint8_t FIFO_GYRO = 0x70;</em>
+<a id='L193' name='L193'></a> 193   <em class='comment'>// const uint8_t FIFO_ACCEL = 0x08;</em>
+<a id='L194' name='L194'></a> 194   <em class='comment'>// const uint8_t FIFO_MAG = 0x01;</em>
+<a id='L195' name='L195'></a> 195   <em class='comment'>// const uint8_t FIFO_COUNT = 0x72;</em>
+<a id='L196' name='L196'></a> 196   <em class='comment'>// const uint8_t FIFO_READ = 0x74;</em>
+<a id='L197' name='L197'></a> 197   <em class='comment'>// registro do magnetometro AK8963</em>
+<a id='L198' name='L198'></a> 198   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/23.html' title='Multiple used in 3 places.'>AK8963_I2C_ADDR</a> = 0x0C;
+<a id='L199' name='L199'></a> 199   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/22.html' title='Multiple used in 2 places.'>AK8963_HXL</a> = 0x03;
+<a id='L200' name='L200'></a> 200   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/17.html' title='Multiple used in 6 places.'>AK8963_CNTL1</a> = 0x0A;
+<a id='L201' name='L201'></a> 201   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/24.html' title='Multiple used in 4 places.'>AK8963_PWR_DOWN</a> = 0x00;
+<a id='L202' name='L202'></a> 202   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> AK8963_CNT_MEAS1 = 0x12;
+<a id='L203' name='L203'></a> 203   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/20.html' title='Multiple used in 2 places.'>AK8963_CNT_MEAS2</a> = 0x16;
+<a id='L204' name='L204'></a> 204   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/21.html' title='Multiple used in 2 places.'>AK8963_FUSE_ROM</a> = 0x0F;
+<a id='L205' name='L205'></a> 205   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/18.html' title='Multiple used in 2 places.'>AK8963_CNTL2</a> = 0x0B;
+<a id='L206' name='L206'></a> 206   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/25.html' title='Multiple used in 2 places.'>AK8963_RESET</a> = 0x01;
+<a id='L207' name='L207'></a> 207   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/16.html' title='Multiple used in 2 places.'>AK8963_ASA</a> = 0x10;
+<a id='L208' name='L208'></a> 208   <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/26.html' title='Multiple used in 2 places.'>AK8963_WHO_AM_I</a> = 0x00;
+<a id='L209' name='L209'></a> 209   <em class='comment'>// funcoes privadas</em>
+<a id='L210' name='L210'></a> 210   <strong class='reserved'>int</strong> <a href='../S/9.html#L382' title='Defined at 382 in lib/IMU/IMU.cpp.'>writeRegister</a>(<a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/355.html' title='Multiple used in 14 places.'>subAddress</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/210.html' title='Multiple used in 32 places.'>data</a>);
+<a id='L211' name='L211'></a> 211   <strong class='reserved'>int</strong> <a href='../S/9.html#L404' title='Defined at 404 in lib/IMU/IMU.cpp.'>readRegisters</a>(<a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/355.html' title='Multiple used in 14 places.'>subAddress</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/206.html' title='Multiple used in 9 places.'>count</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> *<a href='../Y/218.html' title='Multiple used in 5 places.'>dest</a>);
+<a id='L212' name='L212'></a> 212   <strong class='reserved'>int</strong> <a href='../S/9.html#L348' title='Defined at 348 in lib/IMU/IMU.cpp.'>writeAK8963Register</a>(<a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/355.html' title='Multiple used in 14 places.'>subAddress</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/210.html' title='Multiple used in 32 places.'>data</a>);
+<a id='L213' name='L213'></a> 213   <strong class='reserved'>int</strong> <a href='../S/9.html#L422' title='Defined at 422 in lib/IMU/IMU.cpp.'>whoAmI</a>();
+<a id='L214' name='L214'></a> 214   <strong class='reserved'>int</strong> <a href='../S/9.html#L429' title='Defined at 429 in lib/IMU/IMU.cpp.'>whoAmIAK8963</a>();
+<a id='L215' name='L215'></a> 215   <strong class='reserved'>int</strong> <a href='../S/9.html#L340' title='Defined at 340 in lib/IMU/IMU.cpp.'>readAK8963Registers</a>(<a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/355.html' title='Multiple used in 14 places.'>subAddress</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/206.html' title='Multiple used in 9 places.'>count</a>, <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> *<a href='../Y/218.html' title='Multiple used in 5 places.'>dest</a>);
+<a id='L216' name='L216'></a> 216 <em class='brace'>}</em>;
+<a id='L217' name='L217'></a> 217 
+<a id='L218' name='L218'></a> 218 <em class='sharp'>#endif</em>
+<a id='L219' name='L219'></a> 219 <em class='comment'>/* IMU_H_ */</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

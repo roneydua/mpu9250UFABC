@@ -1,0 +1,14 @@
+digraph "ekf::EKF::predictionStage"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node51 [label="ekf::EKF::predictionStage",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node51 -> Node52 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node52 [label="ekf::EKF::integrationOfStates",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a4bd0d4a6ec2787cf1c690fcf154a43c5"];
+  Node51 -> Node53 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node53 [label="ekf::EKF::updateF_G",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ae6c0295a32e90b9594ad10bb1061b62b",tooltip="Atualiza matrix lineariza de estados F e a matrix G. "];
+  Node51 -> Node54 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node54 [label="ekf::EKF::updatefi",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ad5949e9e8eae2938a332af03a8ec353b"];
+}

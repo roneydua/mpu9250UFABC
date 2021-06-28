@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>sF</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/10.html#L38'>sF</a>                 38 lib/IMU/METODOSCALIBRACAO.h   int calibracaoGeometrica(MatrixXf &amp;data, Matrix3f &amp;sF, Vector3f &amp;bias,</span>
+<span class='curline'><a href='../S/10.html#L45'>sF</a>                 45 lib/IMU/METODOSCALIBRACAO.h     sF = Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/10.html#L68'>sF</a>                 68 lib/IMU/METODOSCALIBRACAO.h     sF(0, 0) = 1.0 / sqrt(tmp(0));</span>
+<span class='curline'><a href='../S/10.html#L69'>sF</a>                 69 lib/IMU/METODOSCALIBRACAO.h     sF(1, 1) = 1.0 / sqrt(tmp(1));</span>
+<span class='curline'><a href='../S/10.html#L70'>sF</a>                 70 lib/IMU/METODOSCALIBRACAO.h     sF(2, 2) = 1.0 / sqrt(tmp(2));</span>
+<span class='curline'><a href='../S/10.html#L76'>sF</a>                 76 lib/IMU/METODOSCALIBRACAO.h         if (isnan(sF(i, j)) || isinf(sF(i, j))) {</span>
+<span class='curline'><a href='../S/10.html#L98'>sF</a>                 98 lib/IMU/METODOSCALIBRACAO.h   int calibracaoAcelerometro(Matrix3f &amp;sF, int16_t (&amp;bias)[3], MatrixXf data) {</span>
+<span class='curline'><a href='../S/10.html#L131'>sF</a>                131 lib/IMU/METODOSCALIBRACAO.h     sF = X.block(0, 0, 3, 3);</span>
+<span class='curline'><a href='../S/10.html#L132'>sF</a>                132 lib/IMU/METODOSCALIBRACAO.h     _bias = -sF.inverse() * X.col(3);</span>
+</pre>
+</body>
+</html>

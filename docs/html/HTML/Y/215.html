@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>deltaYObs</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L149'>deltaYObs</a>         149 lib/EKF/EKF.cpp     deltaYObs(6) = (float)ubxMessage.navVelned.velN / 100.0f - r(0);</span>
+<span class='curline'><a href='../S/18.html#L150'>deltaYObs</a>         150 lib/EKF/EKF.cpp     deltaYObs(7) = (float)ubxMessage.navVelned.velE / 100.0f - r(1);</span>
+<span class='curline'><a href='../S/18.html#L151'>deltaYObs</a>         151 lib/EKF/EKF.cpp     deltaYObs(8) = (float)ubxMessage.navVelned.velD / 100.0f - r(2);</span>
+<span class='curline'><a href='../S/18.html#L210'>deltaYObs</a>         210 lib/EKF/EKF.cpp   deltaYObs.head(3) = localGravity - predictedGravityField;</span>
+<span class='curline'><a href='../S/18.html#L211'>deltaYObs</a>         211 lib/EKF/EKF.cpp   deltaYObs.segment(3, 3) = mag - predictedMagneticField;</span>
+<span class='curline'><a href='../S/16.html#L112'>deltaYObs</a>         112 lib/EKF/EKF.h    Eigen::VectorXf deltaYObs = Eigen::VectorXf::Zero(p);</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>uint8_t</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/16.html#L68'>uint8_t</a>            68 lib/EKF/EKF.h    uint8_t messageGPS = 0;</span>
+<span class='curline'><a href='../S/16.html#L72'>uint8_t</a>            72 lib/EKF/EKF.h    uint8_t p = 9;</span>
+<span class='curline'><a href='../S/16.html#L74'>uint8_t</a>            74 lib/EKF/EKF.h    uint8_t n = 12;</span>
+<span class='curline'><a href='../S/9.html#L8'>uint8_t</a>             8 lib/IMU/IMU.cpp IMU::IMU(TwoWire &amp;bus, uint8_t address) {</span>
+<span class='curline'><a href='../S/9.html#L340'>uint8_t</a>           340 lib/IMU/IMU.cpp int IMU::readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest) {</span>
+<span class='curline'><a href='../S/9.html#L348'>uint8_t</a>           348 lib/IMU/IMU.cpp int IMU::writeAK8963Register(uint8_t subAddress, uint8_t data) {</span>
+<span class='curline'><a href='../S/9.html#L362'>uint8_t</a>           362 lib/IMU/IMU.cpp   if (writeRegister(I2C_SLV0_CTRL, I2C_SLV0_EN | (uint8_t)1) &lt; 0) {</span>
+<span class='curline'><a href='../S/9.html#L382'>uint8_t</a>           382 lib/IMU/IMU.cpp int IMU::writeRegister(uint8_t subAddress, uint8_t data) {</span>
+<span class='curline'><a href='../S/9.html#L404'>uint8_t</a>           404 lib/IMU/IMU.cpp int IMU::readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest) {</span>
+<span class='curline'><a href='../S/9.html#L410'>uint8_t</a>           410 lib/IMU/IMU.cpp     for (uint8_t i = 0; i &lt; count; i++) {</span>
+<span class='curline'><a href='../S/8.html#L83'>uint8_t</a>            83 lib/IMU/IMU.h    IMU(TwoWire &amp;bus, uint8_t address);</span>
+<span class='curline'><a href='../S/8.html#L95'>uint8_t</a>            95 lib/IMU/IMU.h    uint8_t _buffer[21];</span>
+<span class='curline'><a href='../S/8.html#L104'>uint8_t</a>           104 lib/IMU/IMU.h    uint8_t _address;</span>
+<span class='curline'><a href='../S/8.html#L126'>uint8_t</a>           126 lib/IMU/IMU.h    uint8_t _srd;</span>
+<span class='curline'><a href='../S/8.html#L129'>uint8_t</a>           129 lib/IMU/IMU.h    const uint8_t ACCEL_OUT = 0x3B;</span>
+<span class='curline'><a href='../S/8.html#L130'>uint8_t</a>           130 lib/IMU/IMU.h    const uint8_t GYRO_OUT = 0x43;</span>
+<span class='curline'><a href='../S/8.html#L131'>uint8_t</a>           131 lib/IMU/IMU.h    const uint8_t TEMP_OUT = 0x41;</span>
+<span class='curline'><a href='../S/8.html#L132'>uint8_t</a>           132 lib/IMU/IMU.h    const uint8_t EXT_SENS_DATA_00 = 0x49;</span>
+<span class='curline'><a href='../S/8.html#L133'>uint8_t</a>           133 lib/IMU/IMU.h    const uint8_t ACCEL_CONFIG = 0x1C;</span>
+<span class='curline'><a href='../S/8.html#L137'>uint8_t</a>           137 lib/IMU/IMU.h    const uint8_t ACCEL_FS_SEL_2G = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L138'>uint8_t</a>           138 lib/IMU/IMU.h    const uint8_t ACCEL_FS_SEL_4G = 0x08;</span>
+<span class='curline'><a href='../S/8.html#L139'>uint8_t</a>           139 lib/IMU/IMU.h    const uint8_t ACCEL_FS_SEL_8G = 0x10;</span>
+<span class='curline'><a href='../S/8.html#L140'>uint8_t</a>           140 lib/IMU/IMU.h    const uint8_t ACCEL_FS_SEL_16G = 0x18;</span>
+<span class='curline'><a href='../S/8.html#L141'>uint8_t</a>           141 lib/IMU/IMU.h    const uint8_t GYRO_CONFIG = 0x1B;</span>
+<span class='curline'><a href='../S/8.html#L142'>uint8_t</a>           142 lib/IMU/IMU.h    const uint8_t GYRO_FS_SEL_250DPS = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L143'>uint8_t</a>           143 lib/IMU/IMU.h    const uint8_t GYRO_FS_SEL_500DPS = 0x08;</span>
+<span class='curline'><a href='../S/8.html#L144'>uint8_t</a>           144 lib/IMU/IMU.h    const uint8_t GYRO_FS_SEL_1000DPS = 0x10;</span>
+<span class='curline'><a href='../S/8.html#L145'>uint8_t</a>           145 lib/IMU/IMU.h    const uint8_t GYRO_FS_SEL_2000DPS = 0x18;</span>
+<span class='curline'><a href='../S/8.html#L146'>uint8_t</a>           146 lib/IMU/IMU.h    const uint8_t ACCEL_CONFIG2 = 0x1D;</span>
+<span class='curline'><a href='../S/8.html#L147'>uint8_t</a>           147 lib/IMU/IMU.h    const uint8_t ACCEL_DLPF_184 = 0x01;</span>
+<span class='curline'><a href='../S/8.html#L148'>uint8_t</a>           148 lib/IMU/IMU.h    const uint8_t ACCEL_DLPF_92 = 0x02;</span>
+<span class='curline'><a href='../S/8.html#L149'>uint8_t</a>           149 lib/IMU/IMU.h    const uint8_t ACCEL_DLPF_41 = 0x03;</span>
+<span class='curline'><a href='../S/8.html#L150'>uint8_t</a>           150 lib/IMU/IMU.h    const uint8_t ACCEL_DLPF_20 = 0x04;</span>
+<span class='curline'><a href='../S/8.html#L151'>uint8_t</a>           151 lib/IMU/IMU.h    const uint8_t ACCEL_DLPF_10 = 0x05;</span>
+<span class='curline'><a href='../S/8.html#L152'>uint8_t</a>           152 lib/IMU/IMU.h    const uint8_t ACCEL_DLPF_5 = 0x06;</span>
+<span class='curline'><a href='../S/8.html#L153'>uint8_t</a>           153 lib/IMU/IMU.h    const uint8_t CONFIG = 0x1A;</span>
+<span class='curline'><a href='../S/8.html#L154'>uint8_t</a>           154 lib/IMU/IMU.h    const uint8_t GYRO_DLPF_184 = 0x01;</span>
+<span class='curline'><a href='../S/8.html#L155'>uint8_t</a>           155 lib/IMU/IMU.h    const uint8_t GYRO_DLPF_92 = 0x02;</span>
+<span class='curline'><a href='../S/8.html#L156'>uint8_t</a>           156 lib/IMU/IMU.h    const uint8_t GYRO_DLPF_41 = 0x03;</span>
+<span class='curline'><a href='../S/8.html#L157'>uint8_t</a>           157 lib/IMU/IMU.h    const uint8_t GYRO_DLPF_20 = 0x04;</span>
+<span class='curline'><a href='../S/8.html#L158'>uint8_t</a>           158 lib/IMU/IMU.h    const uint8_t GYRO_DLPF_10 = 0x05;</span>
+<span class='curline'><a href='../S/8.html#L159'>uint8_t</a>           159 lib/IMU/IMU.h    const uint8_t GYRO_DLPF_5 = 0x06;</span>
+<span class='curline'><a href='../S/8.html#L160'>uint8_t</a>           160 lib/IMU/IMU.h    const uint8_t SMPDIV = 0x19;</span>
+<span class='curline'><a href='../S/8.html#L161'>uint8_t</a>           161 lib/IMU/IMU.h    const uint8_t INT_PIN_CFG = 0x37;</span>
+<span class='curline'><a href='../S/8.html#L162'>uint8_t</a>           162 lib/IMU/IMU.h    const uint8_t INT_ENABLE = 0x38;</span>
+<span class='curline'><a href='../S/8.html#L163'>uint8_t</a>           163 lib/IMU/IMU.h    const uint8_t INT_DISABLE = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L164'>uint8_t</a>           164 lib/IMU/IMU.h    const uint8_t INT_PULSE_50US = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L165'>uint8_t</a>           165 lib/IMU/IMU.h    const uint8_t INT_WOM_EN = 0x40;</span>
+<span class='curline'><a href='../S/8.html#L166'>uint8_t</a>           166 lib/IMU/IMU.h    const uint8_t INT_RAW_RDY_EN = 0x01;</span>
+<span class='curline'><a href='../S/8.html#L167'>uint8_t</a>           167 lib/IMU/IMU.h    const uint8_t PWR_MGMNT_1 = 0x6B;</span>
+<span class='curline'><a href='../S/8.html#L168'>uint8_t</a>           168 lib/IMU/IMU.h    const uint8_t PWR_CYCLE = 0x20;</span>
+<span class='curline'><a href='../S/8.html#L169'>uint8_t</a>           169 lib/IMU/IMU.h    const uint8_t PWR_RESET = 0x80;</span>
+<span class='curline'><a href='../S/8.html#L170'>uint8_t</a>           170 lib/IMU/IMU.h    const uint8_t CLOCK_SEL_PLL = 0x01;</span>
+<span class='curline'><a href='../S/8.html#L171'>uint8_t</a>           171 lib/IMU/IMU.h    const uint8_t PWR_MGMNT_2 = 0x6C;</span>
+<span class='curline'><a href='../S/8.html#L172'>uint8_t</a>           172 lib/IMU/IMU.h    const uint8_t SEN_ENABLE = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L173'>uint8_t</a>           173 lib/IMU/IMU.h    const uint8_t DIS_GYRO = 0x07;</span>
+<span class='curline'><a href='../S/8.html#L174'>uint8_t</a>           174 lib/IMU/IMU.h    const uint8_t USER_CTRL = 0x6A;</span>
+<span class='curline'><a href='../S/8.html#L175'>uint8_t</a>           175 lib/IMU/IMU.h    const uint8_t I2C_MST_EN = 0x20;</span>
+<span class='curline'><a href='../S/8.html#L176'>uint8_t</a>           176 lib/IMU/IMU.h    const uint8_t I2C_MST_CLK = 0x0D;</span>
+<span class='curline'><a href='../S/8.html#L177'>uint8_t</a>           177 lib/IMU/IMU.h    const uint8_t I2C_MST_CTRL = 0x24;</span>
+<span class='curline'><a href='../S/8.html#L178'>uint8_t</a>           178 lib/IMU/IMU.h    const uint8_t I2C_SLV0_ADDR = 0x25;</span>
+<span class='curline'><a href='../S/8.html#L179'>uint8_t</a>           179 lib/IMU/IMU.h    const uint8_t I2C_SLV0_REG = 0x26;</span>
+<span class='curline'><a href='../S/8.html#L180'>uint8_t</a>           180 lib/IMU/IMU.h    const uint8_t I2C_SLV0_DO = 0x63;</span>
+<span class='curline'><a href='../S/8.html#L181'>uint8_t</a>           181 lib/IMU/IMU.h    const uint8_t I2C_SLV0_CTRL = 0x27;</span>
+<span class='curline'><a href='../S/8.html#L182'>uint8_t</a>           182 lib/IMU/IMU.h    const uint8_t I2C_SLV0_EN = 0x80;</span>
+<span class='curline'><a href='../S/8.html#L183'>uint8_t</a>           183 lib/IMU/IMU.h    const uint8_t I2C_READ_FLAG = 0x80;</span>
+<span class='curline'><a href='../S/8.html#L184'>uint8_t</a>           184 lib/IMU/IMU.h    const uint8_t MOT_DETECT_CTRL = 0x69;</span>
+<span class='curline'><a href='../S/8.html#L185'>uint8_t</a>           185 lib/IMU/IMU.h    const uint8_t ACCEL_INTEL_EN = 0x80;</span>
+<span class='curline'><a href='../S/8.html#L186'>uint8_t</a>           186 lib/IMU/IMU.h    const uint8_t ACCEL_INTEL_MODE = 0x40;</span>
+<span class='curline'><a href='../S/8.html#L187'>uint8_t</a>           187 lib/IMU/IMU.h    const uint8_t LP_ACCEL_ODR = 0x1E;</span>
+<span class='curline'><a href='../S/8.html#L188'>uint8_t</a>           188 lib/IMU/IMU.h    const uint8_t WOM_THR = 0x1F;</span>
+<span class='curline'><a href='../S/8.html#L189'>uint8_t</a>           189 lib/IMU/IMU.h    const uint8_t WHO_AM_I = 0x75;</span>
+<span class='curline'><a href='../S/8.html#L198'>uint8_t</a>           198 lib/IMU/IMU.h    const uint8_t AK8963_I2C_ADDR = 0x0C;</span>
+<span class='curline'><a href='../S/8.html#L199'>uint8_t</a>           199 lib/IMU/IMU.h    const uint8_t AK8963_HXL = 0x03;</span>
+<span class='curline'><a href='../S/8.html#L200'>uint8_t</a>           200 lib/IMU/IMU.h    const uint8_t AK8963_CNTL1 = 0x0A;</span>
+<span class='curline'><a href='../S/8.html#L201'>uint8_t</a>           201 lib/IMU/IMU.h    const uint8_t AK8963_PWR_DOWN = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L202'>uint8_t</a>           202 lib/IMU/IMU.h    const uint8_t AK8963_CNT_MEAS1 = 0x12;</span>
+<span class='curline'><a href='../S/8.html#L203'>uint8_t</a>           203 lib/IMU/IMU.h    const uint8_t AK8963_CNT_MEAS2 = 0x16;</span>
+<span class='curline'><a href='../S/8.html#L204'>uint8_t</a>           204 lib/IMU/IMU.h    const uint8_t AK8963_FUSE_ROM = 0x0F;</span>
+<span class='curline'><a href='../S/8.html#L205'>uint8_t</a>           205 lib/IMU/IMU.h    const uint8_t AK8963_CNTL2 = 0x0B;</span>
+<span class='curline'><a href='../S/8.html#L206'>uint8_t</a>           206 lib/IMU/IMU.h    const uint8_t AK8963_RESET = 0x01;</span>
+<span class='curline'><a href='../S/8.html#L207'>uint8_t</a>           207 lib/IMU/IMU.h    const uint8_t AK8963_ASA = 0x10;</span>
+<span class='curline'><a href='../S/8.html#L208'>uint8_t</a>           208 lib/IMU/IMU.h    const uint8_t AK8963_WHO_AM_I = 0x00;</span>
+<span class='curline'><a href='../S/8.html#L210'>uint8_t</a>           210 lib/IMU/IMU.h    int writeRegister(uint8_t subAddress, uint8_t data);</span>
+<span class='curline'><a href='../S/8.html#L211'>uint8_t</a>           211 lib/IMU/IMU.h    int readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest);</span>
+<span class='curline'><a href='../S/8.html#L212'>uint8_t</a>           212 lib/IMU/IMU.h    int writeAK8963Register(uint8_t subAddress, uint8_t data);</span>
+<span class='curline'><a href='../S/8.html#L215'>uint8_t</a>           215 lib/IMU/IMU.h    int readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest);</span>
+<span class='curline'><a href='../S/19.html#L51'>uint8_t</a>            51 lib/TELEMETRIA/TELEMETRIA.cpp   uint8_t bs[sizeof(mensagem)];</span>
+<span class='curline'><a href='../S/19.html#L64'>uint8_t</a>            64 lib/TELEMETRIA/TELEMETRIA.cpp   uint8_t bs[sizeof(mensagem)];</span>
+<span class='curline'><a href='../S/19.html#L69'>uint8_t</a>            69 lib/TELEMETRIA/TELEMETRIA.cpp void TELEMETRIA::OnDataRecv(const uint8_t *_broadcast, const uint8_t *data,</span>
+<span class='curline'><a href='../S/19.html#L78'>uint8_t</a>            78 lib/TELEMETRIA/TELEMETRIA.cpp uint8_t TELEMETRIA::comAceito;</span>
+<span class='curline'><a href='../S/19.html#L79'>uint8_t</a>            79 lib/TELEMETRIA/TELEMETRIA.cpp void TELEMETRIA::pisca(uint8_t porta) {</span>
+<span class='curline'><a href='../S/20.html#L29'>uint8_t</a>            29 lib/TELEMETRIA/TELEMETRIA.h   uint8_t _broadcast[6] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};</span>
+<span class='curline'><a href='../S/20.html#L30'>uint8_t</a>            30 lib/TELEMETRIA/TELEMETRIA.h   void pisca(uint8_t porta);</span>
+<span class='curline'><a href='../S/20.html#L37'>uint8_t</a>            37 lib/TELEMETRIA/TELEMETRIA.h     uint8_t dados;</span>
+<span class='curline'><a href='../S/20.html#L39'>uint8_t</a>            39 lib/TELEMETRIA/TELEMETRIA.h   static uint8_t comAceito;</span>
+<span class='curline'><a href='../S/20.html#L40'>uint8_t</a>            40 lib/TELEMETRIA/TELEMETRIA.h   uint8_t _quantDados;</span>
+<span class='curline'><a href='../S/20.html#L43'>uint8_t</a>            43 lib/TELEMETRIA/TELEMETRIA.h   static void OnDataRecv(const uint8_t *_broadcast, const uint8_t *data,</span>
+<span class='curline'><a href='../S/7.html#L23'>uint8_t</a>            23 lib/TIME/TIME.h   uint8_t timeVectorIndex = 0;</span>
+</pre>
+</body>
+</html>

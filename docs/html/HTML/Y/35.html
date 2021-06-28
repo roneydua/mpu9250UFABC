@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Eigen</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L39'>Eigen</a>              39 lib/EKF/EKF.cpp   F.block&lt;3, 3&gt;(0, 3) = -0.5f * Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/18.html#L41'>Eigen</a>              41 lib/EKF/EKF.cpp   G.topLeftCorner(3, 3) = -0.5f * Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/18.html#L42'>Eigen</a>              42 lib/EKF/EKF.cpp   G.block&lt;3, 3&gt;(3, 3) = Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/18.html#L43'>Eigen</a>              43 lib/EKF/EKF.cpp   G.bottomRightCorner(3, 3) = Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/18.html#L45'>Eigen</a>              45 lib/EKF/EKF.cpp   H.block&lt;3, 3&gt;(6, 6) = Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/18.html#L70'>Eigen</a>              70 lib/EKF/EKF.cpp   P.topLeftCorner(n, n) = (Eigen::MatrixXf::Identity(n, n) -</span>
+<span class='curline'><a href='../S/18.html#L83'>Eigen</a>              83 lib/EKF/EKF.cpp   Eigen::Vector4f deltaq;</span>
+<span class='curline'><a href='../S/18.html#L201'>Eigen</a>             201 lib/EKF/EKF.cpp   Eigen::Vector3f predictedGravityField =</span>
+<span class='curline'><a href='../S/18.html#L206'>Eigen</a>             206 lib/EKF/EKF.cpp   Eigen::Vector3f predictedMagneticField =</span>
+<span class='curline'><a href='../S/16.html#L28'>Eigen</a>              28 lib/EKF/EKF.h    Eigen::Vector3f accel = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L30'>Eigen</a>              30 lib/EKF/EKF.h    Eigen::Vector3f localGravity = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L32'>Eigen</a>              32 lib/EKF/EKF.h    Eigen::Vector3f navegationGravity{0.0f, 0.0f, 9.81f};</span>
+<span class='curline'><a href='../S/16.html#L34'>Eigen</a>              34 lib/EKF/EKF.h    Eigen::Vector3f gyro = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L36'>Eigen</a>              36 lib/EKF/EKF.h    Eigen::Vector3f mag = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L39'>Eigen</a>              39 lib/EKF/EKF.h    Eigen::Vector3f magOrthogonalGrav = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L41'>Eigen</a>              41 lib/EKF/EKF.h    Eigen::Vector4f q{1.0f, 0.0f, 0.0f, 0.0f};</span>
+<span class='curline'><a href='../S/16.html#L43'>Eigen</a>              43 lib/EKF/EKF.h    Eigen::Vector3f euler{0.0f, 0.0f, 0.0f};</span>
+<span class='curline'><a href='../S/16.html#L53'>Eigen</a>              53 lib/EKF/EKF.h    Eigen::Vector3f position = Eigen::Vector3f::Zero(3);</span>
+<span class='curline'><a href='../S/16.html#L58'>Eigen</a>              58 lib/EKF/EKF.h    Eigen::Vector3f r = Eigen::Vector3f::Zero(3);</span>
+<span class='curline'><a href='../S/16.html#L60'>Eigen</a>              60 lib/EKF/EKF.h    Eigen::Vector3f deltar = Eigen::Vector3f::Zero(3);</span>
+<span class='curline'><a href='../S/16.html#L62'>Eigen</a>              62 lib/EKF/EKF.h    Eigen::Matrix3f mcd = Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/16.html#L84'>Eigen</a>              84 lib/EKF/EKF.h    const Eigen::MatrixXf Q =</span>
+<span class='curline'><a href='../S/16.html#L85'>Eigen</a>              85 lib/EKF/EKF.h        ((Eigen::VectorXf(n) &lt;&lt; sigma_acel, sigma_acel, sigma_acel,</span>
+<span class='curline'><a href='../S/16.html#L91'>Eigen</a>              91 lib/EKF/EKF.h    const Eigen::MatrixXf R =</span>
+<span class='curline'><a href='../S/16.html#L92'>Eigen</a>              92 lib/EKF/EKF.h        ((Eigen::VectorXf(p) &lt;&lt; sigma_acel, sigma_acel, sigma_acel, sigma_mag,</span>
+<span class='curline'><a href='../S/16.html#L98'>Eigen</a>              98 lib/EKF/EKF.h    Eigen::MatrixXf F = Eigen::MatrixXf::Zero(n, n);</span>
+<span class='curline'><a href='../S/16.html#L100'>Eigen</a>             100 lib/EKF/EKF.h    Eigen::MatrixXf fi = Eigen::MatrixXf::Zero(n, n);</span>
+<span class='curline'><a href='../S/16.html#L102'>Eigen</a>             102 lib/EKF/EKF.h    Eigen::MatrixXf G = Eigen::MatrixXf::Zero(n, n);</span>
+<span class='curline'><a href='../S/16.html#L104'>Eigen</a>             104 lib/EKF/EKF.h    Eigen::MatrixXf P = 100000.0f * Eigen::MatrixXf::Identity(n, n);</span>
+<span class='curline'><a href='../S/16.html#L106'>Eigen</a>             106 lib/EKF/EKF.h    Eigen::MatrixXf H = Eigen::MatrixXf::Zero(p, n);</span>
+<span class='curline'><a href='../S/16.html#L108'>Eigen</a>             108 lib/EKF/EKF.h    Eigen::MatrixXf K = Eigen::MatrixXf::Identity(n, p);</span>
+<span class='curline'><a href='../S/16.html#L110'>Eigen</a>             110 lib/EKF/EKF.h    Eigen::VectorXf deltaChi = Eigen::VectorXf::Zero(n);</span>
+<span class='curline'><a href='../S/16.html#L112'>Eigen</a>             112 lib/EKF/EKF.h    Eigen::VectorXf deltaYObs = Eigen::VectorXf::Zero(p);</span>
+<span class='curline'><a href='../S/11.html#L22'>Eigen</a>              22 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Matrix3f skew(const Eigen::Vector3f &amp;v) {</span>
+<span class='curline'><a href='../S/11.html#L24'>Eigen</a>              24 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   Eigen::Matrix3f M = Eigen::Matrix3f::Zero();</span>
+<span class='curline'><a href='../S/11.html#L35'>Eigen</a>              35 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Matrix4f S_r(const Eigen::Vector4f &amp;q) {</span>
+<span class='curline'><a href='../S/11.html#L37'>Eigen</a>              37 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   Eigen::Matrix4f mS_r = Eigen::Matrix4f::Identity() * q(0);</span>
+<span class='curline'><a href='../S/11.html#L48'>Eigen</a>              48 lib/GRUPO_QUAT/GRUPO_QUAT.cpp void computeMcdFromQuaternion(const Eigen::Vector4f &amp;q, Eigen::Matrix3f &amp;mcd) {</span>
+<span class='curline'><a href='../S/11.html#L49'>Eigen</a>              49 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   mcd = Eigen::Matrix3f::Identity() * (2.0f * q(0) * q(0) - 1.0f) +</span>
+<span class='curline'><a href='../S/11.html#L53'>Eigen</a>              53 lib/GRUPO_QUAT/GRUPO_QUAT.cpp void printEigen(const Eigen::MatrixXf &amp;m) {</span>
+<span class='curline'><a href='../S/11.html#L72'>Eigen</a>              72 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Vector3f computeVectorProjection(const Eigen::Vector3f &amp;v,</span>
+<span class='curline'><a href='../S/11.html#L73'>Eigen</a>              73 lib/GRUPO_QUAT/GRUPO_QUAT.cpp                                         const Eigen::Vector3f &amp;u) {</span>
+<span class='curline'><a href='../S/11.html#L84'>Eigen</a>              84 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/11.html#L85'>Eigen</a>              85 lib/GRUPO_QUAT/GRUPO_QUAT.cpp                                     const Eigen::Vector4f &amp;q) {</span>
+<span class='curline'><a href='../S/11.html#L86'>Eigen</a>              86 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   Eigen::Vector4f pq;</span>
+<span class='curline'><a href='../S/11.html#L99'>Eigen</a>              99 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/11.html#L100'>Eigen</a>             100 lib/GRUPO_QUAT/GRUPO_QUAT.cpp                                     const Eigen::Vector3f &amp;q) {</span>
+<span class='curline'><a href='../S/11.html#L101'>Eigen</a>             101 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   Eigen::Vector4f pq;</span>
+<span class='curline'><a href='../S/11.html#L114'>Eigen</a>             114 lib/GRUPO_QUAT/GRUPO_QUAT.cpp void quaternion2Euler(Eigen::Vector3f &amp;_euler, const Eigen::Vector4f &amp;_q) {</span>
+<span class='curline'><a href='../S/12.html#L18'>Eigen</a>              18 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Matrix3f skew(const Eigen::Vector3f &amp;v);</span>
+<span class='curline'><a href='../S/12.html#L19'>Eigen</a>              19 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Matrix4f S_r(const Eigen::Vector4f &amp;q);</span>
+<span class='curline'><a href='../S/12.html#L20'>Eigen</a>              20 lib/GRUPO_QUAT/GRUPO_QUAT.h void printEigen(const Eigen::MatrixXf &amp;m);</span>
+<span class='curline'><a href='../S/12.html#L21'>Eigen</a>              21 lib/GRUPO_QUAT/GRUPO_QUAT.h void quaternion2Euler(Eigen::Vector3f &amp;_euler, const Eigen::Vector4f &amp;_q);</span>
+<span class='curline'><a href='../S/12.html#L22'>Eigen</a>              22 lib/GRUPO_QUAT/GRUPO_QUAT.h void computeMcdFromQuaternion(const Eigen::Vector4f &amp;q, Eigen::Matrix3f &amp;mcd);</span>
+<span class='curline'><a href='../S/12.html#L23'>Eigen</a>              23 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Vector3f computeVectorProjection(const Eigen::Vector3f &amp;u,</span>
+<span class='curline'><a href='../S/12.html#L24'>Eigen</a>              24 lib/GRUPO_QUAT/GRUPO_QUAT.h                                         const Eigen::Vector3f &amp;v);</span>
+<span class='curline'><a href='../S/12.html#L26'>Eigen</a>              26 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/12.html#L27'>Eigen</a>              27 lib/GRUPO_QUAT/GRUPO_QUAT.h                                     const Eigen::Vector4f &amp;q);</span>
+<span class='curline'><a href='../S/12.html#L29'>Eigen</a>              29 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/12.html#L30'>Eigen</a>              30 lib/GRUPO_QUAT/GRUPO_QUAT.h                                     const Eigen::Vector3f &amp;q);</span>
+<span class='curline'><a href='../S/8.html#L19'>Eigen</a>              19 lib/IMU/IMU.h  using namespace Eigen;</span>
+<span class='curline'><a href='../S/10.html#L19'>Eigen</a>              19 lib/IMU/METODOSCALIBRACAO.h using namespace Eigen;</span>
+<span class='curline'><a href='../S/20.html#L20'>Eigen</a>              20 lib/TELEMETRIA/TELEMETRIA.h using namespace Eigen;</span>
+<span class='curline'><a href='../S/800.html#L11'>Eigen</a>              11 src/main.cpp   using namespace Eigen;</span>
+<span class='curline'><a href='../S/800.html#L26'>Eigen</a>              26 src/main.cpp     Eigen::VectorXf observacao(3 + 3 + 3 + 1 + 4 + 3);</span>
+</pre>
+</body>
+</html>

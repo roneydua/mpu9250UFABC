@@ -1,0 +1,683 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="GPS_8h" kind="file" language="C++">
+    <compoundname>GPS.h</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">HardwareSerial.h</includes>
+    <includedby refid="EKF_8cpp" local="yes">lib/EKF/EKF.cpp</includedby>
+    <incdepgraph>
+      <node id="18">
+        <label>lib/EKF/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>HardwareSerial.h</label>
+      </node>
+      <node id="19">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="21">
+        <label>lib/EKF/GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>lib/EKF/EKF.cpp</label>
+        <link refid="EKF_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structNAV__VELNED__STRUCT" prot="public">NAV_VELNED_STRUCT</innerclass>
+    <innerclass refid="structPacketData" prot="public">PacketData</innerclass>
+    <innerclass refid="unionUBXMessage" prot="public">UBXMessage</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="GPS_8h_1a0facb6f7f6c2270a38ef7a3d40949fe3" prot="public" static="no">
+        <name>NAV_VELNED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="25" column="9" bodyfile="lib/EKF/GPS.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="GPS_8h_1ad6a8e09d58c8001e27e3eaf6f59d3544" prot="public" static="no">
+        <name>RATE_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="30" column="9" bodyfile="lib/EKF/GPS.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="GPS_8h_1a4afb4aaa3fa37c26d148c32f7af5a944" prot="public" static="no">
+        <name>NAV_MODE_1G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="31" column="9" bodyfile="lib/EKF/GPS.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1" prot="public" static="no">
+        <name>_ubxMsgType</name>
+        <enumvalue id="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" prot="public">
+          <name>MT_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" prot="public">
+          <name>MT_NAV_POSLLH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" prot="public">
+          <name>MT_NAV_VELNED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23" prot="public">
+          <name>MT_NAV_PVT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="138" column="1" bodyfile="lib/EKF/GPS.h" bodystart="138" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="GPS_8h_1a23eb131661d623c855d4216331834845" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char UBX_HEADER[]</definition>
+        <argsstring>[]</argsstring>
+        <name>UBX_HEADER</name>
+        <initializer>= {0xB5, 0x62}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="33" column="1" bodyfile="lib/EKF/GPS.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="GPS_8h_1a31b92b93ae8465e892017caa2a57d670" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char NAV_POSLLH_HEADER[]</definition>
+        <argsstring>[]</argsstring>
+        <name>NAV_POSLLH_HEADER</name>
+        <initializer>= {0x01, 0x02}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="34" column="1" bodyfile="lib/EKF/GPS.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="GPS_8h_1ad1e1681e7a1affa7ff106d2f69b3805a" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char NAV_VELNED_HEADER[]</definition>
+        <argsstring>[]</argsstring>
+        <name>NAV_VELNED_HEADER</name>
+        <initializer>= {0x01, 0x12}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="35" column="1" bodyfile="lib/EKF/GPS.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="GPS_8h_1a4c90ad3996e1901ce9aa8a364eab6c0d" prot="public" static="no" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char NAV_PVT_HEADER[]</definition>
+        <argsstring>[]</argsstring>
+        <name>NAV_PVT_HEADER</name>
+        <initializer>= {0x01, 0x07}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="36" column="1" bodyfile="lib/EKF/GPS.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" prot="public" static="no" mutable="no">
+        <type><ref refid="structPacketData" kindref="compound">PacketData</ref></type>
+        <definition>PacketData data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="123" column="1" bodyfile="lib/EKF/GPS.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="classMETODOSCALIBRACAO_1ad7b555b5f46cdad7ae551f5cd4886a9b" compoundref="METODOSCALIBRACAO_8h" startline="98" endline="139">METODOSCALIBRACAO::calibracaoAcelerometro</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" prot="public" static="no" mutable="no">
+        <type><ref refid="unionUBXMessage" kindref="compound">UBXMessage</ref></type>
+        <definition>UBXMessage ubxMessage</definition>
+        <argsstring></argsstring>
+        <name>ubxMessage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="140" column="1" bodyfile="lib/EKF/GPS.h" bodystart="140" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" compoundref="EKF_8cpp" startline="106" endline="148">ekf::EKF::updateOfMeasurements</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>HardwareSerial</type>
+        <definition>HardwareSerial GPSSERIAL</definition>
+        <argsstring>(1)</argsstring>
+        <name>GPSSERIAL</name>
+        <param>
+          <type>1</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="15" column="1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="349" endline="365">gps_imprime</referencedby>
+        <referencedby refid="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" compoundref="GPS_8h" startline="142" endline="245">gpsSetup</referencedby>
+        <referencedby refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gpsSetup</definition>
+        <argsstring>()</argsstring>
+        <name>gpsSetup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="142" column="1" bodyfile="lib/EKF/GPS.h" bodystart="142" bodyend="245"/>
+        <references refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</references>
+        <referencedby refid="classekf_1_1EKF_1af52f661717f56b3deee7b4f42ba80dc5" compoundref="EKF_8cpp" startline="30" endline="48">ekf::EKF::begin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="GPS_8h_1aa2fac937d6e192633f020459321241e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void calcChecksum</definition>
+        <argsstring>(unsigned char *CK, int msgSize)</argsstring>
+        <name>calcChecksum</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>CK</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>msgSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="249" column="1" bodyfile="lib/EKF/GPS.h" bodystart="249" bodyend="255"/>
+        <referencedby refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="GPS_8h_1aecde093c7427cc661daceaa118cf4455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean compareMsgHeader</definition>
+        <argsstring>(const unsigned char *msgHeader)</argsstring>
+        <name>compareMsgHeader</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>msgHeader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="259" column="1" bodyfile="lib/EKF/GPS.h" bodystart="259" bodyend="262"/>
+        <referencedby refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int processGPS</definition>
+        <argsstring>()</argsstring>
+        <name>processGPS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="264" column="1" bodyfile="lib/EKF/GPS.h" bodystart="264" bodyend="348"/>
+        <references refid="GPS_8h_1aa2fac937d6e192633f020459321241e7" compoundref="GPS_8h" startline="249" endline="255">calcChecksum</references>
+        <references refid="GPS_8h_1aecde093c7427cc661daceaa118cf4455" compoundref="GPS_8h" startline="259" endline="262">compareMsgHeader</references>
+        <references refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</references>
+        <references refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" compoundref="GPS_8h" startline="138">MT_NAV_POSLLH</references>
+        <references refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" compoundref="GPS_8h" startline="138">MT_NAV_VELNED</references>
+        <references refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" compoundref="GPS_8h" startline="138">MT_NONE</references>
+        <references refid="GPS_8h_1a31b92b93ae8465e892017caa2a57d670" compoundref="GPS_8h" startline="34">NAV_POSLLH_HEADER</references>
+        <references refid="GPS_8h_1ad1e1681e7a1affa7ff106d2f69b3805a" compoundref="GPS_8h" startline="35">NAV_VELNED_HEADER</references>
+        <references refid="GPS_8h_1a23eb131661d623c855d4216331834845" compoundref="GPS_8h" startline="33">UBX_HEADER</references>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="349" endline="365">gps_imprime</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" compoundref="EKF_8cpp" startline="106" endline="148">ekf::EKF::updateOfMeasurements</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gps_imprime</definition>
+        <argsstring>()</argsstring>
+        <name>gps_imprime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="349" column="1" bodyfile="lib/EKF/GPS.h" bodystart="349" bodyend="365"/>
+        <references refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6">GPSSERIAL</references>
+        <references refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" compoundref="GPS_8h" startline="138">MT_NAV_POSLLH</references>
+        <references refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" compoundref="GPS_8h" startline="138">MT_NAV_VELNED</references>
+        <references refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" compoundref="GPS_8h" startline="130">UBXMessage::navVelned</references>
+        <references refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" compoundref="GPS_8h" startline="264" endline="348">processGPS</references>
+        <references refid="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" compoundref="GPS_8h" startline="64">NAV_VELNED_STRUCT::velD</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Simples Cabecalho de funcoes para leituras do GPS. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Roney D da Silva </para></simplesect>
+<simplesect kind="date"><para>7 Apr 2021 </para></simplesect>
+<simplesect kind="copyright"><para>2021 Roney D da Silva Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#ifndef<sp/>GPS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;HardwareSerial.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">HardwareSerial<sp/><ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>(1);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>serialHW<sp/>GPSSERIAL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Definas<sp/>quais<sp/>mensagens<sp/>deseja<sp/>que<sp/>o<sp/>sistema<sp/>envie</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>GxGGA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>GxGLL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>GxGSA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>GxGSV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>GxRMC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>GxVTG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>NAV_PVT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="GPS_8h_1a0facb6f7f6c2270a38ef7a3d40949fe3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Defina<sp/>a<sp/>frequencia<sp/>desejada</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>RATE_10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>RATE_5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="GPS_8h_1ad6a8e09d58c8001e27e3eaf6f59d3544" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RATE_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="GPS_8h_1a4afb4aaa3fa37c26d148c32f7af5a944" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NAV_MODE_1G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>NAV_MODE_2G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="GPS_8h_1a23eb131661d623c855d4216331834845" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1a23eb131661d623c855d4216331834845" kindref="member">UBX_HEADER</ref>[]<sp/>=<sp/>{0xB5,<sp/>0x62};</highlight></codeline>
+<codeline lineno="34" refid="GPS_8h_1a31b92b93ae8465e892017caa2a57d670" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1a31b92b93ae8465e892017caa2a57d670" kindref="member">NAV_POSLLH_HEADER</ref>[]<sp/>=<sp/>{0x01,<sp/>0x02};</highlight></codeline>
+<codeline lineno="35" refid="GPS_8h_1ad1e1681e7a1affa7ff106d2f69b3805a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1ad1e1681e7a1affa7ff106d2f69b3805a" kindref="member">NAV_VELNED_HEADER</ref>[]<sp/>=<sp/>{0x01,<sp/>0x12};</highlight></codeline>
+<codeline lineno="36" refid="GPS_8h_1a4c90ad3996e1901ce9aa8a364eab6c0d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1a4c90ad3996e1901ce9aa8a364eab6c0d" kindref="member">NAV_PVT_HEADER</ref>[]<sp/>=<sp/>{0x01,<sp/>0x07};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">NAV_POSLLH_STRUCT<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cls;<sp/><sp/></highlight><highlight class="comment">//<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>id;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>len;<sp/></highlight><highlight class="comment">//<sp/>28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>iTOW;<sp/></highlight><highlight class="comment">//<sp/>millisecond<sp/>time<sp/>of<sp/>week</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>long<sp/>lon;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>longitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lon;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>longitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lat;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>latitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>height;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>height<sp/>above<sp/>ellipsoid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>hMSL;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>height<sp/>above<sp/>mean<sp/>sea<sp/>level</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>hAcc;<sp/></highlight><highlight class="comment">//<sp/>horizontal<sp/>accuracy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>vAcc;<sp/></highlight><highlight class="comment">//<sp/>vertical<sp/>accuracy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="structNAV__VELNED__STRUCT" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structNAV__VELNED__STRUCT" kindref="compound">NAV_VELNED_STRUCT</ref><sp/>{</highlight></codeline>
+<codeline lineno="55" refid="structNAV__VELNED__STRUCT_1a45593c9406dca08e3d01ed92cd2a8147" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a45593c9406dca08e3d01ed92cd2a8147" kindref="member">cls</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structNAV__VELNED__STRUCT_1a05eece75c9dfbc17d4e4a431a0cf8f99" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a05eece75c9dfbc17d4e4a431a0cf8f99" kindref="member">id</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="structNAV__VELNED__STRUCT_1a168baf913166d49a3f824a5e7a8304ed" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a168baf913166d49a3f824a5e7a8304ed" kindref="member">len</ref>;<sp/></highlight><highlight class="comment">//<sp/>36</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structNAV__VELNED__STRUCT_1a7076c4ff1faf5e9c3bafd1131bf9d2ae" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a7076c4ff1faf5e9c3bafd1131bf9d2ae" kindref="member">iTOW</ref>;<sp/></highlight><highlight class="comment">//<sp/>millisecond<sp/>time<sp/>of<sp/>week</highlight></codeline>
+<codeline lineno="60" refid="structNAV__VELNED__STRUCT_1ac0328eba082ead963e3c617d9263c51e" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1ac0328eba082ead963e3c617d9263c51e" kindref="member">velN</ref>;</highlight></codeline>
+<codeline lineno="62" refid="structNAV__VELNED__STRUCT_1ac7dd25d45876ad638d2926a07f82347c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1ac7dd25d45876ad638d2926a07f82347c" kindref="member">velE</ref>;</highlight></codeline>
+<codeline lineno="64" refid="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" kindref="member">velD</ref>;</highlight></codeline>
+<codeline lineno="65" refid="structNAV__VELNED__STRUCT_1a7cbffe528f5a66fd37774cb883840c7f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a7cbffe528f5a66fd37774cb883840c7f" kindref="member">speed</ref>;<sp/><sp/></highlight><highlight class="comment">//<sp/>3d<sp/>(cm/s)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="structNAV__VELNED__STRUCT_1a1408226864c59acfacae1567335e4d3f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a1408226864c59acfacae1567335e4d3f" kindref="member">gSpeed</ref>;<sp/></highlight><highlight class="comment">//<sp/>ground<sp/>speed<sp/>(2d)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="structNAV__VELNED__STRUCT_1a32f277b48321730e0f989525cb8801ca" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a32f277b48321730e0f989525cb8801ca" kindref="member">heading</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>heading<sp/>of<sp/>motion<sp/>(2d)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="structNAV__VELNED__STRUCT_1a6bc9a425a42942c84c6e5adb49621aaa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a6bc9a425a42942c84c6e5adb49621aaa" kindref="member">sAcc</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>speed<sp/>accuracy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="structNAV__VELNED__STRUCT_1a558f4968fe65bfd2441492036345eebe" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structNAV__VELNED__STRUCT_1a558f4968fe65bfd2441492036345eebe" kindref="member">cAcc</ref>;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>course/heading<sp/>accuracy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_PVT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">NAV_PVT_STRUCT<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cls;<sp/><sp/></highlight><highlight class="comment">//<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>id;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>0x12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>len;<sp/></highlight><highlight class="comment">//<sp/>92</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>0<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>iTOW;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>4<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>year;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>6<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>month;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>7<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>day;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>8<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>hour;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>9<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>min;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>10<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>sec;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>11<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>valid;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>12<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>tAcc;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>16<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nano;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>20<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>fixType;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>21<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>22<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>flags2;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>23<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>numSV;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>24<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lon;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>28<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>lat;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>32<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>height;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>36<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>hMSL;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>40<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>hAcc;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>44<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>vAcc;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>48<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>velN;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>52<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>velE;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>56<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>velD;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>60<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>gSpeed;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>64<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>headMot;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>68<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>sAcc;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>72<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>headAcc;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>76<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>pDOP;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>78<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>reserved1;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>79<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>headVeh;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>83<sp/>*/</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>reserved2;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="structPacketData" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structPacketData" kindref="compound">PacketData</ref><sp/>{</highlight></codeline>
+<codeline lineno="115" refid="structPacketData_1a0a6e39d74d6461dcac04e8a19dcd0b6d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structPacketData_1a0a6e39d74d6461dcac04e8a19dcd0b6d" kindref="member">lon</ref>;</highlight></codeline>
+<codeline lineno="116" refid="structPacketData_1a398a83a5119663539a6e0aedebfcd60b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structPacketData_1a398a83a5119663539a6e0aedebfcd60b" kindref="member">lat</ref>;</highlight></codeline>
+<codeline lineno="117" refid="structPacketData_1ac04ae3b7a33e3d1a04650289429d78ec" refkind="member"><highlight class="normal"><sp/><sp/>int32_t<sp/><ref refid="structPacketData_1ac04ae3b7a33e3d1a04650289429d78ec" kindref="member">altitude</ref>;</highlight></codeline>
+<codeline lineno="118" refid="structPacketData_1a9cdf7ee028863b451b3ad3fc22e4827a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structPacketData_1a9cdf7ee028863b451b3ad3fc22e4827a" kindref="member">velN</ref>;</highlight></codeline>
+<codeline lineno="119" refid="structPacketData_1ae937755078f86e2a4c4827b07d31f72c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structPacketData_1ae937755078f86e2a4c4827b07d31f72c" kindref="member">velE</ref>;</highlight></codeline>
+<codeline lineno="120" refid="structPacketData_1a22515ed8e898933c6b2bdb48e06cc8d7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="structPacketData_1a22515ed8e898933c6b2bdb48e06cc8d7" kindref="member">velD</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" refkind="member"><highlight class="normal"><ref refid="structPacketData" kindref="compound">PacketData</ref><sp/><ref refid="GPS_8h_1a27c939ba1a4f4d927aaa500781293ba7" kindref="member">data</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="unionUBXMessage" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionUBXMessage" kindref="compound">UBXMessage</ref><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>NAV_POSLLH_STRUCT<sp/>navPosllh;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structNAV__VELNED__STRUCT" kindref="compound">NAV_VELNED_STRUCT</ref><sp/><ref refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" kindref="member">navVelned</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_PVT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>NAV_PVT_STRUCT<sp/>navPVT;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1" kindref="member">_ubxMsgType</ref><sp/>{<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" kindref="member">MT_NONE</ref>,<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" kindref="member">MT_NAV_POSLLH</ref>,<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" kindref="member">MT_NAV_VELNED</ref>,<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a87ee2b7c21367a2caa62b0a01491ea23" kindref="member">MT_NAV_PVT</ref><sp/>};</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" refkind="member"><highlight class="normal"><ref refid="unionUBXMessage" kindref="compound">UBXMessage</ref><sp/><ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" kindref="member">gpsSetup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>GPSSERIAL.begin(baud,<sp/>config<sp/>=<sp/>SERIAL_8N1,<sp/>rxPin,txPin)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>.begin(9600,<sp/>SERIAL_8N1,<sp/>16,<sp/>17);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>VALORES_PADROES[]<sp/>PROGMEM<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>valores<sp/>padroes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x09,<sp/>0x0D,<sp/>0x00,<sp/>0xFF,<sp/>0xFF,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0xFF,<sp/>0xFF,<sp/>0x00,<sp/>0x00,<sp/>0x03,<sp/>0x1B,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x9A,<sp/></highlight><highlight class="comment">//<sp/>Desabilitar<sp/>NMEA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>UBLOX_CONFIGURACAO[]<sp/>PROGMEM<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Desabilitar<sp/>NMEA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GxGGA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0xF0,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0xFF,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x23,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GxGLL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0xF0,<sp/>0x01,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x2A,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GxGSA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0xF0,<sp/>0x02,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x01,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x31,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GxGSV</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0xF0,<sp/>0x03,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x02,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x38,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GxRMC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0xF0,<sp/>0x04,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x03,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x3F,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GxVTG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0xF0,<sp/>0x05,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x04,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x46,<sp/></highlight><highlight class="comment">//<sp/>Configuracao<sp/>de<sp/>Navegacao</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0x01,<sp/>0x12,<sp/>0x00,<sp/>0x01,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x23,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x2E,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0x01,<sp/>0x02,<sp/>0x00,<sp/>0x01,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x13,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xBE,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_PVT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x01,<sp/>0x08,<sp/>0x00,<sp/>0x01,<sp/>0x07,<sp/>0x00,<sp/>0x01,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x18,</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xE1,<sp/></highlight><highlight class="comment">//<sp/>frequencia<sp/>de<sp/>amostragem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>RATE_10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x08,<sp/>0x06,<sp/>0x00,<sp/>0x64,<sp/>0x00,<sp/>0x01,<sp/>0x00,<sp/>0x01,<sp/>0x00,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x7A,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x12,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>RATE_5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x08,<sp/>0x06,<sp/>0x00,<sp/>0xC8,<sp/>0x00,<sp/>0x01,<sp/>0x00,<sp/>0x01,<sp/>0x00,</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xDE,</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x6A,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>RATE_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x08,<sp/>0x06,<sp/>0x00,<sp/>0xE8,<sp/>0x03,<sp/>0x01,<sp/>0x00,<sp/>0x01,<sp/>0x00,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x01,</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x39,<sp/></highlight><highlight class="comment">//<sp/>Configuracao<sp/>do<sp/>NAV<sp/>MODE<sp/><sp/>opcao<sp/>7-<sp/>Airbone<sp/>&lt;<sp/>2g</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_MODE_2G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x24,<sp/>0x24,<sp/>0x00,<sp/>0xFF,<sp/>0xFF,<sp/>0x07,<sp/>0x03,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x10,<sp/>0x27,<sp/>0x00,<sp/>0x00,<sp/>0x05,<sp/>0x00,<sp/>0xFA,<sp/>0x00,<sp/>0xFA,<sp/>0x00,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x64,<sp/>0x00,<sp/>0x5E,<sp/>0x01,<sp/>0x00,<sp/>0x3C,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x85,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x2A,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_MODE_1G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NAV<sp/>MODE<sp/><sp/>opcao<sp/>7-<sp/>Airbone<sp/>&lt;<sp/>1g</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0xB5,<sp/>0x62,<sp/>0x06,<sp/>0x24,<sp/>0x24,<sp/>0x00,<sp/>0xFF,<sp/>0xFF,<sp/>0x06,<sp/>0x03,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x10,<sp/>0x27,<sp/>0x00,<sp/>0x00,<sp/>0x05,<sp/>0x00,<sp/>0xFA,<sp/>0x00,<sp/>0xFA,<sp/>0x00,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x64,<sp/>0x00,<sp/>0x5E,<sp/>0x01,<sp/>0x00,<sp/>0x3C,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x00,<sp/>0x85,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x2A,<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>(int)</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(VALORES_PADROES);<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>.write(pgm_read_byte(VALORES_PADROES<sp/>+<sp/>i));</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(5);<sp/></highlight><highlight class="comment">//<sp/>Simula<sp/>38400<sp/>baudrate.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>delay(1000);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Envia<sp/>os<sp/>dados</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>(int)</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(UBLOX_CONFIGURACAO);<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>.write(pgm_read_byte(UBLOX_CONFIGURACAO<sp/>+<sp/>i));</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(5);<sp/></highlight><highlight class="comment">//<sp/>Simula<sp/>38400<sp/>baudrate.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>last<sp/>two<sp/>bytes<sp/>of<sp/>the<sp/>message<sp/>is<sp/>a<sp/>checksum<sp/>value,<sp/>used<sp/>to<sp/>confirm<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>received<sp/>payload<sp/>is<sp/>valid.<sp/>The<sp/>procedure<sp/>used<sp/>to<sp/>calculate<sp/>this<sp/>is<sp/>given</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="comment">//<sp/>as<sp/>pseudo-code<sp/>in<sp/>the<sp/>uBlox<sp/>manual.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="GPS_8h_1aa2fac937d6e192633f020459321241e7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1aa2fac937d6e192633f020459321241e7" kindref="member">calcChecksum</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*CK,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>msgSize)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>memset(CK,<sp/>0,<sp/>2);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>msgSize;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>CK[0]<sp/>+=<sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)(&amp;ubxMessage))[i];</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>CK[1]<sp/>+=<sp/>CK[0];</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Compares<sp/>the<sp/>first<sp/>two<sp/>bytes<sp/>of<sp/>the<sp/>ubxMessage<sp/>struct<sp/>with<sp/>a<sp/>specific<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">//<sp/>header.<sp/>Returns<sp/>true<sp/>if<sp/>the<sp/>two<sp/>bytes<sp/>match.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259" refid="GPS_8h_1aecde093c7427cc661daceaa118cf4455" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1aecde093c7427cc661daceaa118cf4455" kindref="member">compareMsgHeader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*msgHeader)<sp/>{</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)(&amp;ubxMessage);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ptr[0]<sp/>==<sp/>msgHeader[0]<sp/>&amp;&amp;<sp/>ptr[1]<sp/>==<sp/>msgHeader[1];</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" kindref="member">processGPS</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fpos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>checksum[2];</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>byte<sp/>currentMsgType<sp/>=<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" kindref="member">MT_NONE</ref>;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>payloadSize<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="unionUBXMessage" kindref="compound">UBXMessage</ref>);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>trocado<sp/>while<sp/>por<sp/>if<sp/>para<sp/>naum<sp/>travar<sp/>o<sp/>processo.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>.available())<sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>byte<sp/>c<sp/>=<sp/><ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>.read();</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Serial.write(c);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpos<sp/>&lt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>Procura<sp/>se<sp/>os<sp/>primeiro<sp/>dois<sp/>bytes<sp/>sao<sp/>os<sp/>cabecalhos(0xB5,0x62)</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/><ref refid="GPS_8h_1a23eb131661d623c855d4216331834845" kindref="member">UBX_HEADER</ref>[fpos])</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpos++;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>we<sp/>come<sp/>here<sp/>then<sp/>fpos<sp/>&gt;=<sp/>2,<sp/>which<sp/>means<sp/>we<sp/>have<sp/>found<sp/>a<sp/>match<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>UBX_HEADER<sp/>and<sp/>we<sp/>are<sp/>now<sp/>reading<sp/>in<sp/>the<sp/>bytes<sp/>that<sp/>make<sp/>up<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>payload.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Place<sp/>the<sp/>incoming<sp/>byte<sp/>into<sp/>the<sp/>ubxMessage<sp/>struct.<sp/>The<sp/>position<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fpos-2<sp/>because<sp/>the<sp/>struct<sp/>does<sp/>not<sp/>include<sp/>the<sp/>initial<sp/>two-byte<sp/>header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>(UBX_HEADER).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((fpos<sp/>-<sp/>2)<sp/>&lt;<sp/>payloadSize)</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)(&amp;ubxMessage))[fpos<sp/>-<sp/>2]<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fpos++;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpos<sp/>==<sp/>4)<sp/>{</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>just<sp/>received<sp/>the<sp/>second<sp/>byte<sp/>of<sp/>the<sp/>message<sp/>type<sp/>header,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>now<sp/>we<sp/>can<sp/>check<sp/>to<sp/>see<sp/>what<sp/>kind<sp/>of<sp/>message<sp/>it<sp/>is.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1aecde093c7427cc661daceaa118cf4455" kindref="member">compareMsgHeader</ref>(<ref refid="GPS_8h_1a31b92b93ae8465e892017caa2a57d670" kindref="member">NAV_POSLLH_HEADER</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMsgType<sp/>=<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" kindref="member">MT_NAV_POSLLH</ref>;</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>payloadSize<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(NAV_POSLLH_STRUCT);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1aecde093c7427cc661daceaa118cf4455" kindref="member">compareMsgHeader</ref>(<ref refid="GPS_8h_1ad1e1681e7a1affa7ff106d2f69b3805a" kindref="member">NAV_VELNED_HEADER</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMsgType<sp/>=<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" kindref="member">MT_NAV_VELNED</ref>;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>payloadSize<sp/>=<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structNAV__VELNED__STRUCT" kindref="compound">NAV_VELNED_STRUCT</ref>);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>unknown<sp/>message<sp/>type,<sp/>bail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpos<sp/>==<sp/>(payloadSize<sp/>+<sp/>2))<sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>All<sp/>payload<sp/>bytes<sp/>have<sp/>now<sp/>been<sp/>received,<sp/>so<sp/>we<sp/>can<sp/>calculate<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>expected<sp/>checksum<sp/>value<sp/>to<sp/>compare<sp/>with<sp/>the<sp/>next<sp/>two<sp/>incoming<sp/>bytes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="GPS_8h_1aa2fac937d6e192633f020459321241e7" kindref="member">calcChecksum</ref>(checksum,<sp/>payloadSize);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpos<sp/>==<sp/>(payloadSize<sp/>+<sp/>3))<sp/>{</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>First<sp/>byte<sp/>after<sp/>the<sp/>payload,<sp/>ie.<sp/>first<sp/>byte<sp/>of<sp/>the<sp/>checksum.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Does<sp/>it<sp/>match<sp/>the<sp/>first<sp/>byte<sp/>of<sp/>the<sp/>checksum<sp/>we<sp/>calculated?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>!=<sp/>checksum[0])<sp/>{</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Checksum<sp/>doesn&apos;t<sp/>match,<sp/>reset<sp/>to<sp/>beginning<sp/>state<sp/>and<sp/>try<sp/>again.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpos<sp/>==<sp/>(payloadSize<sp/>+<sp/>4))<sp/>{</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Second<sp/>byte<sp/>after<sp/>the<sp/>payload,<sp/>ie.<sp/>second<sp/>byte<sp/>of<sp/>the<sp/>checksum.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Does<sp/>it<sp/>match<sp/>the<sp/>second<sp/>byte<sp/>of<sp/>the<sp/>checksum<sp/>we<sp/>calculated?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpos<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>We<sp/>will<sp/>reset<sp/>the<sp/>state<sp/>regardless<sp/>of<sp/>whether<sp/>the<sp/>checksum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>matches.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(c<sp/>==<sp/>checksum[1])<sp/>{</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Checksum<sp/>matches,<sp/>we<sp/>have<sp/>a<sp/>valid<sp/>message.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>currentMsgType;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fpos<sp/>&gt;<sp/>(payloadSize<sp/>+<sp/>4))<sp/>{</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>have<sp/>now<sp/>read<sp/>more<sp/>bytes<sp/>than<sp/>both<sp/>the<sp/>expected<sp/>payload<sp/>and</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checksum<sp/>together,<sp/>so<sp/>something<sp/>went<sp/>wrong.<sp/>Reset<sp/>to<sp/>beginning<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>and<sp/>try<sp/>again.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fpos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" kindref="member">MT_NONE</ref>;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="349" refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" kindref="member">gps_imprime</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="GPS_8h_1a5d2ecd8f29f7e3e702c8b8bea333f6c6" kindref="member">GPSSERIAL</ref>.available())<sp/>{</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Serial.write(GPSSERIAL.read());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>msgType<sp/>=<sp/><ref refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" kindref="member">processGPS</ref>();</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msgType<sp/>==<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" kindref="member">MT_NAV_VELNED</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%f\t\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">(ubxMessage.<ref refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" kindref="member">navVelned</ref>.<ref refid="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" kindref="member">velD</ref>)<sp/>/<sp/>100.0f);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msgType<sp/>==<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" kindref="member">MT_NAV_POSLLH</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%ld<sp/>\t%ld<sp/>\t\n&quot;</highlight><highlight class="normal">,<sp/>ubxMessage.navPosllh.lat,</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ubxMessage.navPosllh.lon);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>GPS_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="lib/EKF/GPS.h"/>
+  </compounddef>
+</doxygen>

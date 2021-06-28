@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="RK_8cpp" kind="file" language="C++">
+    <compoundname>RK.cpp</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12" refid="classRK_1abbb5f5ef6d9f39aa204143e4daba39c6" refkind="member"><highlight class="normal"><ref refid="classRK_1abbb5f5ef6d9f39aa204143e4daba39c6" kindref="member">RK::RK</ref>()<sp/>{}</highlight></codeline>
+    </programlisting>
+    <location file="lib/RK/RK.cpp"/>
+  </compounddef>
+</doxygen>

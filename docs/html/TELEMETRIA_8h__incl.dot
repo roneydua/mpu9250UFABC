@@ -1,0 +1,15 @@
+digraph "lib/TELEMETRIA/TELEMETRIA.h"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node0 [label="lib/TELEMETRIA/TELEMETRIA.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 [label="../../eigen/Eigen/Dense",height=0.2,width=0.4,color="grey75"];
+  Node0 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="Arduino.h",height=0.2,width=0.4,color="grey75"];
+  Node0 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="WiFi.h",height=0.2,width=0.4,color="grey75"];
+  Node0 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="esp_now.h",height=0.2,width=0.4,color="grey75"];
+}

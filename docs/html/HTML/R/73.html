@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>skew</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L169'>skew</a>              169 lib/EKF/EKF.cpp   F.topLeftCorner(3, 3) = -skew(gyro);</span>
+<span class='curline'><a href='../S/18.html#L178'>skew</a>              178 lib/EKF/EKF.cpp     F.bottomLeftCorner(3, 3) = -2.0 * skew(mcd * accel);</span>
+<span class='curline'><a href='../S/18.html#L215'>skew</a>              215 lib/EKF/EKF.cpp   H.topLeftCorner(3, 3) = 2.0f * skew(predictedGravityField);</span>
+<span class='curline'><a href='../S/18.html#L216'>skew</a>              216 lib/EKF/EKF.cpp   H.block&lt;3, 3&gt;(3, 0) = 2.0f * skew(predictedMagneticField);</span>
+<span class='curline'><a href='../S/11.html#L40'>skew</a>               40 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   mS_r.block&lt;3, 3&gt;(1, 1) -= skew(q.segment&lt;3&gt;(1));</span>
+<span class='curline'><a href='../S/11.html#L51'>skew</a>               51 lib/GRUPO_QUAT/GRUPO_QUAT.cpp         2.0f * q(0) * skew(q.tail(3));</span>
+<span class='curline'><a href='../S/12.html#L18'>skew</a>               18 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Matrix3f skew(const Eigen::Vector3f &amp;v);</span>
+</pre>
+</body>
+</html>

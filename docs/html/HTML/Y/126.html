@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>X</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/10.html#L49'>X</a>                  49 lib/IMU/METODOSCALIBRACAO.h     VectorXf w(N), X(6), tmp(3);</span>
+<span class='curline'><a href='../S/10.html#L58'>X</a>                  58 lib/IMU/METODOSCALIBRACAO.h     X = H.fullPivHouseholderQr().solve(w);</span>
+<span class='curline'><a href='../S/10.html#L60'>X</a>                  60 lib/IMU/METODOSCALIBRACAO.h     bias(0) = X(0) / 2.0;</span>
+<span class='curline'><a href='../S/10.html#L61'>X</a>                  61 lib/IMU/METODOSCALIBRACAO.h     bias(1) = X(1) / (2.0 * X(3));</span>
+<span class='curline'><a href='../S/10.html#L62'>X</a>                  62 lib/IMU/METODOSCALIBRACAO.h     bias(2) = X(2) / (2.0 * X(4));</span>
+<span class='curline'><a href='../S/10.html#L63'>X</a>                  63 lib/IMU/METODOSCALIBRACAO.h     tmp(0) = (X(5) + bias(0) * bias(0) + X(3) * bias(1) * bias(1) +</span>
+<span class='curline'><a href='../S/10.html#L64'>X</a>                  64 lib/IMU/METODOSCALIBRACAO.h               X(4) * bias(2) * bias(2)) /</span>
+<span class='curline'><a href='../S/10.html#L66'>X</a>                  66 lib/IMU/METODOSCALIBRACAO.h     tmp(1) = tmp(0) / X(3);</span>
+<span class='curline'><a href='../S/10.html#L67'>X</a>                  67 lib/IMU/METODOSCALIBRACAO.h     tmp(2) = tmp(0) / X(4);</span>
+<span class='curline'><a href='../S/10.html#L107'>X</a>                 107 lib/IMU/METODOSCALIBRACAO.h     MatrixXf X = MatrixXf::Zero(4, 3);</span>
+<span class='curline'><a href='../S/10.html#L120'>X</a>                 120 lib/IMU/METODOSCALIBRACAO.h     X = w.colPivHouseholderQr().solve(Y);</span>
+<span class='curline'><a href='../S/10.html#L121'>X</a>                 121 lib/IMU/METODOSCALIBRACAO.h     X.transposeInPlace();</span>
+<span class='curline'><a href='../S/10.html#L123'>X</a>                 123 lib/IMU/METODOSCALIBRACAO.h     for (int i = 0; i &lt; X.rows(); ++i) {</span>
+<span class='curline'><a href='../S/10.html#L124'>X</a>                 124 lib/IMU/METODOSCALIBRACAO.h       for (int j = 0; j &lt; X.cols(); ++j) {</span>
+<span class='curline'><a href='../S/10.html#L125'>X</a>                 125 lib/IMU/METODOSCALIBRACAO.h         if (isnan(X(i, j)) || isinf(X(i, j))) {</span>
+<span class='curline'><a href='../S/10.html#L131'>X</a>                 131 lib/IMU/METODOSCALIBRACAO.h     sF = X.block(0, 0, 3, 3);</span>
+<span class='curline'><a href='../S/10.html#L132'>X</a>                 132 lib/IMU/METODOSCALIBRACAO.h     _bias = -sF.inverse() * X.col(3);</span>
+</pre>
+</body>
+</html>

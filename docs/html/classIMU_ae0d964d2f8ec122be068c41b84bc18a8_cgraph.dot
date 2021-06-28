@@ -1,0 +1,32 @@
+digraph "IMU::begin"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node2 [label="IMU::begin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="IMU::readAK8963Registers",height=0.2,width=0.4,color="black",URL="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996"];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
+  Node4 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node3 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="IMU::setAccelRange",height=0.2,width=0.4,color="black",URL="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7"];
+  Node6 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="IMU::setDlpfBandwidth",height=0.2,width=0.4,color="black",URL="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527"];
+  Node7 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node8 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="IMU::setGyroRange",height=0.2,width=0.4,color="black",URL="$classIMU.html#a834f21762003f831e5e632cc7974ba75"];
+  Node8 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node9 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="IMU::whoAmIAK8963",height=0.2,width=0.4,color="black",URL="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7"];
+  Node9 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node10 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 [label="IMU::writeAK8963Register",height=0.2,width=0.4,color="black",URL="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737"];
+  Node10 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

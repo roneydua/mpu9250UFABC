@@ -1,0 +1,8 @@
+<map id="ekf::EKF::calibrationMethods" name="ekf::EKF::calibrationMethods">
+<area shape="rect" id="node2" href="$classIMU.html#a3546779010d9128859f465195eff77f5" title="IMU::calibracaoMagnetometro" alt="" coords="272,18,483,42"/>
+<area shape="rect" id="node6" href="$classIMU.html#a5f096cb37d4b16851381bf09d6809403" title="IMU::calibraGyro" alt="" coords="310,66,445,90"/>
+<area shape="rect" id="node7" href="$classTIME.html#a51b6020daf09773ef3948cf6b9ccd736" title="Retorna o valor do tempo decorrido desde a última requisição. " alt="" coords="282,114,473,138"/>
+<area shape="rect" id="node3" href="$classMETODOSCALIBRACAO.html#af0478ed112a1139bafefe7833568e641" title="METODOSCALIBRACAO::\lcalibracaoGeometrica" alt="" coords="531,5,693,41"/>
+<area shape="rect" id="node4" href="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title="IMU::readSensor" alt="" coords="549,66,675,90"/>
+<area shape="rect" id="node5" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title="IMU::readRegisters" alt="" coords="741,66,889,90"/>
+</map>

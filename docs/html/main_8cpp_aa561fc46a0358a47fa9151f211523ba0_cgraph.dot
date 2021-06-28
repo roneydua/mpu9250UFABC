@@ -1,0 +1,40 @@
+digraph "core_1"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node0 [label="core_1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node1 [label="ekf::EKF::loopEKF",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43"];
+  Node1 -> Node2 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node2 [label="ekf::EKF::updateOfMeasurements",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a84048d25ebfb6431d7b1372b7315a7a3",tooltip="Atualiza a medicao a partir dos sensores da unidade Margin e GPS. "];
+  Node2 -> Node3 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node3 [label="IMU::readSensor",height=0.2,width=0.4,color="black",URL="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79"];
+  Node3 -> Node4 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node4 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node2 -> Node5 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node5 [label="TIME::computeElapsedTime",height=0.2,width=0.4,color="black",URL="$classTIME.html#a51b6020daf09773ef3948cf6b9ccd736",tooltip="Retorna o valor do tempo decorrido desde a última requisição. "];
+  Node2 -> Node6 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node6 [label="processGPS",height=0.2,width=0.4,color="black",URL="$GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7"];
+  Node6 -> Node7 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node7 [label="calcChecksum",height=0.2,width=0.4,color="black",URL="$GPS_8h.html#aa2fac937d6e192633f020459321241e7"];
+  Node6 -> Node8 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="compareMsgHeader",height=0.2,width=0.4,color="black",URL="$GPS_8h.html#aecde093c7427cc661daceaa118cf4455"];
+  Node6 -> Node9 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node9 [label="GPSSERIAL",height=0.2,width=0.4,color="black",URL="$GPS_8h.html#a5d2ecd8f29f7e3e702c8b8bea333f6c6"];
+  Node1 -> Node10 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node10 [label="ekf::EKF::predictionStage",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ae27545818f775f4aa6b999e012a851e3"];
+  Node10 -> Node11 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node11 [label="ekf::EKF::updateF_G",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ae6c0295a32e90b9594ad10bb1061b62b",tooltip="Atualiza matrix lineariza de estados F e a matrix G. "];
+  Node10 -> Node12 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node12 [label="ekf::EKF::updatefi",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ad5949e9e8eae2938a332af03a8ec353b"];
+  Node10 -> Node13 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node13 [label="ekf::EKF::integrationOfStates",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a4bd0d4a6ec2787cf1c690fcf154a43c5"];
+  Node1 -> Node14 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node14 [label="ekf::EKF::updateH",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a94bc601335d20c0a058e8e8600d912e7"];
+  Node1 -> Node15 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node15 [label="ekf::EKF::updateStage",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ad4c19d26e9735c356dc8767793939efb"];
+  Node15 -> Node16 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node16 [label="ekf::EKF::updateStates",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a7bcbdc98c071241367a17d698624a5a1"];
+}

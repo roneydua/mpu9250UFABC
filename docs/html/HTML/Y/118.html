@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Vector3f</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L201'>Vector3f</a>          201 lib/EKF/EKF.cpp   Eigen::Vector3f predictedGravityField =</span>
+<span class='curline'><a href='../S/18.html#L206'>Vector3f</a>          206 lib/EKF/EKF.cpp   Eigen::Vector3f predictedMagneticField =</span>
+<span class='curline'><a href='../S/16.html#L28'>Vector3f</a>           28 lib/EKF/EKF.h    Eigen::Vector3f accel = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L30'>Vector3f</a>           30 lib/EKF/EKF.h    Eigen::Vector3f localGravity = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L32'>Vector3f</a>           32 lib/EKF/EKF.h    Eigen::Vector3f navegationGravity{0.0f, 0.0f, 9.81f};</span>
+<span class='curline'><a href='../S/16.html#L34'>Vector3f</a>           34 lib/EKF/EKF.h    Eigen::Vector3f gyro = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L36'>Vector3f</a>           36 lib/EKF/EKF.h    Eigen::Vector3f mag = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L39'>Vector3f</a>           39 lib/EKF/EKF.h    Eigen::Vector3f magOrthogonalGrav = Eigen::Vector3f::Zero();</span>
+<span class='curline'><a href='../S/16.html#L43'>Vector3f</a>           43 lib/EKF/EKF.h    Eigen::Vector3f euler{0.0f, 0.0f, 0.0f};</span>
+<span class='curline'><a href='../S/16.html#L53'>Vector3f</a>           53 lib/EKF/EKF.h    Eigen::Vector3f position = Eigen::Vector3f::Zero(3);</span>
+<span class='curline'><a href='../S/16.html#L58'>Vector3f</a>           58 lib/EKF/EKF.h    Eigen::Vector3f r = Eigen::Vector3f::Zero(3);</span>
+<span class='curline'><a href='../S/16.html#L60'>Vector3f</a>           60 lib/EKF/EKF.h    Eigen::Vector3f deltar = Eigen::Vector3f::Zero(3);</span>
+<span class='curline'><a href='../S/11.html#L22'>Vector3f</a>           22 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Matrix3f skew(const Eigen::Vector3f &amp;v) {</span>
+<span class='curline'><a href='../S/11.html#L72'>Vector3f</a>           72 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Vector3f computeVectorProjection(const Eigen::Vector3f &amp;v,</span>
+<span class='curline'><a href='../S/11.html#L73'>Vector3f</a>           73 lib/GRUPO_QUAT/GRUPO_QUAT.cpp                                         const Eigen::Vector3f &amp;u) {</span>
+<span class='curline'><a href='../S/11.html#L100'>Vector3f</a>          100 lib/GRUPO_QUAT/GRUPO_QUAT.cpp                                     const Eigen::Vector3f &amp;q) {</span>
+<span class='curline'><a href='../S/11.html#L114'>Vector3f</a>          114 lib/GRUPO_QUAT/GRUPO_QUAT.cpp void quaternion2Euler(Eigen::Vector3f &amp;_euler, const Eigen::Vector4f &amp;_q) {</span>
+<span class='curline'><a href='../S/12.html#L18'>Vector3f</a>           18 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Matrix3f skew(const Eigen::Vector3f &amp;v);</span>
+<span class='curline'><a href='../S/12.html#L21'>Vector3f</a>           21 lib/GRUPO_QUAT/GRUPO_QUAT.h void quaternion2Euler(Eigen::Vector3f &amp;_euler, const Eigen::Vector4f &amp;_q);</span>
+<span class='curline'><a href='../S/12.html#L23'>Vector3f</a>           23 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Vector3f computeVectorProjection(const Eigen::Vector3f &amp;u,</span>
+<span class='curline'><a href='../S/12.html#L24'>Vector3f</a>           24 lib/GRUPO_QUAT/GRUPO_QUAT.h                                         const Eigen::Vector3f &amp;v);</span>
+<span class='curline'><a href='../S/12.html#L30'>Vector3f</a>           30 lib/GRUPO_QUAT/GRUPO_QUAT.h                                     const Eigen::Vector3f &amp;q);</span>
+<span class='curline'><a href='../S/9.html#L20'>Vector3f</a>           20 lib/IMU/IMU.cpp int IMU::begin(Vector3f &amp;acel, Vector3f &amp;gyro, Vector3f &amp;mag) {</span>
+<span class='curline'><a href='../S/8.html#L58'>Vector3f</a>           58 lib/IMU/IMU.h    Vector3f *_acel;</span>
+<span class='curline'><a href='../S/8.html#L60'>Vector3f</a>           60 lib/IMU/IMU.h    Vector3f *_gyro;</span>
+<span class='curline'><a href='../S/8.html#L62'>Vector3f</a>           62 lib/IMU/IMU.h    Vector3f *_mag;</span>
+<span class='curline'><a href='../S/8.html#L63'>Vector3f</a>           63 lib/IMU/IMU.h    Vector3f magTemp;</span>
+<span class='curline'><a href='../S/8.html#L75'>Vector3f</a>           75 lib/IMU/IMU.h    Vector3f _biasAcel = Vector3f::Zero();</span>
+<span class='curline'><a href='../S/8.html#L78'>Vector3f</a>           78 lib/IMU/IMU.h    Vector3f _biasGyro = Vector3f::Zero();</span>
+<span class='curline'><a href='../S/8.html#L80'>Vector3f</a>           80 lib/IMU/IMU.h    Vector3f _biasMag = Vector3f::Zero();</span>
+<span class='curline'><a href='../S/8.html#L84'>Vector3f</a>           84 lib/IMU/IMU.h    int begin(Vector3f &amp;acel, Vector3f &amp;gyro, Vector3f &amp;mag);</span>
+<span class='curline'><a href='../S/10.html#L38'>Vector3f</a>           38 lib/IMU/METODOSCALIBRACAO.h   int calibracaoGeometrica(MatrixXf &amp;data, Matrix3f &amp;sF, Vector3f &amp;bias,</span>
+<span class='curline'><a href='../S/10.html#L46'>Vector3f</a>           46 lib/IMU/METODOSCALIBRACAO.h     bias = Vector3f::Zero();</span>
+<span class='curline'><a href='../S/10.html#L108'>Vector3f</a>          108 lib/IMU/METODOSCALIBRACAO.h     Vector3f _bias;</span>
+</pre>
+</body>
+</html>

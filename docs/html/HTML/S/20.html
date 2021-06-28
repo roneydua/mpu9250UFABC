@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>lib/TELEMETRIA/TELEMETRIA.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/802.html'>lib</a>/<a href='../files/807.html'>TELEMETRIA</a>/TELEMETRIA.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='19.html#L10' title='Included from 10 in lib/TELEMETRIA/TELEMETRIA.cpp.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='comment'>/**</em>
+<a id='L2' name='L2'></a>   2 <em class='comment'> * @Author: roney</em>
+<a id='L3' name='L3'></a>   3 <em class='comment'> * @Date:   2021-05-07T10:25:15-03:00</em>
+<a id='L4' name='L4'></a>   4 <em class='comment'> * @Email:  roneyddasilva@gmail.com</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'> * @Filename: TELEMETRIA.h</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'> * @Last modified by:   roney</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'> * @Last modified time: 2021-05-07T10:25:41-03:00</em>
+<a id='L8' name='L8'></a>   8 <em class='comment'> */</em>
+<a id='L9' name='L9'></a>   9 
+<a id='L10' name='L10'></a>  10 <em class='sharp'>#ifndef</em> <a href='../S/20.html#L11' title='Defined at 11 in lib/TELEMETRIA/TELEMETRIA.h.'>TELEMETRIA_h</a>
+<a id='L11' name='L11'></a>  11 <em class='sharp'>#define</em> <a href='../S/20.html#L10' title='Referred from 10 in lib/TELEMETRIA/TELEMETRIA.h.'>TELEMETRIA_h</a>
+<a id='L12' name='L12'></a>  12 <em class='sharp'>#include</em> "../../eigen/Eigen/Dense"
+<a id='L13' name='L13'></a>  13 
+<a id='L14' name='L14'></a>  14 <em class='sharp'>#include</em> "Arduino.h"
+<a id='L15' name='L15'></a>  15 <em class='sharp'>#include</em> "WiFi.h"
+<a id='L16' name='L16'></a>  16 <strong class='reserved'>extern</strong> "C" <em class='brace'>{</em>
+<a id='L17' name='L17'></a>  17 <em class='sharp'>#include</em> "esp_now.h"
+<a id='L18' name='L18'></a>  18 <em class='brace'>}</em>
+<a id='L19' name='L19'></a>  19 
+<a id='L20' name='L20'></a>  20 <a href='../Y/373.html' title='Multiple used in 3 places.'>using</a> <a href='../Y/294.html' title='Multiple used in 5 places.'>namespace</a> <a href='../Y/35.html' title='Multiple used in 65 places.'>Eigen</a>;
+<a id='L21' name='L21'></a>  21 
+<a id='L22' name='L22'></a>  22 <a href='../Y/200.html' title='Multiple used in 6 places.'>class</a> <a href='../S/19.html#L16' title='Defined at 16 in lib/TELEMETRIA/TELEMETRIA.cpp.'>TELEMETRIA</a> <em class='brace'>{</em>
+<a id='L23' name='L23'></a>  23 
+<a id='L24' name='L24'></a>  24 <a href='../Y/322.html' title='Multiple used in 6 places.'>public</a>:
+<a id='L25' name='L25'></a>  25   <a href='../S/19.html#L16' title='Defined at 16 in lib/TELEMETRIA/TELEMETRIA.cpp.'>TELEMETRIA</a>();
+<a id='L26' name='L26'></a>  26   <strong class='reserved'>void</strong> <a href='../D/59.html' title='Multiple defined in 4 places.'>begin</a>();
+<a id='L27' name='L27'></a>  27   <strong class='reserved'>void</strong> <a href='../S/19.html#L41' title='Defined at 41 in lib/TELEMETRIA/TELEMETRIA.cpp.'>envia</a>(<a href='../Y/120.html' title='Multiple used in 9 places.'>VectorXf</a> a);
+<a id='L28' name='L28'></a>  28   <strong class='reserved'>void</strong> <a href='../S/19.html#L56' title='Defined at 56 in lib/TELEMETRIA/TELEMETRIA.cpp.'>enviaMensagem</a>(<strong class='reserved'>char</strong> *<a href='../Y/183.html' title='Multiple used in 3 places.'>aviso</a>);
+<a id='L29' name='L29'></a>  29   <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/144.html' title='Multiple used in 6 places.'>_broadcast</a>[6] = <em class='brace'>{</em>0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF<em class='brace'>}</em>;
+<a id='L30' name='L30'></a>  30   <strong class='reserved'>void</strong> <a href='../S/19.html#L79' title='Defined at 79 in lib/TELEMETRIA/TELEMETRIA.cpp.'>pisca</a>(<a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/311.html' title='Multiple used in 4 places.'>porta</a>);
+<a id='L31' name='L31'></a>  31   <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <strong class='reserved'>__attribute__</strong>((<a href='../Y/305.html' title='Multiple used in 2 places.'>packed</a>)) <a href='../R/61.html' title='Multiple referred from 4 places.'>mensagem</a> <em class='brace'>{</em>
+<a id='L32' name='L32'></a>  32     <strong class='reserved'>float</strong> <a href='../Y/209.html' title='Multiple used in 5 places.'>dados</a>[4 + 3 + 3 + 3 + 3 + 1];
+<a id='L33' name='L33'></a>  33     <strong class='reserved'>char</strong> <a href='../Y/259.html' title='Multiple used in 3 places.'>info</a>[35]; <em class='comment'>// dados para informacao;</em>
+<a id='L34' name='L34'></a>  34   <em class='brace'>}</em> <a href='../R/61.html' title='Multiple referred from 4 places.'>mensagem</a>;
+<a id='L35' name='L35'></a>  35 
+<a id='L36' name='L36'></a>  36   <strong class='reserved'>typedef</strong> <strong class='reserved'>struct</strong> <strong class='reserved'>__attribute__</strong>((<a href='../Y/305.html' title='Multiple used in 2 places.'>packed</a>)) <a href='../R/53.html' title='Multiple referred from 2 places.'>controle</a> <em class='brace'>{</em>
+<a id='L37' name='L37'></a>  37     <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/209.html' title='Multiple used in 5 places.'>dados</a>;
+<a id='L38' name='L38'></a>  38   <em class='brace'>}</em> <a href='../R/53.html' title='Multiple referred from 2 places.'>controle</a>;
+<a id='L39' name='L39'></a>  39   <strong class='reserved'>static</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> <a href='../Y/205.html' title='Multiple used in 3 places.'>comAceito</a>;
+<a id='L40' name='L40'></a>  40   <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> _quantDados;
+<a id='L41' name='L41'></a>  41 
+<a id='L42' name='L42'></a>  42 <a href='../Y/319.html' title='Multiple used in 4 places.'>private</a>:
+<a id='L43' name='L43'></a>  43   <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../S/19.html#L69' title='Defined at 69 in lib/TELEMETRIA/TELEMETRIA.cpp.'>OnDataRecv</a>(<strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> *<a href='../Y/144.html' title='Multiple used in 6 places.'>_broadcast</a>, <strong class='reserved'>const</strong> <a href='../Y/371.html' title='Multiple used in 99 places.'>uint8_t</a> *<a href='../Y/210.html' title='Multiple used in 32 places.'>data</a>,
+<a id='L44' name='L44'></a>  44                          <strong class='reserved'>int</strong> <a href='../Y/211.html' title='Multiple used in 2 places.'>data_len</a>);
+<a id='L45' name='L45'></a>  45 <em class='brace'>}</em>;
+<a id='L46' name='L46'></a>  46 <em class='sharp'>#endif</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structPacketData" kind="struct" language="C++" prot="public">
+    <compoundname>PacketData</compoundname>
+    <includes refid="GPS_8h" local="no">GPS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structPacketData_1a0a6e39d74d6461dcac04e8a19dcd0b6d" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long PacketData::lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="115" column="1" bodyfile="lib/EKF/GPS.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPacketData_1a398a83a5119663539a6e0aedebfcd60b" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long PacketData::lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="116" column="1" bodyfile="lib/EKF/GPS.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPacketData_1ac04ae3b7a33e3d1a04650289429d78ec" prot="public" static="no" mutable="no">
+        <type>int32_t</type>
+        <definition>int32_t PacketData::altitude</definition>
+        <argsstring></argsstring>
+        <name>altitude</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="117" column="1" bodyfile="lib/EKF/GPS.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPacketData_1a9cdf7ee028863b451b3ad3fc22e4827a" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long PacketData::velN</definition>
+        <argsstring></argsstring>
+        <name>velN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="118" column="1" bodyfile="lib/EKF/GPS.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPacketData_1ae937755078f86e2a4c4827b07d31f72c" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long PacketData::velE</definition>
+        <argsstring></argsstring>
+        <name>velE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="119" column="1" bodyfile="lib/EKF/GPS.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structPacketData_1a22515ed8e898933c6b2bdb48e06cc8d7" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long PacketData::velD</definition>
+        <argsstring></argsstring>
+        <name>velD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="120" column="1" bodyfile="lib/EKF/GPS.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="11">
+        <label>PacketData</label>
+        <link refid="structPacketData"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/GPS.h" line="114" column="1" bodyfile="lib/EKF/GPS.h" bodystart="114" bodyend="121"/>
+    <listofallmembers>
+      <member refid="structPacketData_1ac04ae3b7a33e3d1a04650289429d78ec" prot="public" virt="non-virtual"><scope>PacketData</scope><name>altitude</name></member>
+      <member refid="structPacketData_1a398a83a5119663539a6e0aedebfcd60b" prot="public" virt="non-virtual"><scope>PacketData</scope><name>lat</name></member>
+      <member refid="structPacketData_1a0a6e39d74d6461dcac04e8a19dcd0b6d" prot="public" virt="non-virtual"><scope>PacketData</scope><name>lon</name></member>
+      <member refid="structPacketData_1a22515ed8e898933c6b2bdb48e06cc8d7" prot="public" virt="non-virtual"><scope>PacketData</scope><name>velD</name></member>
+      <member refid="structPacketData_1ae937755078f86e2a4c4827b07d31f72c" prot="public" virt="non-virtual"><scope>PacketData</scope><name>velE</name></member>
+      <member refid="structPacketData_1a9cdf7ee028863b451b3ad3fc22e4827a" prot="public" virt="non-virtual"><scope>PacketData</scope><name>velN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

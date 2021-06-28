@@ -1,0 +1,9 @@
+digraph "UBXMessage"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  Node1 [label="{UBXMessage\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="8",style="solid",label=" +navVelned" ,arrowhead="odiamond",fontname="DejaVuSansMono"];
+  Node2 [label="{NAV_VELNED_STRUCT\n|+ cls\l+ id\l+ len\l+ iTOW\l+ velN\l+ velE\l+ velD\l+ speed\l+ gSpeed\l+ heading\l+ sAcc\l+ cAcc\l|}",height=0.2,width=0.4,color="black",URL="$structNAV__VELNED__STRUCT.html"];
+}

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Lista de Futuras Atividades</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="todo_1_todo000001"/>Membro <ref refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" kindref="member">IMU::_biasAccel</ref>  </term></varlistentry>
+<listitem><para>A MARG eh capaz de registrar os bias/Offset nos resgistradores. Feito isso as medidas </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,23 @@
+digraph "ekf::EKF::temporalPrediction"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node63 [label="ekf::EKF::temporalPrediction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node63 -> Node64 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node64 [label="ekf::computeVectorProjection",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#a13baef64e88517a1c0af97c5bfb32787"];
+  Node63 -> Node65 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node65 [label="ekf::EKF::integrationOfStates",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#a4bd0d4a6ec2787cf1c690fcf154a43c5"];
+  Node65 -> Node66 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node66 [label="ekf::computeMcdFromQuaternion",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#ac031eda654b199bd45807eed2acdb3ec"];
+  Node66 -> Node67 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node67 [label="ekf::skew",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#af3f0a631343e55ec8b42f3fbea182461",tooltip="Matrix antissimetrica. "];
+  Node65 -> Node68 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node68 [label="ekf::multiplyQuaternions",height=0.2,width=0.4,color="black",URL="$namespaceekf.html#aebcb4259d74954e6d5b117101bbec4ca",tooltip="Produto de quaternions. "];
+  Node63 -> Node69 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node69 [label="ekf::EKF::updatefi",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ad5949e9e8eae2938a332af03a8ec353b"];
+  Node69 -> Node70 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node70 [label="ekf::EKF::updateF_G",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#ae6c0295a32e90b9594ad10bb1061b62b",tooltip="Atualiza matrix lineariza de estados F e a matrix G. "];
+  Node70 -> Node67 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

@@ -1,0 +1,15 @@
+digraph "IMU::whoAmIAK8963"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node65 [label="IMU::whoAmIAK8963",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node65 -> Node66 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node66 [label="IMU::readAK8963Registers",height=0.2,width=0.4,color="black",URL="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996"];
+  Node66 -> Node67 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node67 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node66 -> Node68 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node68 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
+  Node68 -> Node67 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

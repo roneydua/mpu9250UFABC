@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>subAddress</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/9.html#L340'>subAddress</a>        340 lib/IMU/IMU.cpp int IMU::readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest) {</span>
+<span class='curline'><a href='../S/9.html#L342'>subAddress</a>        342 lib/IMU/IMU.cpp   writeRegister(I2C_SLV0_REG, subAddress);</span>
+<span class='curline'><a href='../S/9.html#L348'>subAddress</a>        348 lib/IMU/IMU.cpp int IMU::writeAK8963Register(uint8_t subAddress, uint8_t data) {</span>
+<span class='curline'><a href='../S/9.html#L354'>subAddress</a>        354 lib/IMU/IMU.cpp   if (writeRegister(I2C_SLV0_REG, subAddress) &lt; 0) {</span>
+<span class='curline'><a href='../S/9.html#L366'>subAddress</a>        366 lib/IMU/IMU.cpp   if (readAK8963Registers(subAddress, 1, _buffer) &lt; 0) {</span>
+<span class='curline'><a href='../S/9.html#L382'>subAddress</a>        382 lib/IMU/IMU.cpp int IMU::writeRegister(uint8_t subAddress, uint8_t data) {</span>
+<span class='curline'><a href='../S/9.html#L384'>subAddress</a>        384 lib/IMU/IMU.cpp   _i2c-&gt;write(subAddress);           // write the register address</span>
+<span class='curline'><a href='../S/9.html#L389'>subAddress</a>        389 lib/IMU/IMU.cpp   readRegisters(subAddress, 1, _buffer);</span>
+<span class='curline'><a href='../S/9.html#L404'>subAddress</a>        404 lib/IMU/IMU.cpp int IMU::readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest) {</span>
+<span class='curline'><a href='../S/9.html#L406'>subAddress</a>        406 lib/IMU/IMU.cpp   _i2c-&gt;write(subAddress);</span>
+<span class='curline'><a href='../S/8.html#L210'>subAddress</a>        210 lib/IMU/IMU.h    int writeRegister(uint8_t subAddress, uint8_t data);</span>
+<span class='curline'><a href='../S/8.html#L211'>subAddress</a>        211 lib/IMU/IMU.h    int readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest);</span>
+<span class='curline'><a href='../S/8.html#L212'>subAddress</a>        212 lib/IMU/IMU.h    int writeAK8963Register(uint8_t subAddress, uint8_t data);</span>
+<span class='curline'><a href='../S/8.html#L215'>subAddress</a>        215 lib/IMU/IMU.h    int readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest);</span>
+</pre>
+</body>
+</html>

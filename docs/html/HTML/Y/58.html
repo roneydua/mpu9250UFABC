@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>H</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L45'>H</a>                  45 lib/EKF/EKF.cpp   H.block&lt;3, 3&gt;(6, 6) = Eigen::Matrix3f::Identity();</span>
+<span class='curline'><a href='../S/18.html#L64'>H</a>                  64 lib/EKF/EKF.cpp                           H.topLeftCorner(p, n).transpose() *</span>
+<span class='curline'><a href='../S/18.html#L65'>H</a>                  65 lib/EKF/EKF.cpp                           (H.topLeftCorner(p, n) * P.topLeftCorner(n, n) *</span>
+<span class='curline'><a href='../S/18.html#L66'>H</a>                  66 lib/EKF/EKF.cpp                                (H.topLeftCorner(p, n)).transpose() +</span>
+<span class='curline'><a href='../S/18.html#L71'>H</a>                  71 lib/EKF/EKF.cpp                            K.topLeftCorner(n, p) * H.topLeftCorner(p, n)) *</span>
+<span class='curline'><a href='../S/18.html#L215'>H</a>                 215 lib/EKF/EKF.cpp   H.topLeftCorner(3, 3) = 2.0f * skew(predictedGravityField);</span>
+<span class='curline'><a href='../S/18.html#L216'>H</a>                 216 lib/EKF/EKF.cpp   H.block&lt;3, 3&gt;(3, 0) = 2.0f * skew(predictedMagneticField);</span>
+<span class='curline'><a href='../S/16.html#L106'>H</a>                 106 lib/EKF/EKF.h    Eigen::MatrixXf H = Eigen::MatrixXf::Zero(p, n);</span>
+<span class='curline'><a href='../S/10.html#L48'>H</a>                  48 lib/IMU/METODOSCALIBRACAO.h     MatrixXf H = MatrixXf::Ones(N, 6);</span>
+<span class='curline'><a href='../S/10.html#L50'>H</a>                  50 lib/IMU/METODOSCALIBRACAO.h     H.col(0) = data.col(0);</span>
+<span class='curline'><a href='../S/10.html#L51'>H</a>                  51 lib/IMU/METODOSCALIBRACAO.h     H.col(1) = data.col(1);</span>
+<span class='curline'><a href='../S/10.html#L52'>H</a>                  52 lib/IMU/METODOSCALIBRACAO.h     H.col(2) = data.col(2);</span>
+<span class='curline'><a href='../S/10.html#L53'>H</a>                  53 lib/IMU/METODOSCALIBRACAO.h     H.col(3) = -data.col(1).array().pow(2).matrix();</span>
+<span class='curline'><a href='../S/10.html#L54'>H</a>                  54 lib/IMU/METODOSCALIBRACAO.h     H.col(4) = -data.col(2).array().pow(2).matrix();</span>
+<span class='curline'><a href='../S/10.html#L58'>H</a>                  58 lib/IMU/METODOSCALIBRACAO.h     X = H.fullPivHouseholderQr().solve(w);</span>
+<span class='curline'><a href='../S/10.html#L59'>H</a>                  59 lib/IMU/METODOSCALIBRACAO.h     H.resize(0, 0); // libera memoria</span>
+</pre>
+</body>
+</html>

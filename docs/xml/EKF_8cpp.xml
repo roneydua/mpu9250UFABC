@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="EKF_8cpp" kind="file" language="C++">
+    <compoundname>EKF.cpp</compoundname>
+    <includes refid="EKF_8h" local="yes">EKF.h</includes>
+    <includes refid="GPS_8h" local="yes">GPS.h</includes>
+    <includes local="yes">GRUPO_QUAT.h</includes>
+    <includes refid="TIME_8h" local="yes">TIME.h</includes>
+    <includes refid="IMU_8h" local="no">IMU.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>GPS.h</label>
+        <link refid="GPS_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>TIME.h</label>
+        <link refid="TIME_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>EKF.h</label>
+        <link refid="EKF_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>GRUPO_QUAT.h</label>
+      </node>
+      <node id="5">
+        <label>HardwareSerial.h</label>
+      </node>
+      <node id="9">
+        <label>METODOSCALIBRACAO.h</label>
+        <link refid="METODOSCALIBRACAO_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>lib/EKF/EKF.cpp</label>
+        <link refid="EKF_8cpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="10">
+        <label>Wire.h</label>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="8">
+        <label>IMU.h</label>
+        <link refid="IMU_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceekf">ekf</innernamespace>
+    <briefdescription>
+<para>Classe que implementa o filtro de Kalman estendido. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Roney D da Silva </para></simplesect>
+<simplesect kind="date"><para>7 Apr 2021 </para></simplesect>
+<simplesect kind="copyright"><para>2021 Roney D da Silva Email: <ulink url="mailto:roneyddasilva@gmail.com">roneyddasilva@gmail.com</ulink> </para></simplesect>
+</para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="EKF_8h" kindref="compound">EKF.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GPS_8h" kindref="compound">GPS.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GRUPO_QUAT.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TIME_8h" kindref="compound">TIME.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="IMU_8h" kindref="compound">IMU.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="namespaceekf" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceekf" kindref="compound">ekf</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="classIMU" kindref="compound">IMU</ref><sp/><ref refid="namespaceekf_1a93697a30a70c1143a3e32e9abf7f2133" kindref="member">imu</ref>(Wire,<sp/>0x68);</highlight></codeline>
+<codeline lineno="22" refid="namespaceekf_1aca2a4b084cc9cd6ede068c292a7e76d3" refkind="member"><highlight class="normal"><ref refid="classTIME" kindref="compound">TIME</ref><sp/><ref refid="namespaceekf_1aca2a4b084cc9cd6ede068c292a7e76d3" kindref="member">timeClass</ref>;</highlight></codeline>
+<codeline lineno="23" refid="classekf_1_1EKF_1aea7bda69ce19f724930eb8c691272508" refkind="member"><highlight class="normal"><ref refid="classekf_1_1EKF_1aea7bda69ce19f724930eb8c691272508" kindref="member">EKF::EKF</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="30" refid="classekf_1_1EKF_1af52f661717f56b3deee7b4f42ba80dc5" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1af52f661717f56b3deee7b4f42ba80dc5" kindref="member">EKF::begin</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><ref refid="GPS_8h_1a35c55bcf9a6f5a52f34cb1ab02c91479" kindref="member">gpsSetup</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>timeClass.<ref refid="classTIME_1a8cd98765b05a23aa7afe8fa5234b9695" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Instancia<sp/>o<sp/>vetor<sp/>de<sp/>medidas<sp/>na<sp/>biblioteca<sp/>da<sp/>IMU.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/>imu.<ref refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" kindref="member">begin</ref>(<ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>,<sp/><ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>,<sp/><ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>valor<sp/>do<sp/>bias<sp/>do<sp/>giroscópio<sp/>com<sp/>uma<sp/>média<sp/>de<sp/>amostras</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>valores<sp/>constantes<sp/>das<sp/>matriz<sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a6ac75b28b1066175ed3d3dd4ff861f8f" kindref="member">F</ref>.block&lt;3,<sp/>3&gt;(0,<sp/>3)<sp/>=<sp/>-0.5f<sp/>*<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Valores<sp/>constantes<sp/>da<sp/>matriz<sp/>G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aa942935955d39b9e6125bbfe7deb02f1" kindref="member">G</ref>.topLeftCorner(3,<sp/>3)<sp/>=<sp/>-0.5f<sp/>*<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aa942935955d39b9e6125bbfe7deb02f1" kindref="member">G</ref>.block&lt;3,<sp/>3&gt;(3,<sp/>3)<sp/>=<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aa942935955d39b9e6125bbfe7deb02f1" kindref="member">G</ref>.bottomRightCorner(3,<sp/>3)<sp/>=<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Valores<sp/>constantes<sp/>da<sp/>matriz<sp/>H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.block&lt;3,<sp/>3&gt;(6,<sp/>6)<sp/>=<sp/>Eigen::Matrix3f::Identity();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52" refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a651814ff64d234394572e2e7c5703a43" kindref="member">EKF::loopEKF</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" kindref="member">updateOfMeasurements</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ae27545818f775f4aa6b999e012a851e3" kindref="member">predictionStage</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a94bc601335d20c0a058e8e8600d912e7" kindref="member">updateH</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ad4c19d26e9735c356dc8767793939efb" kindref="member">updateStage</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61" refid="classekf_1_1EKF_1a7bcbdc98c071241367a17d698624a5a1" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a7bcbdc98c071241367a17d698624a5a1" kindref="member">EKF::updateStates</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>(0)<sp/>=<sp/>sqrtf(1.0f<sp/>-<sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>.segment&lt;3&gt;(1).squaredNorm());</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>a<sp/>orientação.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref><sp/>=<sp/>multiplyQuaternions(q,<sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>imu.<ref refid="classIMU_1a9d22cd7cb7bb93f2e04aa713aed73532" kindref="member">_biasGyro</ref><sp/>=<sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>.segment&lt;3&gt;(4);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>matriz<sp/>de<sp/>rotação<sp/>com<sp/>a<sp/>ultima<sp/>atitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>computeMcdFromQuaternion(q,<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>quaternion2Euler(<ref refid="classekf_1_1EKF_1adc3de40884689bb897ebe90979d6f28f" kindref="member">euler</ref>,<sp/>q);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Verifica<sp/>se<sp/>as<sp/>medidas<sp/>do<sp/>GPS<sp/>foram<sp/>utilizadas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref><sp/>&gt;<sp/>6)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Corrige<sp/>a<sp/>velocidade<sp/>de<sp/>translacao.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1a62d97c4efde36112d3c59afa88d7bcfb" kindref="member">r</ref><sp/>+=<sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>.segment&lt;3&gt;(7);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>corrige<sp/>o<sp/>bias<sp/>do<sp/>acelerometro.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>imu.<ref refid="classIMU_1a9a145f45e2e08cae0f363747c5603bd1" kindref="member">_biasAccel</ref><sp/>=<sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>.tail(3);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>a<sp/>aceleração<sp/>linear.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1ad6e815d418433b79328bd90dd6ef1344" kindref="member">deltar</ref><sp/>=<sp/>-<ref refid="classekf_1_1EKF_1a7225ed157eefaf96a9b98b0683bd3f6d" kindref="member">navegationGravity</ref><sp/>+<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref><sp/>*<sp/>(<ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83" refid="classekf_1_1EKF_1ae27545818f775f4aa6b999e012a851e3" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ae27545818f775f4aa6b999e012a851e3" kindref="member">EKF::predictionStage</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ae6c0295a32e90b9594ad10bb1061b62b" kindref="member">updateF_G</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ad5949e9e8eae2938a332af03a8ec353b" kindref="member">updatefi</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>atualiza<sp/>a<sp/>matriz<sp/>de<sp/>covariâncias</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1af3d9f149c542dae8e23b8bb6a71e896d" kindref="member">P</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>=<sp/><ref refid="classekf_1_1EKF_1a94669b63095dd91e43ab645c3e930643" kindref="member">fi</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*<sp/><ref refid="classekf_1_1EKF_1af3d9f149c542dae8e23b8bb6a71e896d" kindref="member">P</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1a94669b63095dd91e43ab645c3e930643" kindref="member">fi</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>).transpose()<sp/>+</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref><sp/>*<sp/><ref refid="classekf_1_1EKF_1aa942935955d39b9e6125bbfe7deb02f1" kindref="member">G</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*<sp/><ref refid="classekf_1_1EKF_1a4069373f775dd5d06c503ec5a20b06cd" kindref="member">Q</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1aa942935955d39b9e6125bbfe7deb02f1" kindref="member">G</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>).transpose();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Campos<sp/>de<sp/>referência</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>NormalizedLocalGravity<sp/>=<sp/>(-<ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref>.transpose()<sp/>*<sp/><ref refid="classekf_1_1EKF_1ad6e815d418433b79328bd90dd6ef1344" kindref="member">deltar</ref><sp/>+<sp/><ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>).normalized();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a3ba07296b1ad2a2b1b00cf41ef3ff996" kindref="member">magOrthogonalGrav</ref><sp/>=<sp/>computeVectorProjection(<ref refid="classekf_1_1EKF_1a3f84435c646a27ad0f922e5205c13eb3" kindref="member">mag</ref>,<sp/>NormalizedLocalGravity);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Integracao<sp/>dos<sp/>estados</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a4bd0d4a6ec2787cf1c690fcf154a43c5" kindref="member">integrationOfStates</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106" refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" kindref="member">EKF::updateOfMeasurements</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Faz<sp/>a<sp/>leitura<sp/>dos<sp/>sensores<sp/>da<sp/>MARG<sp/>atualizando<sp/>os<sp/>vetores<sp/>#accel,<sp/>#gyro<sp/>e</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>#mag.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>imu.<ref refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" kindref="member">readSensor</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>tempo<sp/>decorrido<sp/>entre<sp/>medidas<sp/>a<sp/>medida<sp/>anterior<sp/>e<sp/>a<sp/>atual.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref><sp/>=<sp/>timeClass.<ref refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" kindref="member">computeElapsedTime</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Esta<sp/>de<sp/>predição.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>verifica<sp/>se<sp/>há<sp/>medidas<sp/>novas<sp/>a<sp/>partir<sp/>do<sp/>GPS.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>MT_NONE,<sp/>MT_NAV_POSLLH,<sp/>MT_NAV_VELNED,<sp/>MT_NAV_PVT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kindref="member">messageGPS</ref><sp/>=<sp/><ref refid="GPS_8h_1ad604e63cc857e5663dfba96c37c66bc7" kindref="member">processGPS</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kindref="member">messageGPS</ref><sp/>==<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1ad2e3f1bdeae0fa235b7dfe6656c46f14" kindref="member">MT_NONE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>O<sp/>pre<sp/>compilador<sp/>exclui<sp/>adapta<sp/>a<sp/>verificação<sp/>dependendo<sp/>da<sp/>configuração<sp/>do</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>GPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_VELNED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kindref="member">messageGPS</ref><sp/>==<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1a850b8feaf03997bd2be8b2a14ad8d691" kindref="member">MT_NAV_VELNED</ref>)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref><sp/>=<sp/>9;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref><sp/>=<sp/>12;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>o<sp/>erro<sp/>de<sp/>medida<sp/>na<sp/>velocidade<sp/>linear</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1acacdb7f209258937a6b1d21ab19a1a64" kindref="member">deltaYObs</ref>(6)<sp/>=<sp/>(float)<ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>.<ref refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" kindref="member">navVelned</ref>.<ref refid="structNAV__VELNED__STRUCT_1ac0328eba082ead963e3c617d9263c51e" kindref="member">velN</ref><sp/>/<sp/>100.0f<sp/>-<sp/><ref refid="classekf_1_1EKF_1a62d97c4efde36112d3c59afa88d7bcfb" kindref="member">r</ref>(0);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1acacdb7f209258937a6b1d21ab19a1a64" kindref="member">deltaYObs</ref>(7)<sp/>=<sp/>(float)<ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>.<ref refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" kindref="member">navVelned</ref>.<ref refid="structNAV__VELNED__STRUCT_1ac7dd25d45876ad638d2926a07f82347c" kindref="member">velE</ref><sp/>/<sp/>100.0f<sp/>-<sp/><ref refid="classekf_1_1EKF_1a62d97c4efde36112d3c59afa88d7bcfb" kindref="member">r</ref>(1);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1acacdb7f209258937a6b1d21ab19a1a64" kindref="member">deltaYObs</ref>(8)<sp/>=<sp/>(float)<ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>.<ref refid="unionUBXMessage_1a11b04d364c078d65eba35c53cdb1d392" kindref="member">navVelned</ref>.<ref refid="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" kindref="member">velD</ref><sp/>/<sp/>100.0f<sp/>-<sp/><ref refid="classekf_1_1EKF_1a62d97c4efde36112d3c59afa88d7bcfb" kindref="member">r</ref>(2);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>lon<sp/>=<sp/>ubxMessage.navPosllh.lon;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NAV_POSLLH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classekf_1_1EKF_1a8d016a5adf9aa5f33a8c9e1f7dd73592" kindref="member">messageGPS</ref><sp/>==<sp/><ref refid="GPS_8h_1a9730e8d0bbbe3f1515ed1d0b2acda1e1abc121fb87333b0e9a243876a94f4cc97" kindref="member">MT_NAV_POSLLH</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>position(0)<sp/>=<sp/>1e-7<sp/>*<sp/>(float)<ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>.navPosllh.lat;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>position(1)<sp/>=<sp/>1e-7<sp/>*<sp/>(float)<ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>.navPosllh.lon;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>position(2)<sp/>=<sp/>1e-3<sp/>*<sp/>(float)<ref refid="GPS_8h_1a4ff3f4ce55f117a43c4e117d850ca5a8" kindref="member">ubxMessage</ref>.navPosllh.hMSL;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152" refid="classekf_1_1EKF_1ae6c0295a32e90b9594ad10bb1061b62b" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ae6c0295a32e90b9594ad10bb1061b62b" kindref="member">EKF::updateF_G</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a6ac75b28b1066175ed3d3dd4ff861f8f" kindref="member">F</ref>.topLeftCorner(3,<sp/>3)<sp/>=<sp/>-skew(<ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref><sp/>&gt;<sp/>6)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1a6ac75b28b1066175ed3d3dd4ff861f8f" kindref="member">F</ref>.block&lt;3,<sp/>3&gt;(6,<sp/>0)<sp/>=<sp/>-2.0<sp/>*<sp/>skew(<ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref><sp/>*<sp/><ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1a6ac75b28b1066175ed3d3dd4ff861f8f" kindref="member">F</ref>.block&lt;3,<sp/>3&gt;(6,<sp/>9)<sp/>=<sp/>-<ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1aa942935955d39b9e6125bbfe7deb02f1" kindref="member">G</ref>.block&lt;3,<sp/>3&gt;(6,<sp/>6)<sp/>=<sp/>-<ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168" refid="classekf_1_1EKF_1ad5949e9e8eae2938a332af03a8ec353b" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ad5949e9e8eae2938a332af03a8ec353b" kindref="member">EKF::updatefi</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>fi<sp/>=<sp/>I+dt<sp/>*<sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a94669b63095dd91e43ab645c3e930643" kindref="member">fi</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>=</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>MatrixXf::Identity(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>+<sp/><ref refid="classekf_1_1EKF_1a6ac75b28b1066175ed3d3dd4ff861f8f" kindref="member">F</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*<sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref>;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179" refid="classekf_1_1EKF_1a94bc601335d20c0a058e8e8600d912e7" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a94bc601335d20c0a058e8e8600d912e7" kindref="member">EKF::updateH</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>predictedGravityField<sp/>=<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref><sp/>*<sp/>NormalizedLocalGravity;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>Eigen::Vector3f<sp/>predictedMagneticField<sp/>=<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref><sp/>*<sp/><ref refid="classekf_1_1EKF_1a3ba07296b1ad2a2b1b00cf41ef3ff996" kindref="member">magOrthogonalGrav</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.topLeftCorner(3,<sp/>3)<sp/>=<sp/>-2.0f<sp/>*<sp/>skew(predictedGravityField);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.block&lt;3,<sp/>3&gt;(3,<sp/>0)<sp/>=<sp/>-2.0f<sp/>*<sp/>skew(predictedMagneticField);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1acacdb7f209258937a6b1d21ab19a1a64" kindref="member">deltaYObs</ref>.head(3)<sp/>=<sp/>-predictedGravityField;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>deltaYobs(3)<sp/>+=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1acacdb7f209258937a6b1d21ab19a1a64" kindref="member">deltaYObs</ref>.segment(3,<sp/>3)<sp/>=<sp/>magOrthogonalGrav<sp/>-<sp/>predictedMagneticField;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>-Serial.println(</highlight><highlight class="stringliteral">&quot;Matrix<sp/>H&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>printEigen(<ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199" refid="classekf_1_1EKF_1a4bd0d4a6ec2787cf1c690fcf154a43c5" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1a4bd0d4a6ec2787cf1c690fcf154a43c5" kindref="member">EKF::integrationOfStates</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Quatérnio<sp/>com<sp/>Euler<sp/>de<sp/>primeira<sp/>ordem</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref><sp/>+=<sp/>0.5<sp/>*<sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref><sp/>*<sp/>multiplyQuaternions(<ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref>,<sp/><ref refid="classekf_1_1EKF_1af990ea0dbcd3f286f04584ab663d08e6" kindref="member">gyro</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>atualiza<sp/>matriz<sp/>de<sp/>rotação<sp/>com<sp/>o<sp/>quaternio<sp/>predito</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>computeMcdFromQuaternion(<ref refid="classekf_1_1EKF_1aa38bc83dfb656519cfcda0c0a589ef16" kindref="member">q</ref>,<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref>);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Bias<sp/>do<sp/>giroscópio.</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>imu._biasGyro<sp/>=<sp/>deltaChi.segment(3,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref><sp/>&gt;<sp/>6)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Velocidade<sp/>linear</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1a62d97c4efde36112d3c59afa88d7bcfb" kindref="member">r</ref><sp/>+=<sp/><ref refid="classekf_1_1EKF_1aee84ca91742c11dd89683930a58d59e3" kindref="member">dt</ref><sp/>*<sp/>(<ref refid="classekf_1_1EKF_1a7225ed157eefaf96a9b98b0683bd3f6d" kindref="member">navegationGravity</ref><sp/>+<sp/><ref refid="classekf_1_1EKF_1a2f7f579eb38461f7396cca2a9a846bbb" kindref="member">mcd</ref><sp/>*<sp/><ref refid="classekf_1_1EKF_1a30d3adf68cc6ee599fec8fa45a697bbb" kindref="member">accel</ref>);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>imu._biasAcel<sp/>=<sp/>deltaChi.segment(9,<sp/>3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="216" refid="classekf_1_1EKF_1ad4c19d26e9735c356dc8767793939efb" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1ad4c19d26e9735c356dc8767793939efb" kindref="member">EKF::updateStage</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Ganha<sp/>de<sp/>Kalman</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1abd4e82d28621f8cf617f19a42a11eb29" kindref="member">K</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>)<sp/>=<sp/><ref refid="classekf_1_1EKF_1af3d9f149c542dae8e23b8bb6a71e896d" kindref="member">P</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>).transpose()<sp/>*</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*<sp/><ref refid="classekf_1_1EKF_1af3d9f149c542dae8e23b8bb6a71e896d" kindref="member">P</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>*</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)).transpose()<sp/>+</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1a5f29f91470f99c48240dfd41f1fc32e6" kindref="member">R</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>,<sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>))</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.inverse();</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Atualiza<sp/>a<sp/>matriz<sp/>de<sp/>covariância.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1af3d9f149c542dae8e23b8bb6a71e896d" kindref="member">P</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>=<sp/>(Eigen::MatrixXf::Identity(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>-</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1abd4e82d28621f8cf617f19a42a11eb29" kindref="member">K</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>)<sp/>*<sp/><ref refid="classekf_1_1EKF_1ad468c35e1497e23df1a26d6dbbe0eb67" kindref="member">H</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>))<sp/>*</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classekf_1_1EKF_1af3d9f149c542dae8e23b8bb6a71e896d" kindref="member">P</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Computa<sp/>o<sp/>erro<sp/>de<sp/>estimação<sp/>#deltaChi</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a1a015f96a2f51461f6132eab3e301a94" kindref="member">deltaChi</ref>.segment(1,<sp/><ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>)<sp/>=<sp/><ref refid="classekf_1_1EKF_1abd4e82d28621f8cf617f19a42a11eb29" kindref="member">K</ref>.topLeftCorner(<ref refid="classekf_1_1EKF_1af36cffd92f910adbebe2d79fe5b02f87" kindref="member">n</ref>,<sp/><ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>)<sp/>*<sp/><ref refid="classekf_1_1EKF_1acacdb7f209258937a6b1d21ab19a1a64" kindref="member">deltaYObs</ref>.head(<ref refid="classekf_1_1EKF_1aae13945192d53d1920ddc26b61c96477" kindref="member">p</ref>);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><ref refid="classekf_1_1EKF_1a7bcbdc98c071241367a17d698624a5a1" kindref="member">updateStates</ref>();</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="classekf_1_1EKF_1aecdea0922a84bc38cdd78e86657d6ae9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classekf_1_1EKF_1aecdea0922a84bc38cdd78e86657d6ae9" kindref="member">EKF::calibrationMethods</ref>(gpio_num_t<sp/>&amp;_porta_led)<sp/>{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>digitalWrite(_porta_led,<sp/>LOW);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>imu.<ref refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" kindref="member">calibraGyro</ref>(100);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(_porta_led,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>delay(200);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(_porta_led,<sp/>LOW);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(imu.<ref refid="classIMU_1a3546779010d9128859f465195eff77f5" kindref="member">calibracaoMagnetometro</ref>(22.8908f)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(_porta_led,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>digitalWrite(_porta_led,<sp/>LOW);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/>digitalWrite(_porta_led,<sp/>HIGH);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/>timeClass.<ref refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" kindref="member">computeElapsedTime</ref>();</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>timeClass.<ref refid="classTIME_1a51b6020daf09773ef3948cf6b9ccd736" kindref="member">computeElapsedTime</ref>();</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ekf</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="lib/EKF/EKF.cpp"/>
+  </compounddef>
+</doxygen>

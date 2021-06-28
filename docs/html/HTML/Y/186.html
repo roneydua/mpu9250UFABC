@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>bias</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/10.html#L38'>bias</a>               38 lib/IMU/METODOSCALIBRACAO.h   int calibracaoGeometrica(MatrixXf &amp;data, Matrix3f &amp;sF, Vector3f &amp;bias,</span>
+<span class='curline'><a href='../S/10.html#L46'>bias</a>               46 lib/IMU/METODOSCALIBRACAO.h     bias = Vector3f::Zero();</span>
+<span class='curline'><a href='../S/10.html#L60'>bias</a>               60 lib/IMU/METODOSCALIBRACAO.h     bias(0) = X(0) / 2.0;</span>
+<span class='curline'><a href='../S/10.html#L61'>bias</a>               61 lib/IMU/METODOSCALIBRACAO.h     bias(1) = X(1) / (2.0 * X(3));</span>
+<span class='curline'><a href='../S/10.html#L62'>bias</a>               62 lib/IMU/METODOSCALIBRACAO.h     bias(2) = X(2) / (2.0 * X(4));</span>
+<span class='curline'><a href='../S/10.html#L63'>bias</a>               63 lib/IMU/METODOSCALIBRACAO.h     tmp(0) = (X(5) + bias(0) * bias(0) + X(3) * bias(1) * bias(1) +</span>
+<span class='curline'><a href='../S/10.html#L64'>bias</a>               64 lib/IMU/METODOSCALIBRACAO.h               X(4) * bias(2) * bias(2)) /</span>
+<span class='curline'><a href='../S/10.html#L80'>bias</a>               80 lib/IMU/METODOSCALIBRACAO.h       if (isnan(bias(i)) || isinf(bias(i))) {</span>
+<span class='curline'><a href='../S/10.html#L98'>bias</a>               98 lib/IMU/METODOSCALIBRACAO.h   int calibracaoAcelerometro(Matrix3f &amp;sF, int16_t (&amp;bias)[3], MatrixXf data) {</span>
+<span class='curline'><a href='../S/10.html#L135'>bias</a>              135 lib/IMU/METODOSCALIBRACAO.h     bias[0] = (int16_t)_bias[0];</span>
+<span class='curline'><a href='../S/10.html#L136'>bias</a>              136 lib/IMU/METODOSCALIBRACAO.h     bias[1] = (int16_t)_bias[1];</span>
+<span class='curline'><a href='../S/10.html#L137'>bias</a>              137 lib/IMU/METODOSCALIBRACAO.h     bias[2] = (int16_t)_bias[2];</span>
+</pre>
+</body>
+</html>

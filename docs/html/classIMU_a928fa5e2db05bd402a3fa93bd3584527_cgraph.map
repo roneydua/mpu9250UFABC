@@ -1,0 +1,4 @@
+<map id="IMU::setDlpfBandwidth" name="IMU::setDlpfBandwidth">
+<area shape="rect" id="node2" href="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400" title="IMU::writeRegister" alt="" coords="223,5,371,29"/>
+<area shape="rect" id="node3" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title="IMU::readRegisters" alt="" coords="419,5,567,29"/>
+</map>

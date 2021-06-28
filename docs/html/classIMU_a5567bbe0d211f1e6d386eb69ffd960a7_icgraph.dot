@@ -1,0 +1,10 @@
+digraph "IMU::setAccelRange"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node50 [label="IMU::setAccelRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node50 -> Node51 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node51 [label="IMU::begin",height=0.2,width=0.4,color="black",URL="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8"];
+}

@@ -1,0 +1,12 @@
+digraph "IMU::readSensor"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node44 [label="IMU::readSensor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node44 -> Node45 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node45 [label="IMU::calibracaoMagnetometro",height=0.2,width=0.4,color="black",URL="$classIMU.html#a3546779010d9128859f465195eff77f5"];
+  Node44 -> Node46 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node46 [label="IMU::calibraGyro",height=0.2,width=0.4,color="black",URL="$classIMU.html#a5f096cb37d4b16851381bf09d6809403"];
+}

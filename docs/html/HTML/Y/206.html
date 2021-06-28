@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>count</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/9.html#L340'>count</a>             340 lib/IMU/IMU.cpp int IMU::readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest) {</span>
+<span class='curline'><a href='../S/9.html#L343'>count</a>             343 lib/IMU/IMU.cpp   writeRegister(I2C_SLV0_CTRL, I2C_SLV0_EN | count);</span>
+<span class='curline'><a href='../S/9.html#L345'>count</a>             345 lib/IMU/IMU.cpp   _status = readRegisters(EXT_SENS_DATA_00, count, _buffer);</span>
+<span class='curline'><a href='../S/9.html#L404'>count</a>             404 lib/IMU/IMU.cpp int IMU::readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest) {</span>
+<span class='curline'><a href='../S/9.html#L408'>count</a>             408 lib/IMU/IMU.cpp   _numBytes = _i2c-&gt;requestFrom(_address, count);</span>
+<span class='curline'><a href='../S/9.html#L409'>count</a>             409 lib/IMU/IMU.cpp   if (_numBytes == count) {</span>
+<span class='curline'><a href='../S/9.html#L410'>count</a>             410 lib/IMU/IMU.cpp     for (uint8_t i = 0; i &lt; count; i++) {</span>
+<span class='curline'><a href='../S/8.html#L211'>count</a>             211 lib/IMU/IMU.h    int readRegisters(uint8_t subAddress, uint8_t count, uint8_t *dest);</span>
+<span class='curline'><a href='../S/8.html#L215'>count</a>             215 lib/IMU/IMU.h    int readAK8963Registers(uint8_t subAddress, uint8_t count, uint8_t *dest);</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>p</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L46'>p</a>                  46 lib/EKF/EKF.cpp   p = 6;</span>
+<span class='curline'><a href='../S/18.html#L63'>p</a>                  63 lib/EKF/EKF.cpp   K.topLeftCorner(n, p) = P.topLeftCorner(n, n) *</span>
+<span class='curline'><a href='../S/18.html#L64'>p</a>                  64 lib/EKF/EKF.cpp                           H.topLeftCorner(p, n).transpose() *</span>
+<span class='curline'><a href='../S/18.html#L65'>p</a>                  65 lib/EKF/EKF.cpp                           (H.topLeftCorner(p, n) * P.topLeftCorner(n, n) *</span>
+<span class='curline'><a href='../S/18.html#L66'>p</a>                  66 lib/EKF/EKF.cpp                                (H.topLeftCorner(p, n)).transpose() +</span>
+<span class='curline'><a href='../S/18.html#L67'>p</a>                  67 lib/EKF/EKF.cpp                            R.topLeftCorner(p, p))</span>
+<span class='curline'><a href='../S/18.html#L71'>p</a>                  71 lib/EKF/EKF.cpp                            K.topLeftCorner(n, p) * H.topLeftCorner(p, n)) *</span>
+<span class='curline'><a href='../S/18.html#L90'>p</a>                  90 lib/EKF/EKF.cpp   if (p &gt; 6) {</span>
+<span class='curline'><a href='../S/18.html#L118'>p</a>                 118 lib/EKF/EKF.cpp   P.topLeftCorner(p, p) = fi.topLeftCorner(p, p) * P.topLeftCorner(p, p) *</span>
+<span class='curline'><a href='../S/18.html#L119'>p</a>                 119 lib/EKF/EKF.cpp                               fi.topLeftCorner(p, p).transpose() +</span>
+<span class='curline'><a href='../S/18.html#L120'>p</a>                 120 lib/EKF/EKF.cpp                           dt * G.topLeftCorner(p, p) * Q.topLeftCorner(p, p) *</span>
+<span class='curline'><a href='../S/18.html#L121'>p</a>                 121 lib/EKF/EKF.cpp                               G.topLeftCorner(p, p).transpose();</span>
+<span class='curline'><a href='../S/18.html#L139'>p</a>                 139 lib/EKF/EKF.cpp     p = 6;</span>
+<span class='curline'><a href='../S/18.html#L147'>p</a>                 147 lib/EKF/EKF.cpp     p = 9;</span>
+<span class='curline'><a href='../S/18.html#L157'>p</a>                 157 lib/EKF/EKF.cpp     p = 12;</span>
+<span class='curline'><a href='../S/18.html#L173'>p</a>                 173 lib/EKF/EKF.cpp   if (p &gt; 6) {</span>
+<span class='curline'><a href='../S/18.html#L189'>p</a>                 189 lib/EKF/EKF.cpp   fi.topLeftCorner(p, p) =</span>
+<span class='curline'><a href='../S/18.html#L190'>p</a>                 190 lib/EKF/EKF.cpp       MatrixXf::Identity(p, p) + F.topLeftCorner(p, p) * dt;</span>
+<span class='curline'><a href='../S/16.html#L72'>p</a>                  72 lib/EKF/EKF.h    uint8_t p = 9;</span>
+<span class='curline'><a href='../S/16.html#L92'>p</a>                  92 lib/EKF/EKF.h        ((Eigen::VectorXf(p) &lt;&lt; sigma_acel, sigma_acel, sigma_acel, sigma_mag,</span>
+<span class='curline'><a href='../S/16.html#L106'>p</a>                 106 lib/EKF/EKF.h    Eigen::MatrixXf H = Eigen::MatrixXf::Zero(p, n);</span>
+<span class='curline'><a href='../S/16.html#L108'>p</a>                 108 lib/EKF/EKF.h    Eigen::MatrixXf K = Eigen::MatrixXf::Identity(n, p);</span>
+<span class='curline'><a href='../S/16.html#L112'>p</a>                 112 lib/EKF/EKF.h    Eigen::VectorXf deltaYObs = Eigen::VectorXf::Zero(p);</span>
+<span class='curline'><a href='../S/11.html#L84'>p</a>                  84 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/11.html#L87'>p</a>                  87 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(0) = p(0) * q(0) - p(1) * q(1) - p(2) * q(2) - p(3) * q(3);</span>
+<span class='curline'><a href='../S/11.html#L88'>p</a>                  88 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(1) = p(0) * q(1) + p(1) * q(0) + p(2) * q(3) - p(3) * q(2);</span>
+<span class='curline'><a href='../S/11.html#L89'>p</a>                  89 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(2) = p(0) * q(2) - p(1) * q(3) + p(2) * q(0) + p(3) * q(1);</span>
+<span class='curline'><a href='../S/11.html#L90'>p</a>                  90 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(3) = p(0) * q(3) + p(1) * q(2) - p(2) * q(1) + p(3) * q(0);</span>
+<span class='curline'><a href='../S/11.html#L99'>p</a>                  99 lib/GRUPO_QUAT/GRUPO_QUAT.cpp Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/11.html#L102'>p</a>                 102 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(0) = -p(1) * q(0) - p(2) * q(1) - p(3) * q(2);</span>
+<span class='curline'><a href='../S/11.html#L103'>p</a>                 103 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(1) = p(0) * q(0) + p(2) * q(2) - p(3) * q(1);</span>
+<span class='curline'><a href='../S/11.html#L104'>p</a>                 104 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(2) = p(0) * q(1) - p(1) * q(2) + p(3) * q(0);</span>
+<span class='curline'><a href='../S/11.html#L105'>p</a>                 105 lib/GRUPO_QUAT/GRUPO_QUAT.cpp   pq(3) = p(0) * q(2) + p(1) * q(1) - p(2) * q(0);</span>
+<span class='curline'><a href='../S/12.html#L26'>p</a>                  26 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/12.html#L29'>p</a>                  29 lib/GRUPO_QUAT/GRUPO_QUAT.h Eigen::Vector4f multiplyQuaternions(const Eigen::Vector4f &amp;p,</span>
+<span class='curline'><a href='../S/800.html#L16'>p</a>                  16 src/main.cpp   void core_1(void* p) {</span>
+<span class='curline'><a href='../S/800.html#L24'>p</a>                  24 src/main.cpp   void telemetria(void* p) {</span>
+</pre>
+</body>
+</html>

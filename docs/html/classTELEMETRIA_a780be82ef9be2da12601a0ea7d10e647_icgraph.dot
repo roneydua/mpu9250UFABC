@@ -1,0 +1,13 @@
+digraph "TELEMETRIA::begin"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node13 [label="TELEMETRIA::begin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node14 [label="TELEMETRIA::TELEMETRIA",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#ae47c01609eec8284a663dd66e0d7c632"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node15 [label="TELEMETRIA::OnDataRecv",height=0.2,width=0.4,color="black",URL="$classTELEMETRIA.html#ace27ccd5888ebc3802a4eb22cc3fd9da"];
+  Node15 -> Node13 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+}

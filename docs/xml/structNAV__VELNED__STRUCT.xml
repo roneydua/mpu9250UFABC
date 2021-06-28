@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structNAV__VELNED__STRUCT" kind="struct" language="C++" prot="public">
+    <compoundname>NAV_VELNED_STRUCT</compoundname>
+    <includes refid="GPS_8h" local="no">GPS.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a45593c9406dca08e3d01ed92cd2a8147" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_VELNED_STRUCT::cls</definition>
+        <argsstring></argsstring>
+        <name>cls</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="55" column="1" bodyfile="lib/EKF/GPS.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a05eece75c9dfbc17d4e4a431a0cf8f99" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char NAV_VELNED_STRUCT::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="56" column="1" bodyfile="lib/EKF/GPS.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a168baf913166d49a3f824a5e7a8304ed" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short NAV_VELNED_STRUCT::len</definition>
+        <argsstring></argsstring>
+        <name>len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="57" column="1" bodyfile="lib/EKF/GPS.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a7076c4ff1faf5e9c3bafd1131bf9d2ae" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_VELNED_STRUCT::iTOW</definition>
+        <argsstring></argsstring>
+        <name>iTOW</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="58" column="1" bodyfile="lib/EKF/GPS.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1ac0328eba082ead963e3c617d9263c51e" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_VELNED_STRUCT::velN</definition>
+        <argsstring></argsstring>
+        <name>velN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade na direção norte <simplesect kind="warning"><para>(cm/s) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="60" column="1" bodyfile="lib/EKF/GPS.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" compoundref="EKF_8cpp" startline="106" endline="148">ekf::EKF::updateOfMeasurements</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1ac7dd25d45876ad638d2926a07f82347c" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_VELNED_STRUCT::velE</definition>
+        <argsstring></argsstring>
+        <name>velE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade na direção leste <simplesect kind="warning"><para>(cm/s) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="62" column="1" bodyfile="lib/EKF/GPS.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" compoundref="EKF_8cpp" startline="106" endline="148">ekf::EKF::updateOfMeasurements</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_VELNED_STRUCT::velD</definition>
+        <argsstring></argsstring>
+        <name>velD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Velocidade na direção para baixo <simplesect kind="warning"><para>(cm/s) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="64" column="1" bodyfile="lib/EKF/GPS.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="GPS_8h_1aaab66558a5f695df7a6fcc3baa340da3" compoundref="GPS_8h" startline="349" endline="365">gps_imprime</referencedby>
+        <referencedby refid="classekf_1_1EKF_1a84048d25ebfb6431d7b1372b7315a7a3" compoundref="EKF_8cpp" startline="106" endline="148">ekf::EKF::updateOfMeasurements</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a7cbffe528f5a66fd37774cb883840c7f" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_VELNED_STRUCT::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="65" column="1" bodyfile="lib/EKF/GPS.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a1408226864c59acfacae1567335e4d3f" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_VELNED_STRUCT::gSpeed</definition>
+        <argsstring></argsstring>
+        <name>gSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="66" column="1" bodyfile="lib/EKF/GPS.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a32f277b48321730e0f989525cb8801ca" prot="public" static="no" mutable="no">
+        <type>long</type>
+        <definition>long NAV_VELNED_STRUCT::heading</definition>
+        <argsstring></argsstring>
+        <name>heading</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="67" column="1" bodyfile="lib/EKF/GPS.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a6bc9a425a42942c84c6e5adb49621aaa" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_VELNED_STRUCT::sAcc</definition>
+        <argsstring></argsstring>
+        <name>sAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="68" column="1" bodyfile="lib/EKF/GPS.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structNAV__VELNED__STRUCT_1a558f4968fe65bfd2441492036345eebe" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long NAV_VELNED_STRUCT::cAcc</definition>
+        <argsstring></argsstring>
+        <name>cAcc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="lib/EKF/GPS.h" line="69" column="1" bodyfile="lib/EKF/GPS.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>NAV_VELNED_STRUCT</label>
+        <link refid="structNAV__VELNED__STRUCT"/>
+      </node>
+    </collaborationgraph>
+    <location file="lib/EKF/GPS.h" line="54" column="1" bodyfile="lib/EKF/GPS.h" bodystart="54" bodyend="70"/>
+    <listofallmembers>
+      <member refid="structNAV__VELNED__STRUCT_1a558f4968fe65bfd2441492036345eebe" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>cAcc</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a45593c9406dca08e3d01ed92cd2a8147" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>cls</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a1408226864c59acfacae1567335e4d3f" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>gSpeed</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a32f277b48321730e0f989525cb8801ca" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>heading</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a05eece75c9dfbc17d4e4a431a0cf8f99" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>id</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a7076c4ff1faf5e9c3bafd1131bf9d2ae" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>iTOW</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a168baf913166d49a3f824a5e7a8304ed" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>len</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a6bc9a425a42942c84c6e5adb49621aaa" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>sAcc</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1a7cbffe528f5a66fd37774cb883840c7f" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>speed</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1aba8dab80ab09f215c12ed9d103de2097" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>velD</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1ac7dd25d45876ad638d2926a07f82347c" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>velE</name></member>
+      <member refid="structNAV__VELNED__STRUCT_1ac0328eba082ead963e3c617d9263c51e" prot="public" virt="non-virtual"><scope>NAV_VELNED_STRUCT</scope><name>velN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

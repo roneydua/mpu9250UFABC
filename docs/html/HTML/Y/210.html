@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>data</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/17.html#L123'>data</a>              123 lib/EKF/GPS.h  PacketData data;</span>
+<span class='curline'><a href='../S/9.html#L348'>data</a>              348 lib/IMU/IMU.cpp int IMU::writeAK8963Register(uint8_t subAddress, uint8_t data) {</span>
+<span class='curline'><a href='../S/9.html#L358'>data</a>              358 lib/IMU/IMU.cpp   if (writeRegister(I2C_SLV0_DO, data) &lt; 0) {</span>
+<span class='curline'><a href='../S/9.html#L369'>data</a>              369 lib/IMU/IMU.cpp   if (_buffer[0] == data) {</span>
+<span class='curline'><a href='../S/9.html#L382'>data</a>              382 lib/IMU/IMU.cpp int IMU::writeRegister(uint8_t subAddress, uint8_t data) {</span>
+<span class='curline'><a href='../S/9.html#L385'>data</a>              385 lib/IMU/IMU.cpp   _i2c-&gt;write(data);                 // write the data</span>
+<span class='curline'><a href='../S/9.html#L391'>data</a>              391 lib/IMU/IMU.cpp   if (_buffer[0] == data) {</span>
+<span class='curline'><a href='../S/8.html#L210'>data</a>              210 lib/IMU/IMU.h    int writeRegister(uint8_t subAddress, uint8_t data);</span>
+<span class='curline'><a href='../S/8.html#L212'>data</a>              212 lib/IMU/IMU.h    int writeAK8963Register(uint8_t subAddress, uint8_t data);</span>
+<span class='curline'><a href='../S/10.html#L38'>data</a>               38 lib/IMU/METODOSCALIBRACAO.h   int calibracaoGeometrica(MatrixXf &amp;data, Matrix3f &amp;sF, Vector3f &amp;bias,</span>
+<span class='curline'><a href='../S/10.html#L42'>data</a>               42 lib/IMU/METODOSCALIBRACAO.h     if (data.rows() == 3) {</span>
+<span class='curline'><a href='../S/10.html#L43'>data</a>               43 lib/IMU/METODOSCALIBRACAO.h       data.transposeInPlace();</span>
+<span class='curline'><a href='../S/10.html#L47'>data</a>               47 lib/IMU/METODOSCALIBRACAO.h     int N = data.rows();</span>
+<span class='curline'><a href='../S/10.html#L50'>data</a>               50 lib/IMU/METODOSCALIBRACAO.h     H.col(0) = data.col(0);</span>
+<span class='curline'><a href='../S/10.html#L51'>data</a>               51 lib/IMU/METODOSCALIBRACAO.h     H.col(1) = data.col(1);</span>
+<span class='curline'><a href='../S/10.html#L52'>data</a>               52 lib/IMU/METODOSCALIBRACAO.h     H.col(2) = data.col(2);</span>
+<span class='curline'><a href='../S/10.html#L53'>data</a>               53 lib/IMU/METODOSCALIBRACAO.h     H.col(3) = -data.col(1).array().pow(2).matrix();</span>
+<span class='curline'><a href='../S/10.html#L54'>data</a>               54 lib/IMU/METODOSCALIBRACAO.h     H.col(4) = -data.col(2).array().pow(2).matrix();</span>
+<span class='curline'><a href='../S/10.html#L55'>data</a>               55 lib/IMU/METODOSCALIBRACAO.h     w = data.col(0).array().pow(2).matrix();</span>
+<span class='curline'><a href='../S/10.html#L56'>data</a>               56 lib/IMU/METODOSCALIBRACAO.h     data.resize(0, 0); // libera memoria</span>
+<span class='curline'><a href='../S/10.html#L98'>data</a>               98 lib/IMU/METODOSCALIBRACAO.h   int calibracaoAcelerometro(Matrix3f &amp;sF, int16_t (&amp;bias)[3], MatrixXf data) {</span>
+<span class='curline'><a href='../S/10.html#L100'>data</a>              100 lib/IMU/METODOSCALIBRACAO.h     if (data.rows() == 3) {</span>
+<span class='curline'><a href='../S/10.html#L101'>data</a>              101 lib/IMU/METODOSCALIBRACAO.h       data.transposeInPlace();</span>
+<span class='curline'><a href='../S/10.html#L104'>data</a>              104 lib/IMU/METODOSCALIBRACAO.h     int N = data.rows();</span>
+<span class='curline'><a href='../S/10.html#L110'>data</a>              110 lib/IMU/METODOSCALIBRACAO.h       data.row(var).maxCoeff(&amp;indice);</span>
+<span class='curline'><a href='../S/10.html#L111'>data</a>              111 lib/IMU/METODOSCALIBRACAO.h       if (data(var, indice) &gt; 1000.0f) {</span>
+<span class='curline'><a href='../S/10.html#L113'>data</a>              113 lib/IMU/METODOSCALIBRACAO.h         w.row(var) &lt;&lt; data.row(var), 1.0;</span>
+<span class='curline'><a href='../S/10.html#L115'>data</a>              115 lib/IMU/METODOSCALIBRACAO.h         data.row(var).minCoeff(&amp;indice);</span>
+<span class='curline'><a href='../S/10.html#L117'>data</a>              117 lib/IMU/METODOSCALIBRACAO.h         w.row(var) &lt;&lt; data.row(var), 1.0;</span>
+<span class='curline'><a href='../S/19.html#L69'>data</a>               69 lib/TELEMETRIA/TELEMETRIA.cpp void TELEMETRIA::OnDataRecv(const uint8_t *_broadcast, const uint8_t *data,</span>
+<span class='curline'><a href='../S/19.html#L74'>data</a>               74 lib/TELEMETRIA/TELEMETRIA.cpp   memcpy(&amp;ctrl, data, sizeof(controle));</span>
+<span class='curline'><a href='../S/20.html#L43'>data</a>               43 lib/TELEMETRIA/TELEMETRIA.h   static void OnDataRecv(const uint8_t *_broadcast, const uint8_t *data,</span>
+</pre>
+</body>
+</html>

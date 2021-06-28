@@ -1,0 +1,12 @@
+digraph "IMU::calibracaoMagnetometro"
+{
+  bgcolor="transparent";
+  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
+  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
+  rankdir="LR";
+  Node18 [label="IMU::calibracaoMagnetometro",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node19 [label="ekf::EKF::calibrationMethods",height=0.2,width=0.4,color="black",URL="$classekf_1_1EKF.html#aecdea0922a84bc38cdd78e86657d6ae9"];
+  Node19 -> Node20 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node20 [label="setup",height=0.2,width=0.4,color="black",URL="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d"];
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>ubxMessage</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.3' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/18.html#L149'>ubxMessage</a>        149 lib/EKF/EKF.cpp     deltaYObs(6) = (float)ubxMessage.navVelned.velN / 100.0f - r(0);</span>
+<span class='curline'><a href='../S/18.html#L150'>ubxMessage</a>        150 lib/EKF/EKF.cpp     deltaYObs(7) = (float)ubxMessage.navVelned.velE / 100.0f - r(1);</span>
+<span class='curline'><a href='../S/18.html#L151'>ubxMessage</a>        151 lib/EKF/EKF.cpp     deltaYObs(8) = (float)ubxMessage.navVelned.velD / 100.0f - r(2);</span>
+<span class='curline'><a href='../S/18.html#L158'>ubxMessage</a>        158 lib/EKF/EKF.cpp     position(0) = 1e-7 * (float)ubxMessage.navPosllh.lat;</span>
+<span class='curline'><a href='../S/18.html#L159'>ubxMessage</a>        159 lib/EKF/EKF.cpp     position(1) = 1e-7 * (float)ubxMessage.navPosllh.lon;</span>
+<span class='curline'><a href='../S/18.html#L160'>ubxMessage</a>        160 lib/EKF/EKF.cpp     position(2) = 1e-3 * (float)ubxMessage.navPosllh.hMSL;</span>
+<span class='curline'><a href='../S/17.html#L140'>ubxMessage</a>        140 lib/EKF/GPS.h  UBXMessage ubxMessage;</span>
+<span class='curline'><a href='../S/17.html#L252'>ubxMessage</a>        252 lib/EKF/GPS.h      CK[0] += ((unsigned char *)(&amp;ubxMessage))[i];</span>
+<span class='curline'><a href='../S/17.html#L260'>ubxMessage</a>        260 lib/EKF/GPS.h    unsigned char *ptr = (unsigned char *)(&amp;ubxMessage);</span>
+<span class='curline'><a href='../S/17.html#L293'>ubxMessage</a>        293 lib/EKF/GPS.h          ((unsigned char *)(&amp;ubxMessage))[fpos - 2] = c;</span>
+<span class='curline'><a href='../S/17.html#L355'>ubxMessage</a>        355 lib/EKF/GPS.h        Serial.printf("%f\t\n", float(ubxMessage.navVelned.velD) / 100.0f);</span>
+<span class='curline'><a href='../S/17.html#L360'>ubxMessage</a>        360 lib/EKF/GPS.h        Serial.printf("%ld \t%ld \t\n", ubxMessage.navPosllh.lat,</span>
+<span class='curline'><a href='../S/17.html#L361'>ubxMessage</a>        361 lib/EKF/GPS.h                      ubxMessage.navPosllh.lon);</span>
+</pre>
+</body>
+</html>
