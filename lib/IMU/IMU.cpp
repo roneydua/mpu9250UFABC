@@ -23,6 +23,7 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
   _mag = &mag;
   // para analise da calibracao
   // inicializa a biblioteca Wire para comunicacao i2c
+  // _i2c->begin(sda, scl);
   _i2c->begin(21, 22);
 
   // seta a frequencia de comunicacao I2c
