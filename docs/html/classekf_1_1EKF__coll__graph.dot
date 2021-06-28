@@ -1,7 +1,0 @@
-digraph "ekf::EKF"
-{
-  bgcolor="transparent";
-  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
-  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node1 [label="{ekf::EKF\n|+ dt\l+ accel\l+ localGravity\l+ navegationGravity\l+ gyro\l+ mag\l+ magOrthogonalGrav\l+ q\l+ euler\l+ r\l+ deltar\l+ mcd\l+ messageGPS\l+ p\l+ n\l+ sigma_giro\l+ sigma_bias_giro\l+ sigma_acel\l+ sigma_bias_acel\l+ sigma_mag\l+ sigma_vel\l+ Q\l+ R\l+ F\l+ fi\l+ G\l+ P\l+ H\l+ K\l+ deltaChi\l+ deltaYObs\l|+ EKF()\l+ begin()\l+ loopEKF()\l+ updateOfMeasurements()\l+ updateInovations()\l+ integrationOfStates()\l+ updateStates()\l+ predictionStage()\l+ updateStage()\l+ updateF_G()\l+ updateH()\l+ updatefi()\l+ calibrationMethods()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-}

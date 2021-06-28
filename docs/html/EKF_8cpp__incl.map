@@ -1,7 +1,0 @@
-<map id="lib/EKF/EKF.cpp" name="lib/EKF/EKF.cpp">
-<area shape="rect" id="node2" href="$EKF_8h.html" title="Classe que implementa o filtro de Kalman estendido. " alt="" coords="374,149,431,173"/>
-<area shape="rect" id="node5" href="$GPS_8h.html" title="Simples Cabecalho de funcoes para leituras do GPS. " alt="" coords="507,77,565,101"/>
-<area shape="rect" id="node8" href="$TIME_8h.html" title="Classe para medir Intervalo de tempo entre duas chamadas. " alt="" coords="589,77,653,101"/>
-<area shape="rect" id="node9" href="$IMU_8h.html" title="IMU.h" alt="" coords="193,77,250,101"/>
-<area shape="rect" id="node10" href="$METODOSCALIBRACAO_8h.html" title="METODOSCALIBRACAO.h" alt="" coords="144,149,299,173"/>
-</map>

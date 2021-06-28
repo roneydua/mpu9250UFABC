@@ -1,4 +1,0 @@
-<map id="IMU::calibraGyro" name="IMU::calibraGyro">
-<area shape="rect" id="node2" href="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79" title="IMU::readSensor" alt="" coords="188,5,315,29"/>
-<area shape="rect" id="node3" href="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49" title="IMU::readRegisters" alt="" coords="363,5,511,29"/>
-</map>

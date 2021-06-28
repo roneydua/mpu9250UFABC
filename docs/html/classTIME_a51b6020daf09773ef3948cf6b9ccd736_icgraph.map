@@ -1,7 +1,0 @@
-<map id="TIME::computeElapsedTime" name="TIME::computeElapsedTime">
-<area shape="rect" id="node2" href="$classekf_1_1EKF.html#aecdea0922a84bc38cdd78e86657d6ae9" title="ekf::EKF::calibrationMethods" alt="" coords="524,5,743,29"/>
-<area shape="rect" id="node4" href="$classekf_1_1EKF.html#a84048d25ebfb6431d7b1372b7315a7a3" title="Atualiza a medicao a partir dos sensores da unidade Margin e GPS. " alt="" coords="244,55,476,79"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="903,31,960,55"/>
-<area shape="rect" id="node5" href="$classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title="ekf::EKF::loopEKF" alt="" coords="563,55,704,79"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#aa561fc46a0358a47fa9151f211523ba0" title="core_1" alt="" coords="791,55,855,79"/>
-</map>

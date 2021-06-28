@@ -1,7 +1,0 @@
-digraph "TELEMETRIA"
-{
-  bgcolor="transparent";
-  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
-  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node1 [label="{TELEMETRIA\n|+ _broadcast\l+ mensagem\l+ controle\l+ _quantDados\l+ comAceito\l|+ TELEMETRIA()\l+ begin()\l+ envia()\l+ enviaMensagem()\l+ pisca()\l+ __attribute__()\l+ __attribute__()\l- OnDataRecv()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-}

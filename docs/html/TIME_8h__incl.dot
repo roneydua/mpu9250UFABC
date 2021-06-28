@@ -1,9 +1,0 @@
-digraph "lib/TIME/TIME.h"
-{
-  bgcolor="transparent";
-  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
-  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node0 [label="lib/TIME/TIME.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node0 -> Node1 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node1 [label="Arduino.h",height=0.2,width=0.4,color="grey75"];
-}

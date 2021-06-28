@@ -1,7 +1,0 @@
-digraph "PacketData"
-{
-  bgcolor="transparent";
-  edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
-  node [fontname="DejaVuSansMono",fontsize="8",shape=record];
-  Node1 [label="{PacketData\n|+ lon\l+ lat\l+ altitude\l+ velN\l+ velE\l+ velD\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-}

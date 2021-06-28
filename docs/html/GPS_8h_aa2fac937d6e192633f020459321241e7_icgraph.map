@@ -1,8 +1,0 @@
-<map id="calcChecksum" name="calcChecksum">
-<area shape="rect" id="node2" href="$GPS_8h.html#ad604e63cc857e5663dfba96c37c66bc7" title="processGPS" alt="" coords="160,29,252,53"/>
-<area shape="rect" id="node3" href="$classekf_1_1EKF.html#a84048d25ebfb6431d7b1372b7315a7a3" title="Atualiza a medicao a partir dos sensores da unidade Margin e GPS. " alt="" coords="300,5,532,29"/>
-<area shape="rect" id="node7" href="$GPS_8h.html#aaab66558a5f695df7a6fcc3baa340da3" title="gps_imprime" alt="" coords="367,53,465,77"/>
-<area shape="rect" id="node4" href="$classekf_1_1EKF.html#a651814ff64d234394572e2e7c5703a43" title="ekf::EKF::loopEKF" alt="" coords="580,5,721,29"/>
-<area shape="rect" id="node5" href="$main_8cpp.html#aa561fc46a0358a47fa9151f211523ba0" title="core_1" alt="" coords="769,5,833,29"/>
-<area shape="rect" id="node6" href="$main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="881,5,939,29"/>
-</map>
