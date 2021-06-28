@@ -1957,6 +1957,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'ACCEL_RANGE_16G';
     };
       sec-mem-referenceto = {
+        sec-mem-ref-id = 'example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'acel';
+    };
+      sec-mem-referenceto = {
         sec-mem-ref-id = 'IMU_8h_1a5dc26b210ba9adcc176b9e837238d87d';
         sec-mem-ref-line = '206';
         sec-mem-ref-name = 'AK8963_ASA';
@@ -2027,6 +2032,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-name = 'I2C_MST_EN';
     };
       sec-mem-referenceto = {
+        sec-mem-ref-id = 'example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+        sec-mem-ref-line = '8';
+        sec-mem-ref-name = 'mag';
+    };
+      sec-mem-referenceto = {
         sec-mem-ref-id = 'IMU_8h_1a66529d6102c44bc6be8d8ef167f27058';
         sec-mem-ref-line = '166';
         sec-mem-ref-name = 'PWR_MGMNT_1';
@@ -2090,6 +2100,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-id = 'IMU_8cpp_1a37694424e4502ffc69bbb6c540c1a400';
         sec-mem-ref-line = '392';
         sec-mem-ref-name = 'writeRegister';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = 'example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+        sec-mem-ref-line = '12';
+        sec-mem-ref-name = 'setup';
     };
     }; /* sec-member */
     sec-member = {
@@ -2232,6 +2247,11 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-ref-id = 'IMU_8cpp_1a5f096cb37d4b16851381bf09d6809403';
         sec-mem-ref-line = '333';
         sec-mem-ref-name = 'calibraGyro';
+    };
+      sec-mem-referenceby = {
+        sec-mem-ref-id = 'example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+        sec-mem-ref-line = '17';
+        sec-mem-ref-name = 'loop';
     };
     }; /* sec-member */
     sec-member = {
@@ -7829,6 +7849,390 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
 }; /* class */
 file = {
+  file-id   = 'example_2main_8cpp';
+  file-name = 'main.cpp';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'setup';
+      func-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+      func-mem-desc-line = '12';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'acel';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'IMU_8cpp_1ae0d964d2f8ec122be068c41b84bc18a8';
+        func-mem-ref-line = '20';
+        func-mem-ref-name = 'IMU::begin';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'giro';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'mag';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'loop';
+      func-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+      func-mem-desc-line = '17';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'acel';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'giro';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'mag';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'IMU_8cpp_1ac574728dbbc752155239a35c8bbd6e79';
+        func-mem-ref-line = '281';
+        func-mem-ref-name = 'IMU::readSensor';
+    };
+    }; /* func-member */
+    };
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+Vector3f
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'acel';
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+      var-mem-desc-line = '8';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'IMU_8cpp_1ae0d964d2f8ec122be068c41b84bc18a8';
+        var-mem-ref-line = '20';
+        var-mem-ref-name = 'IMU::begin';
+    };
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+        var-mem-ref-line = '17';
+        var-mem-ref-name = 'loop';
+    };
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+        var-mem-ref-line = '12';
+        var-mem-ref-name = 'setup';
+    };
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+Vector3f
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'giro';
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+      var-mem-desc-line = '8';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+        var-mem-ref-line = '17';
+        var-mem-ref-name = 'loop';
+    };
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+        var-mem-ref-line = '12';
+        var-mem-ref-name = 'setup';
+    };
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+Vector3f
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'mag';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= Vector3f::Zero()
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+      var-mem-desc-line = '8';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'IMU_8cpp_1ae0d964d2f8ec122be068c41b84bc18a8';
+        var-mem-ref-line = '20';
+        var-mem-ref-name = 'IMU::begin';
+    };
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+        var-mem-ref-line = '17';
+        var-mem-ref-name = 'loop';
+    };
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+        var-mem-ref-line = '12';
+        var-mem-ref-name = 'setup';
+    };
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+IMU
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'imu';
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+      var-mem-desc-line = '10';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+        var-mem-ref-line = '17';
+        var-mem-ref-name = 'loop';
+    };
+      var-mem-referenceby = {
+        var-mem-ref-id = 'example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+        var-mem-ref-line = '12';
+        var-mem-ref-name = 'setup';
+    };
+    }; /* var-member */
+    };
+  file-full-name  = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/example/main.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
+  file-id   = 'src_2main_8cpp';
+  file-name = 'main.cpp';
+    func = {
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'src_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'setup';
+      func-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+      func-mem-desc-line = '12';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'acel';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'IMU_8cpp_1ae0d964d2f8ec122be068c41b84bc18a8';
+        func-mem-ref-line = '20';
+        func-mem-ref-name = 'IMU::begin';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'giro';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'mag';
+    };
+    }; /* func-member */
+    func-member = {
+      func-mem-kind = 'function';
+      func-mem-id   = 'src_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
+      func-mem-virt = normal;
+      func-mem-prot = public;
+      func-mem-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      func-mem-name = 'loop';
+      func-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+      func-mem-desc-line = '17';
+      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'acel';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'giro';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+        func-mem-ref-line = '8';
+        func-mem-ref-name = 'mag';
+    };
+      func-mem-referenceto = {
+        func-mem-ref-id = 'IMU_8cpp_1ac574728dbbc752155239a35c8bbd6e79';
+        func-mem-ref-line = '281';
+        func-mem-ref-name = 'IMU::readSensor';
+    };
+    }; /* func-member */
+    };
+    var = {
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'src_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+Vector3f
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'acel';
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+      var-mem-desc-line = '8';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'src_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+Vector3f
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'giro';
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+      var-mem-desc-line = '8';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'src_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+Vector3f
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'mag';
+      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
+= Vector3f::Zero()
+_EnD_oF_dEf_TeXt_;
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+      var-mem-desc-line = '8';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    var-member = {
+      var-mem-kind = 'variable';
+      var-mem-id   = 'src_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927';
+      var-mem-virt = normal;
+      var-mem-prot = public;
+      var-mem-type = <<_EnD_oF_dEf_TeXt_
+IMU
+_EnD_oF_dEf_TeXt_;
+      var-mem-name = 'imu';
+      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+      var-mem-desc-line = '10';
+      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* var-member */
+    };
+  file-full-name  = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
+  file-first-line = '1';
+  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+  file-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+}; /* file */
+file = {
   file-id   = 'IMU_8cpp';
   file-name = 'IMU.cpp';
   file-full-name  = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/lib/IMU/IMU.cpp';
@@ -7867,147 +8271,5 @@ _EnD_oF_dEf_TeXt_;
 biblioteca contendo algoritmos de calibracao para acelerometro e
 magnetometro. Para correto funcionamento a bibioteca EIGEN deve estar
 indicada no include abaixo
-_EnD_oF_dEf_TeXt_;
-}; /* file */
-file = {
-  file-id   = 'main_8cpp';
-  file-name = 'main.cpp';
-    func = {
-    func-member = {
-      func-mem-kind = 'function';
-      func-mem-id   = 'main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
-      func-mem-virt = normal;
-      func-mem-prot = public;
-      func-mem-type = <<_EnD_oF_dEf_TeXt_
-void
-_EnD_oF_dEf_TeXt_;
-      func-mem-name = 'setup';
-      func-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
-      func-mem-desc-line = '10';
-      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      func-mem-referenceto = {
-        func-mem-ref-id = 'PARAMETROS_8h_1ac1b0250bcd4568426a8db0cd7266d49f';
-        func-mem-ref-line = '13';
-        func-mem-ref-name = 'led';
-    };
-    }; /* func-member */
-    func-member = {
-      func-mem-kind = 'function';
-      func-mem-id   = 'main_8cpp_1afe461d27b9c48d5921c00d521181f12f';
-      func-mem-virt = normal;
-      func-mem-prot = public;
-      func-mem-type = <<_EnD_oF_dEf_TeXt_
-void
-_EnD_oF_dEf_TeXt_;
-      func-mem-name = 'loop';
-      func-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
-      func-mem-desc-line = '14';
-      func-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      func-mem-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-    }; /* func-member */
-    };
-  file-full-name  = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/main.cpp';
-  file-first-line = '1';
-  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-  file-documentation = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-}; /* file */
-file = {
-  file-id   = 'PARAMETROS_8h';
-  file-name = 'PARAMETROS.h';
-    var = {
-    var-member = {
-      var-mem-kind = 'variable';
-      var-mem-id   = 'PARAMETROS_8h_1ac1b0250bcd4568426a8db0cd7266d49f';
-      var-mem-virt = normal;
-      var-mem-prot = public;
-      var-mem-type = <<_EnD_oF_dEf_TeXt_
-gpio_num_t
-_EnD_oF_dEf_TeXt_;
-      var-mem-name = 'led';
-      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
-= GPIO_NUM_5
-_EnD_oF_dEf_TeXt_;
-      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/PARAMETROS.h';
-      var-mem-desc-line = '13';
-      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
-@Author: roney
-@Date:   2021-05-12T13:52:07-03:00
-@Email:  roneyddasilva@gmail.com
-@Filename: portas.h
-@Last modified by:   roney
-@Last modified time: 2021-05-30T19:24:52-03:00
-_EnD_oF_dEf_TeXt_;
-      var-mem-referenceby = {
-        var-mem-ref-id = 'main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d';
-        var-mem-ref-line = '10';
-        var-mem-ref-name = 'setup';
-    };
-    }; /* var-member */
-    var-member = {
-      var-mem-kind = 'variable';
-      var-mem-id   = 'PARAMETROS_8h_1a1909ead101e545f8904c484b3f7455f4';
-      var-mem-virt = normal;
-      var-mem-prot = public;
-      var-mem-type = <<_EnD_oF_dEf_TeXt_
-TickType_t
-_EnD_oF_dEf_TeXt_;
-      var-mem-name = 'xdtEstimator';
-      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
-= pdMS_TO_TICKS(20)
-_EnD_oF_dEf_TeXt_;
-      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/PARAMETROS.h';
-      var-mem-desc-line = '15';
-      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Periodo de amostragem 
-_EnD_oF_dEf_TeXt_;
-    }; /* var-member */
-    var-member = {
-      var-mem-kind = 'variable';
-      var-mem-id   = 'PARAMETROS_8h_1abdd1a1f99db66aedd7fd2523317fe636';
-      var-mem-virt = normal;
-      var-mem-prot = public;
-      var-mem-type = <<_EnD_oF_dEf_TeXt_
-TickType_t
-_EnD_oF_dEf_TeXt_;
-      var-mem-name = 'xdtTelemetria';
-      var-mem-initializer = <<_EnD_oF_dEf_TeXt_
-= pdMS_TO_TICKS(20)
-_EnD_oF_dEf_TeXt_;
-      var-mem-desc-file = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/PARAMETROS.h';
-      var-mem-desc-line = '17';
-      var-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-      var-mem-documentation = <<_EnD_oF_dEf_TeXt_
-Periodo de telemetria 
-_EnD_oF_dEf_TeXt_;
-    }; /* var-member */
-    };
-  file-full-name  = '/home/roney/Dropbox/mestrado/Programas/programasDefesa/MPU9250UFABC/src/PARAMETROS.h';
-  file-first-line = '1';
-  file-briefdesc  = <<_EnD_oF_dEf_TeXt_
-
-_EnD_oF_dEf_TeXt_;
-  file-documentation = <<_EnD_oF_dEf_TeXt_
-
 _EnD_oF_dEf_TeXt_;
 }; /* file */

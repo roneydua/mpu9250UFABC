@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['led',['led',['../PARAMETROS_8h.html#ac1b0250bcd4568426a8db0cd7266d49f',1,'PARAMETROS.h']]],
-  ['loop',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]],
+  ['loop',['loop',['../example_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;main.cpp'],['../src_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;main.cpp']]],
   ['lp_5faccel_5fodr',['LP_ACCEL_ODR',['../classIMU.html#a981e7149fad7f85b241d9205df62e464',1,'IMU']]],
   ['lp_5faccel_5fodr_5f0_5f24hz',['LP_ACCEL_ODR_0_24HZ',['../classIMU.html#a2c0603234e00be75c6c4249516ad2f3fa075213b5e4f97307e699068a3a5a3477',1,'IMU']]],
   ['lp_5faccel_5fodr_5f0_5f49hz',['LP_ACCEL_ODR_0_49HZ',['../classIMU.html#a2c0603234e00be75c6c4249516ad2f3faf89517a8ecb4855f3234f4462b91c823',1,'IMU']]],

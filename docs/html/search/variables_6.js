@@ -9,6 +9,7 @@ var searchData=
   ['i2c_5fslv0_5fdo',['I2C_SLV0_DO',['../classIMU.html#ab6fc887f35142051d1b1fe3cba25aff0',1,'IMU']]],
   ['i2c_5fslv0_5fen',['I2C_SLV0_EN',['../classIMU.html#a73733d4a18041bbc1f094a52be517118',1,'IMU']]],
   ['i2c_5fslv0_5freg',['I2C_SLV0_REG',['../classIMU.html#a45b93a6a2bd367d73428482805ee65ce',1,'IMU']]],
+  ['imu',['imu',['../example_2main_8cpp.html#a976683df74cdd3d8e8ae6d0edca4a927',1,'imu():&#160;main.cpp'],['../src_2main_8cpp.html#a976683df74cdd3d8e8ae6d0edca4a927',1,'imu():&#160;main.cpp']]],
   ['int_5fdisable',['INT_DISABLE',['../classIMU.html#a525a5ff38a1084f951bbb982b5eda84f',1,'IMU']]],
   ['int_5fenable',['INT_ENABLE',['../classIMU.html#aa465f1843da6c3a27b32234d1c76b746',1,'IMU']]],
   ['int_5fpin_5fcfg',['INT_PIN_CFG',['../classIMU.html#ac9be008941488be4fb726c2021946ef0',1,'IMU']]],

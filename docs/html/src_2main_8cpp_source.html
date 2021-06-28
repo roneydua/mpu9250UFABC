@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MPU9250 CLASSE: Código-Fonte de src/main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MPU9250 CLASSE
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">main.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="src_2main_8cpp.html">Vá para a documentação deste arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="IMU_8h.html">IMU.h</a>&gt;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// #include &lt;eigen3/Eigen/Dense&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Arduino.h&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespaceEigen.html">Eigen</a>;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="src_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">    8</a></span>&#160;Vector3f <a class="code" href="example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c">acel</a>, <a class="code" href="example_2main_8cpp.html#aa01cf37952dfe827daefd62f14e99f6c">giro</a>, <a class="code" href="example_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">mag</a> = Vector3f::Zero();</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// Instancia a classe IMU</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<a class="code" href="classIMU.html">IMU</a> <a class="code" href="example_2main_8cpp.html#a976683df74cdd3d8e8ae6d0edca4a927">imu</a>(Wire, 0x68);</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="src_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">   12</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="example_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a>() {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  Serial.begin(115200);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="comment">// instancia os ponteiros com as medidas</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <a class="code" href="example_2main_8cpp.html#a976683df74cdd3d8e8ae6d0edca4a927">imu</a>.<a class="code" href="classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8">begin</a>(<a class="code" href="example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c">acel</a>, <a class="code" href="example_2main_8cpp.html#aa01cf37952dfe827daefd62f14e99f6c">giro</a>, <a class="code" href="example_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">mag</a>);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div><div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="src_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="example_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a>() {</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="example_2main_8cpp.html#a976683df74cdd3d8e8ae6d0edca4a927">imu</a>.<a class="code" href="classIMU.html#ac574728dbbc752155239a35c8bbd6e79">readSensor</a>();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f;&quot;</span>, <a class="code" href="example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c">acel</a>(0));</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f;&quot;</span>, <a class="code" href="example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c">acel</a>(1));</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f\t&quot;</span>, <a class="code" href="example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c">acel</a>(2));</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f;&quot;</span>, <a class="code" href="example_2main_8cpp.html#aa01cf37952dfe827daefd62f14e99f6c">giro</a>(0));</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f;&quot;</span>, <a class="code" href="example_2main_8cpp.html#aa01cf37952dfe827daefd62f14e99f6c">giro</a>(1));</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f\t&quot;</span>, <a class="code" href="example_2main_8cpp.html#aa01cf37952dfe827daefd62f14e99f6c">giro</a>(2));</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f;&quot;</span>, <a class="code" href="example_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">mag</a>(0));</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f;&quot;</span>, <a class="code" href="example_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">mag</a>(1));</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  Serial.printf(<span class="stringliteral">&quot;%.f\t&quot;</span>, <a class="code" href="example_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">mag</a>(2));</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div><div class="ttc" id="classIMU_html"><div class="ttname"><a href="classIMU.html">IMU</a></div><div class="ttdef"><b>Definition:</b> <a href="IMU_8h_source.html#l00021">IMU.h:21</a></div></div>
+<div class="ttc" id="classIMU_html_ac574728dbbc752155239a35c8bbd6e79"><div class="ttname"><a href="classIMU.html#ac574728dbbc752155239a35c8bbd6e79">IMU::readSensor</a></div><div class="ttdeci">int readSensor()</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8cpp_source.html#l00281">IMU.cpp:281</a></div></div>
+<div class="ttc" id="example_2main_8cpp_html_afe461d27b9c48d5921c00d521181f12f"><div class="ttname"><a href="example_2main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a></div><div class="ttdeci">void loop()</div><div class="ttdef"><b>Definition:</b> <a href="example_2main_8cpp_source.html#l00017">main.cpp:17</a></div></div>
+<div class="ttc" id="namespaceEigen_html"><div class="ttname"><a href="namespaceEigen.html">Eigen</a></div></div>
+<div class="ttc" id="classIMU_html_ae0d964d2f8ec122be068c41b84bc18a8"><div class="ttname"><a href="classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8">IMU::begin</a></div><div class="ttdeci">int begin(Vector3f &amp;acel, Vector3f &amp;gyro, Vector3f &amp;mag)</div><div class="ttdef"><b>Definition:</b> <a href="IMU_8cpp_source.html#l00020">IMU.cpp:20</a></div></div>
+<div class="ttc" id="example_2main_8cpp_html_a4fc01d736fe50cf5b977f755b675f11d"><div class="ttname"><a href="example_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> <a href="example_2main_8cpp_source.html#l00012">main.cpp:12</a></div></div>
+<div class="ttc" id="example_2main_8cpp_html_aa01cf37952dfe827daefd62f14e99f6c"><div class="ttname"><a href="example_2main_8cpp.html#aa01cf37952dfe827daefd62f14e99f6c">giro</a></div><div class="ttdeci">Vector3f giro</div><div class="ttdef"><b>Definition:</b> <a href="example_2main_8cpp_source.html#l00008">main.cpp:8</a></div></div>
+<div class="ttc" id="example_2main_8cpp_html_a5b8f4bf96be842b5e9d8f2d5d19ae78c"><div class="ttname"><a href="example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c">acel</a></div><div class="ttdeci">Vector3f acel</div><div class="ttdef"><b>Definition:</b> <a href="example_2main_8cpp_source.html#l00008">main.cpp:8</a></div></div>
+<div class="ttc" id="example_2main_8cpp_html_a976683df74cdd3d8e8ae6d0edca4a927"><div class="ttname"><a href="example_2main_8cpp.html#a976683df74cdd3d8e8ae6d0edca4a927">imu</a></div><div class="ttdeci">IMU imu(Wire, 0x68)</div></div>
+<div class="ttc" id="example_2main_8cpp_html_af470c0a4588bfe91e386a7f9040dc87d"><div class="ttname"><a href="example_2main_8cpp.html#af470c0a4588bfe91e386a7f9040dc87d">mag</a></div><div class="ttdeci">Vector3f mag</div><div class="ttdef"><b>Definition:</b> <a href="example_2main_8cpp_source.html#l00008">main.cpp:8</a></div></div>
+<div class="ttc" id="IMU_8h_html"><div class="ttname"><a href="IMU_8h.html">IMU.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

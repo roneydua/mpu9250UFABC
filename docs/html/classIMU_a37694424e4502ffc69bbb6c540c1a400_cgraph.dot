@@ -4,7 +4,7 @@ digraph "IMU::writeRegister"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node77 [label="IMU::writeRegister",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node77 -> Node78 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node78 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node87 [label="IMU::writeRegister",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node87 -> Node88 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node88 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
 }

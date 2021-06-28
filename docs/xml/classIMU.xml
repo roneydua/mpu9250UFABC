@@ -1884,6 +1884,7 @@
         <references refid="classIMU_1a47b29b6c4ab5bdb220547362363fa988" compoundref="IMU_8h" startline="118">_magScaleZ</references>
         <references refid="classIMU_1a3eb0783394601a5a41fa7079e4c929b0" compoundref="IMU_8h" startline="125">_srd</references>
         <references refid="classIMU_1acdbd8690acc2a34f12d568cb39486cc6a5398002690dded81a155ebdf7baea27f" compoundref="IMU_8h" startline="33">ACCEL_RANGE_16G</references>
+        <references refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" compoundref="example_2main_8cpp" startline="8">acel</references>
         <references refid="classIMU_1a5dc26b210ba9adcc176b9e837238d87d" compoundref="IMU_8h" startline="206">AK8963_ASA</references>
         <references refid="classIMU_1a81aa27b2da74539d88966ab71c28337d" compoundref="IMU_8h" startline="202">AK8963_CNT_MEAS2</references>
         <references refid="classIMU_1aa8691a633c35d2f7d7951f68b187adb3" compoundref="IMU_8h" startline="199">AK8963_CNTL1</references>
@@ -1898,6 +1899,7 @@
         <references refid="classIMU_1a19704607249a2df9ae115cf5ec42b065" compoundref="IMU_8h" startline="175">I2C_MST_CLK</references>
         <references refid="classIMU_1a40a6c474b6590faa545bcef6796e0b09" compoundref="IMU_8h" startline="176">I2C_MST_CTRL</references>
         <references refid="classIMU_1aac5f67e0f33068d9ca184e8338cea69b" compoundref="IMU_8h" startline="174">I2C_MST_EN</references>
+        <references refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" compoundref="example_2main_8cpp" startline="8">mag</references>
         <references refid="classIMU_1a66529d6102c44bc6be8d8ef167f27058" compoundref="IMU_8h" startline="166">PWR_MGMNT_1</references>
         <references refid="classIMU_1a8e2a7777d4356a5c4cf6cb52e9aeed4b" compoundref="IMU_8h" startline="170">PWR_MGMNT_2</references>
         <references refid="classIMU_1a045e1ec896d0e207d640d1fb7930328f" compoundref="IMU_8h" startline="168">PWR_RESET</references>
@@ -1911,6 +1913,7 @@
         <references refid="classIMU_1acd2af48f4eb0a0321080332016e3c1f7" compoundref="IMU_8cpp" startline="439" endline="447">whoAmIAK8963</references>
         <references refid="classIMU_1af3b90e0b20d4bd55091be99f7aa67737" compoundref="IMU_8cpp" startline="358" endline="384">writeAK8963Register</references>
         <references refid="classIMU_1a37694424e4502ffc69bbb6c540c1a400" compoundref="IMU_8cpp" startline="392" endline="406">writeRegister</references>
+        <referencedby refid="example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" compoundref="example_2main_8cpp" startline="12" endline="16">setup</referencedby>
       </memberdef>
       <memberdef kind="function" id="classIMU_1ac574728dbbc752155239a35c8bbd6e79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -1949,6 +1952,7 @@ As variáveis <ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="
         <references refid="classIMU_1a87c200faa130ff4d2d3416b2d83f4f49" compoundref="IMU_8cpp" startline="414" endline="427">readRegisters</references>
         <referencedby refid="classIMU_1a3546779010d9128859f465195eff77f5" compoundref="IMU_8cpp" startline="448" endline="462">calibracaoMagnetometro</referencedby>
         <referencedby refid="classIMU_1a5f096cb37d4b16851381bf09d6809403" compoundref="IMU_8cpp" startline="333" endline="348">calibraGyro</referencedby>
+        <referencedby refid="example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f" compoundref="example_2main_8cpp" startline="17" endline="28">loop</referencedby>
       </memberdef>
       <memberdef kind="function" id="classIMU_1a928fa5e2db05bd402a3fa93bd3584527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>

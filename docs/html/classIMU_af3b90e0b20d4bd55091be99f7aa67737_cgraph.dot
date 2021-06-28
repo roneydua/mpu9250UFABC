@@ -4,13 +4,13 @@ digraph "IMU::writeAK8963Register"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node71 [label="IMU::writeAK8963Register",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node71 -> Node72 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node72 [label="IMU::readAK8963Registers",height=0.2,width=0.4,color="black",URL="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996"];
-  Node72 -> Node73 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node73 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
-  Node72 -> Node74 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node74 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
-  Node74 -> Node73 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node71 -> Node74 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node80 [label="IMU::writeAK8963Register",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node80 -> Node81 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node81 [label="IMU::readAK8963Registers",height=0.2,width=0.4,color="black",URL="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996"];
+  Node81 -> Node82 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node82 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node81 -> Node83 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node83 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
+  Node83 -> Node82 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node80 -> Node83 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
 }

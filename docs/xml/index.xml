@@ -156,9 +156,23 @@
   </compound>
   <compound refid="namespaceEigen" kind="namespace"><name>Eigen</name>
   </compound>
-  <compound refid="namespaceekf" kind="namespace"><name>ekf</name>
-  </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="example_2main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kind="variable"><name>acel</name></member>
+    <member refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kind="variable"><name>giro</name></member>
+    <member refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kind="variable"><name>mag</name></member>
+    <member refid="example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927" kind="variable"><name>imu</name></member>
+    <member refid="example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>
+    <member refid="example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
+  </compound>
+  <compound refid="src_2main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="src_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kind="variable"><name>acel</name></member>
+    <member refid="src_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kind="variable"><name>giro</name></member>
+    <member refid="src_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kind="variable"><name>mag</name></member>
+    <member refid="src_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927" kind="variable"><name>imu</name></member>
+    <member refid="src_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>
+    <member refid="src_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
   </compound>
   <compound refid="IMU_8cpp" kind="file"><name>IMU.cpp</name>
   </compound>
@@ -166,16 +180,9 @@
   </compound>
   <compound refid="METODOSCALIBRACAO_8h" kind="file"><name>METODOSCALIBRACAO.h</name>
   </compound>
-  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
-    <member refid="main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kind="function"><name>setup</name></member>
-    <member refid="main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kind="function"><name>loop</name></member>
-  </compound>
-  <compound refid="PARAMETROS_8h" kind="file"><name>PARAMETROS.h</name>
-    <member refid="PARAMETROS_8h_1ac1b0250bcd4568426a8db0cd7266d49f" kind="variable"><name>led</name></member>
-    <member refid="PARAMETROS_8h_1a1909ead101e545f8904c484b3f7455f4" kind="variable"><name>xdtEstimator</name></member>
-    <member refid="PARAMETROS_8h_1abdd1a1f99db66aedd7fd2523317fe636" kind="variable"><name>xdtTelemetria</name></member>
-  </compound>
   <compound refid="todo" kind="page"><name>todo</name>
+  </compound>
+  <compound refid="dir_cfafba98a580ce4b62f8a6fa96d7cbb0" kind="dir"><name>example</name>
   </compound>
   <compound refid="dir_3554028ee2797c78c7765098b85f4139" kind="dir"><name>lib/IMU</name>
   </compound>

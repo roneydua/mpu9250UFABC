@@ -4,7 +4,9 @@ digraph "IMU::setDlpfBandwidth"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node55 [label="IMU::setDlpfBandwidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node55 -> Node56 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node56 [label="IMU::begin",height=0.2,width=0.4,color="black",URL="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8"];
+  Node61 [label="IMU::setDlpfBandwidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node61 -> Node62 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node62 [label="IMU::begin",height=0.2,width=0.4,color="black",URL="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8"];
+  Node62 -> Node63 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node63 [label="setup",height=0.2,width=0.4,color="black",URL="$example_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d"];
 }

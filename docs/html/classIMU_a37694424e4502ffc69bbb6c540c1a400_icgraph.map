@@ -1,9 +1,10 @@
 <map id="IMU::writeRegister" name="IMU::writeRegister">
 <area shape="rect" id="node2" href="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8" title="IMU::begin" alt="" coords="679,109,771,133"/>
-<area shape="rect" id="node3" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title="IMU::readAK8963Registers" alt="" coords="201,58,392,82"/>
-<area shape="rect" id="node5" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title="IMU::writeAK8963Register" alt="" coords="440,109,631,133"/>
-<area shape="rect" id="node6" href="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title="IMU::setAccelRange" alt="" coords="461,157,609,181"/>
-<area shape="rect" id="node7" href="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title="IMU::setDlpfBandwidth" alt="" coords="212,207,381,231"/>
-<area shape="rect" id="node8" href="$classIMU.html#a834f21762003f831e5e632cc7974ba75" title="IMU::setGyroRange" alt="" coords="226,255,367,279"/>
-<area shape="rect" id="node4" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title="IMU::whoAmIAK8963" alt="" coords="465,61,606,85"/>
+<area shape="rect" id="node4" href="$classIMU.html#a914f8b4262fba70e6d8fd0e584fa7996" title="IMU::readAK8963Registers" alt="" coords="201,58,392,82"/>
+<area shape="rect" id="node6" href="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737" title="IMU::writeAK8963Register" alt="" coords="440,109,631,133"/>
+<area shape="rect" id="node7" href="$classIMU.html#a5567bbe0d211f1e6d386eb69ffd960a7" title="IMU::setAccelRange" alt="" coords="461,157,609,181"/>
+<area shape="rect" id="node8" href="$classIMU.html#a928fa5e2db05bd402a3fa93bd3584527" title="IMU::setDlpfBandwidth" alt="" coords="212,207,381,231"/>
+<area shape="rect" id="node9" href="$classIMU.html#a834f21762003f831e5e632cc7974ba75" title="IMU::setGyroRange" alt="" coords="226,255,367,279"/>
+<area shape="rect" id="node3" href="$example_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d" title="setup" alt="" coords="819,109,876,133"/>
+<area shape="rect" id="node5" href="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7" title="IMU::whoAmIAK8963" alt="" coords="465,61,606,85"/>
 </map>

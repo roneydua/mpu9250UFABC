@@ -1,4 +1,5 @@
 <map id="lib/IMU/IMU.h" name="lib/IMU/IMU.h">
-<area shape="rect" id="node2" href="$IMU_8cpp.html" title="lib/IMU/IMU.cpp" alt="" coords="5,77,132,101"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="157,77,263,101"/>
+<area shape="rect" id="node2" href="$example_2main_8cpp.html" title="example/main.cpp" alt="" coords="5,77,140,101"/>
+<area shape="rect" id="node3" href="$IMU_8cpp.html" title="lib/IMU/IMU.cpp" alt="" coords="164,77,291,101"/>
+<area shape="rect" id="node4" href="$src_2main_8cpp.html" title="src/main.cpp" alt="" coords="315,77,422,101"/>
 </map>

@@ -5,41 +5,41 @@
     <includes refid="IMU_8h" local="yes">IMU.h</includes>
     <includes local="yes">Arduino.h</includes>
     <incdepgraph>
-      <node id="2">
+      <node id="16">
         <label>Eigen/Dense</label>
       </node>
-      <node id="5">
+      <node id="19">
         <label>Wire.h</label>
       </node>
-      <node id="4">
+      <node id="18">
         <label>Arduino.h</label>
       </node>
-      <node id="1">
+      <node id="15">
         <label>IMU.h</label>
         <link refid="IMU_8h"/>
-        <childnode refid="2" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="3" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="5" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
       </node>
-      <node id="3">
+      <node id="17">
         <label>METODOSCALIBRACAO.h</label>
         <link refid="METODOSCALIBRACAO_8h"/>
-        <childnode refid="2" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
-      <node id="0">
+      <node id="14">
         <label>lib/IMU/IMU.cpp</label>
         <link refid="IMU_8cpp"/>
-        <childnode refid="1" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -55,10 +55,10 @@
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1ac538fc9a09f4d60b73fb477738b0d602" kindref="member">_address</ref><sp/>=<sp/>address;</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Imu<sp/>ok&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="12"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="20" refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" kindref="member">IMU::begin</ref>(Vector3f<sp/>&amp;acel,<sp/>Vector3f<sp/>&amp;gyro,<sp/>Vector3f<sp/>&amp;mag)<sp/>{</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="member">_acel</ref><sp/>=<sp/>&amp;acel;</highlight></codeline>
+<codeline lineno="20" refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" kindref="member">IMU::begin</ref>(Vector3f<sp/>&amp;<ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>,<sp/>Vector3f<sp/>&amp;gyro,<sp/>Vector3f<sp/>&amp;<ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a0efdfa77f452641689be4e9a4bae6a12" kindref="member">_acel</ref><sp/>=<sp/>&amp;<ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a72d1d4fe1027a9b0d6eed394e18ea97b" kindref="member">_gyro</ref><sp/>=<sp/>&amp;gyro;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" kindref="member">_mag</ref><sp/>=<sp/>&amp;mag;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a54e4834bdf8648b7ec11ca460b92facf" kindref="member">_mag</ref><sp/>=<sp/>&amp;<ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>;</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>para<sp/>analise<sp/>da<sp/>calibracao</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>inicializa<sp/>a<sp/>biblioteca<sp/>Wire<sp/>para<sp/>comunicacao<sp/>i2c</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><ref refid="classIMU_1a18fe8e6be1b14c9e6c1b47d884dae375" kindref="member">_i2c</ref>-&gt;begin(21,<sp/>22);</highlight></codeline>

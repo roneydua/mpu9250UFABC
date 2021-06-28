@@ -4,9 +4,9 @@ digraph "IMU::setDlpfBandwidth"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node52 [label="IMU::setDlpfBandwidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node52 -> Node53 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node53 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
-  Node53 -> Node54 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node54 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node58 [label="IMU::setDlpfBandwidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node58 -> Node59 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node59 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
+  Node59 -> Node60 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node60 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
 }

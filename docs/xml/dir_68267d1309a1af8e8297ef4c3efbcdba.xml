@@ -2,8 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
     <compoundname>src</compoundname>
-    <innerfile refid="main_8cpp">main.cpp</innerfile>
-    <innerfile refid="PARAMETROS_8h">PARAMETROS.h</innerfile>
+    <innerfile refid="src_2main_8cpp">main.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

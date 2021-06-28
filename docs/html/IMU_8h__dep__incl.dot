@@ -5,7 +5,9 @@ digraph "lib/IMU/IMU.h"
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   Node5 [label="lib/IMU/IMU.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node6 [label="lib/IMU/IMU.cpp",height=0.2,width=0.4,color="black",URL="$IMU_8cpp.html"];
+  Node6 [label="example/main.cpp",height=0.2,width=0.4,color="black",URL="$example_2main_8cpp.html"];
   Node5 -> Node7 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node7 [label="src/main.cpp",height=0.2,width=0.4,color="black",URL="$main_8cpp.html"];
+  Node7 [label="lib/IMU/IMU.cpp",height=0.2,width=0.4,color="black",URL="$IMU_8cpp.html"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node8 [label="src/main.cpp",height=0.2,width=0.4,color="black",URL="$src_2main_8cpp.html"];
 }

@@ -4,9 +4,9 @@ digraph "IMU::setAccelRange"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node47 [label="IMU::setAccelRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node47 -> Node48 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node48 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
-  Node48 -> Node49 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node49 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node52 [label="IMU::setAccelRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node52 -> Node53 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node53 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
+  Node53 -> Node54 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node54 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
 }

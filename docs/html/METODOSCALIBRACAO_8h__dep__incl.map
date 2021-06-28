@@ -1,5 +1,6 @@
 <map id="lib/IMU/METODOSCALIBRACAO.h" name="lib/IMU/METODOSCALIBRACAO.h">
-<area shape="rect" id="node2" href="$IMU_8h.html" title="lib/IMU/IMU.h" alt="" coords="83,77,196,101"/>
-<area shape="rect" id="node3" href="$IMU_8cpp.html" title="lib/IMU/IMU.cpp" alt="" coords="5,149,132,173"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="src/main.cpp" alt="" coords="157,149,263,173"/>
+<area shape="rect" id="node2" href="$IMU_8h.html" title="lib/IMU/IMU.h" alt="" coords="171,77,284,101"/>
+<area shape="rect" id="node3" href="$example_2main_8cpp.html" title="example/main.cpp" alt="" coords="5,149,140,173"/>
+<area shape="rect" id="node4" href="$IMU_8cpp.html" title="lib/IMU/IMU.cpp" alt="" coords="164,149,291,173"/>
+<area shape="rect" id="node5" href="$src_2main_8cpp.html" title="src/main.cpp" alt="" coords="315,149,422,173"/>
 </map>

@@ -15,6 +15,7 @@ var searchData=
   ['accel_5fintel_5fen',['ACCEL_INTEL_EN',['../classIMU.html#a5ffc27f0c3bca71b7df305a66348a23e',1,'IMU']]],
   ['accel_5fintel_5fmode',['ACCEL_INTEL_MODE',['../classIMU.html#aca3b94b1ea5f63ed99123135f9684d75',1,'IMU']]],
   ['accel_5fout',['ACCEL_OUT',['../classIMU.html#a5e6bc8a1984acb82321f9b48db9e8a79',1,'IMU']]],
+  ['acel',['acel',['../example_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c',1,'acel():&#160;main.cpp'],['../src_2main_8cpp.html#a5b8f4bf96be842b5e9d8f2d5d19ae78c',1,'acel():&#160;main.cpp']]],
   ['ak8963_5fasa',['AK8963_ASA',['../classIMU.html#a5dc26b210ba9adcc176b9e837238d87d',1,'IMU']]],
   ['ak8963_5fcnt_5fmeas1',['AK8963_CNT_MEAS1',['../classIMU.html#a0e2fe28ad7e635876a061dcf0b338bcb',1,'IMU']]],
   ['ak8963_5fcnt_5fmeas2',['AK8963_CNT_MEAS2',['../classIMU.html#a81aa27b2da74539d88966ab71c28337d',1,'IMU']]],

@@ -6,59 +6,65 @@
     <includes refid="METODOSCALIBRACAO_8h" local="yes">METODOSCALIBRACAO.h</includes>
     <includes local="no">Arduino.h</includes>
     <includes local="yes">Wire.h</includes>
+    <includedby refid="example_2main_8cpp" local="no">example/main.cpp</includedby>
     <includedby refid="IMU_8cpp" local="yes">lib/IMU/IMU.cpp</includedby>
-    <includedby refid="main_8cpp" local="no">src/main.cpp</includedby>
+    <includedby refid="src_2main_8cpp" local="no">src/main.cpp</includedby>
     <incdepgraph>
-      <node id="8">
+      <node id="22">
         <label>Eigen/Dense</label>
       </node>
-      <node id="11">
+      <node id="25">
         <label>Wire.h</label>
       </node>
-      <node id="10">
+      <node id="24">
         <label>Arduino.h</label>
       </node>
-      <node id="7">
+      <node id="21">
         <label>lib/IMU/IMU.h</label>
         <link refid="IMU_8h"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="9" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="9">
+      <node id="23">
         <label>METODOSCALIBRACAO.h</label>
         <link refid="METODOSCALIBRACAO_8h"/>
-        <childnode refid="8" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="12">
+      <node id="27">
+        <label>example/main.cpp</label>
+        <link refid="example_2main_8cpp"/>
+      </node>
+      <node id="26">
         <label>lib/IMU/IMU.h</label>
         <link refid="IMU_8h"/>
-        <childnode refid="13" relation="include">
+        <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="14" relation="include">
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
         </childnode>
       </node>
-      <node id="14">
+      <node id="29">
         <label>src/main.cpp</label>
-        <link refid="main_8cpp"/>
+        <link refid="src_2main_8cpp"/>
       </node>
-      <node id="13">
+      <node id="28">
         <label>lib/IMU/IMU.cpp</label>
         <link refid="IMU_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classIMU" prot="public">IMU</innerclass>
-    <innernamespace refid="namespaceEigen">Eigen</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
@@ -127,7 +133,7 @@
 <codeline lineno="80" refid="classIMU_1a3ba42ad7f598311689e5eccd75daa019" refkind="member"><highlight class="normal"><sp/><sp/>Vector3f<sp/>_biasMag<sp/>=<sp/>Vector3f::Zero();</highlight></codeline>
 <codeline lineno="82" refid="classIMU_1af5d90aa5410529450fd31da2e1b1f296" refkind="member"><highlight class="normal"><sp/><sp/>Matrix3f<sp/>_sM<sp/>=<sp/>Matrix3f::Identity();</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><ref refid="classIMU" kindref="compound">IMU</ref>(TwoWire<sp/>&amp;bus,<sp/>uint8_t<sp/>address);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>begin(Vector3f<sp/>&amp;acel,<sp/>Vector3f<sp/>&amp;gyro,<sp/>Vector3f<sp/>&amp;mag);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>begin(Vector3f<sp/>&amp;<ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>,<sp/>Vector3f<sp/>&amp;gyro,<sp/>Vector3f<sp/>&amp;<ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>);</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>readSensor();</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setDlpfBandwidth(<ref refid="classIMU_1a90c4f91f60185430b763f152ecb39521" kindref="member">DlpfBandwidth</ref><sp/>bandwidth);</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>setGyroRange(<ref refid="classIMU_1aeb363437539137b5c1eabd3641d242d1" kindref="member">GyroRange</ref><sp/>range);</highlight></codeline>

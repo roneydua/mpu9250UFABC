@@ -4,9 +4,9 @@ digraph "IMU::setGyroRange"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node57 [label="IMU::setGyroRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node57 -> Node58 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node58 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
-  Node58 -> Node59 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node59 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node64 [label="IMU::setGyroRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node64 -> Node65 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node65 [label="IMU::writeRegister",height=0.2,width=0.4,color="black",URL="$classIMU.html#a37694424e4502ffc69bbb6c540c1a400"];
+  Node65 -> Node66 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node66 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
 }

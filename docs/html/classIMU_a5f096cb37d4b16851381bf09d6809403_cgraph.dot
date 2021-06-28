@@ -4,9 +4,9 @@ digraph "IMU::calibraGyro"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node17 [label="IMU::calibraGyro",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node17 -> Node18 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node18 [label="IMU::readSensor",height=0.2,width=0.4,color="black",URL="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79"];
+  Node18 [label="IMU::calibraGyro",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node18 -> Node19 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node19 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
+  Node19 [label="IMU::readSensor",height=0.2,width=0.4,color="black",URL="$classIMU.html#ac574728dbbc752155239a35c8bbd6e79"];
+  Node19 -> Node20 [color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node20 [label="IMU::readRegisters",height=0.2,width=0.4,color="black",URL="$classIMU.html#a87c200faa130ff4d2d3416b2d83f4f49"];
 }

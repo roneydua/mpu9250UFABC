@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="src_2main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes refid="IMU_8h" local="no">IMU.h</includes>
+    <includes local="no">Eigen/Dense</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="12">
+        <label>Wire.h</label>
+      </node>
+      <node id="11">
+        <label>Arduino.h</label>
+      </node>
+      <node id="8">
+        <label>IMU.h</label>
+        <link refid="IMU_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/main.cpp</label>
+        <link refid="src_2main_8cpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>METODOSCALIBRACAO.h</label>
+        <link refid="METODOSCALIBRACAO_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="src_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f acel</definition>
+        <argsstring></argsstring>
+        <name>acel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="8" column="1" bodyfile="src/main.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="src_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f giro</definition>
+        <argsstring></argsstring>
+        <name>giro</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="8" column="1" bodyfile="src/main.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="src_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" prot="public" static="no" mutable="no">
+        <type>Vector3f</type>
+        <definition>Vector3f mag</definition>
+        <argsstring></argsstring>
+        <name>mag</name>
+        <initializer>= Vector3f::Zero()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="8" column="1" bodyfile="src/main.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="src_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927" prot="public" static="no" mutable="no">
+        <type><ref refid="classIMU" kindref="compound">IMU</ref></type>
+        <definition>IMU imu(Wire, 0x68)</definition>
+        <argsstring>(Wire, 0x68)</argsstring>
+        <name>imu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="10" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="src_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="12" column="1" bodyfile="src/main.cpp" bodystart="12" bodyend="16"/>
+        <references refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" compoundref="example_2main_8cpp" startline="8">acel</references>
+        <references refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" compoundref="IMU_8cpp" startline="20" endline="106">IMU::begin</references>
+        <references refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" compoundref="example_2main_8cpp" startline="8">giro</references>
+        <references refid="example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927">imu</references>
+        <references refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" compoundref="example_2main_8cpp" startline="8">mag</references>
+      </memberdef>
+      <memberdef kind="function" id="src_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/main.cpp" line="17" column="1" bodyfile="src/main.cpp" bodystart="17" bodyend="28"/>
+        <references refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" compoundref="example_2main_8cpp" startline="8">acel</references>
+        <references refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" compoundref="example_2main_8cpp" startline="8">giro</references>
+        <references refid="example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927">imu</references>
+        <references refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" compoundref="example_2main_8cpp" startline="8">mag</references>
+        <references refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" compoundref="IMU_8cpp" startline="281" endline="325">IMU::readSensor</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="IMU_8h" kindref="compound">IMU.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#include<sp/>&lt;eigen3/Eigen/Dense&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceEigen" kindref="compound">Eigen</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="src_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" refkind="member"><highlight class="normal">Vector3f<sp/><ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>,<sp/><ref refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kindref="member">giro</ref>,<sp/><ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref><sp/>=<sp/>Vector3f::Zero();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Instancia<sp/>a<sp/>classe<sp/>IMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="classIMU" kindref="compound">IMU</ref><sp/><ref refid="example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927" kindref="member">imu</ref>(Wire,<sp/>0x68);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="src_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="example_2main_8cpp_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>Serial.begin(115200);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>instancia<sp/>os<sp/>ponteiros<sp/>com<sp/>as<sp/>medidas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><ref refid="example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927" kindref="member">imu</ref>.<ref refid="classIMU_1ae0d964d2f8ec122be068c41b84bc18a8" kindref="member">begin</ref>(<ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>,<sp/><ref refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kindref="member">giro</ref>,<sp/><ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17" refid="src_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="example_2main_8cpp_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><ref refid="example_2main_8cpp_1a976683df74cdd3d8e8ae6d0edca4a927" kindref="member">imu</ref>.<ref refid="classIMU_1ac574728dbbc752155239a35c8bbd6e79" kindref="member">readSensor</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f;&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>(0));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f;&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>(1));</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f\t&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1a5b8f4bf96be842b5e9d8f2d5d19ae78c" kindref="member">acel</ref>(2));</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f;&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kindref="member">giro</ref>(0));</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f;&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kindref="member">giro</ref>(1));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f\t&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1aa01cf37952dfe827daefd62f14e99f6c" kindref="member">giro</ref>(2));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f;&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>(0));</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f;&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>(1));</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>Serial.printf(</highlight><highlight class="stringliteral">&quot;%.f\t&quot;</highlight><highlight class="normal">,<sp/><ref refid="example_2main_8cpp_1af470c0a4588bfe91e386a7f9040dc87d" kindref="member">mag</ref>(2));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/main.cpp"/>
+  </compounddef>
+</doxygen>

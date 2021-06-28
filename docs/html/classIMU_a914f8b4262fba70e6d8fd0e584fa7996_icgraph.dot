@@ -4,13 +4,15 @@ digraph "IMU::readAK8963Registers"
   edge [fontname="DejaVuSansMono",fontsize="8",labelfontname="DejaVuSansMono",labelfontsize="8"];
   node [fontname="DejaVuSansMono",fontsize="8",shape=record];
   rankdir="LR";
-  Node24 [label="IMU::readAK8963Registers",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node24 -> Node25 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node25 [label="IMU::begin",height=0.2,width=0.4,color="black",URL="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8"];
-  Node24 -> Node26 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node26 [label="IMU::whoAmIAK8963",height=0.2,width=0.4,color="black",URL="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7"];
-  Node26 -> Node25 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node24 -> Node27 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
-  Node27 [label="IMU::writeAK8963Register",height=0.2,width=0.4,color="black",URL="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737"];
-  Node27 -> Node25 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node25 [label="IMU::readAK8963Registers",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node25 -> Node26 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node26 [label="IMU::begin",height=0.2,width=0.4,color="black",URL="$classIMU.html#ae0d964d2f8ec122be068c41b84bc18a8"];
+  Node26 -> Node27 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node27 [label="setup",height=0.2,width=0.4,color="black",URL="$example_2main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d"];
+  Node25 -> Node28 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node28 [label="IMU::whoAmIAK8963",height=0.2,width=0.4,color="black",URL="$classIMU.html#acd2af48f4eb0a0321080332016e3c1f7"];
+  Node28 -> Node26 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node25 -> Node29 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
+  Node29 [label="IMU::writeAK8963Register",height=0.2,width=0.4,color="black",URL="$classIMU.html#af3b90e0b20d4bd55091be99f7aa67737"];
+  Node29 -> Node26 [dir="back",color="midnightblue",fontsize="8",style="solid",fontname="DejaVuSansMono"];
 }
