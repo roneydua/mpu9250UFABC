@@ -4,7 +4,7 @@
  * @Email:  roneyddasilva@gmail.com
  * @Filename: IMU.h
  * @Last modified by:   roney
- * @Last modified time: 2021-06-29T17:30:04-03:00
+ * @Last modified time: 2021-06-29T20:03:31-03:00
  * @details biblioteca criada com base na biblioteca dinivel no GitHub :
  https://github.com/bolderflight/MPU9250
  */

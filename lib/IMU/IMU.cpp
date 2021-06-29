@@ -27,8 +27,12 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
   _mag = &mag;
   // inicializa a biblioteca Wire para comunicacao i2c
   _i2c->begin(_sda_port, _scl_port);
+  Serial.println("_i2cbegin");
+  delay(1000);
+  _i2c->begin();
+
   // seta a frequencia de comunicacao I2c
-  _i2c->setClock(_i2cRate);
+  // _i2c->setClock(_i2cRate);
   // seleciona o "clock source" do giroscopio
   writeRegister(PWR_MGMNT_1, CLOCK_SEL_PLL);
   // habilita o modo master i2c
@@ -47,8 +51,10 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
   // habilita o acelerometro o giroscopio
   writeRegister(PWR_MGMNT_2, SEN_ENABLE);
   // selecionas as escalas de 16G e 2000DPS para acel e Giro como padrao
-  setAccelRange(ACCEL_RANGE_16G);
-  setGyroRange(GYRO_RANGE_1000DPS);
+  _accelRange = ACCEL_RANGE_8G;
+  _gyroRange = GYRO_RANGE_1000DPS;
+  setAccelRange(_accelRange);
+  setGyroRange(_gyroRange);
   // atribui define a largura de banda como padrao
   _bandwidth = DLPF_BANDWIDTH_10HZ;
   setDlpfBandwidth(_bandwidth);
@@ -87,6 +93,7 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
   _magScaleZ = ((((float)_buffer[2]) - 128.0) / (256.0) + 1.0) * 4912.0 /
                32760.0; // micro Tesla
   // set AK8963 desligao magnetometro
+  delay(1000);
   if (writeAK8963Register(AK8963_CNTL1, AK8963_PWR_DOWN) < 0) {
     return -17;
   }
@@ -95,6 +102,7 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
   if (writeAK8963Register(AK8963_CNTL1, AK8963_CNT_MEAS2) < 0) {
     return -18;
   }
+
   delay(100); // delay para aplicacao das configuracoes
   // select clock source to gyro
   if (writeRegister(PWR_MGMNT_1, CLOCK_SEL_PLL) < 0) {
@@ -103,10 +111,8 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
   // instruct the MPU9250 to get 7 bytes of data from the AK8963 at the sample
   // rate
   readAK8963Registers(AK8963_HXL, 7, _buffer);
-
-  return 1;
-
   calibraGyro();
+  return 1;
 }
 /**
  * Configura a sensibilidade de operação do acelerômetro.
@@ -293,7 +299,7 @@ int IMU::readSensor() {
   _aycounts = (((int16_t)_buffer[2]) << 8) | _buffer[3];
   _azcounts = (((int16_t)_buffer[4]) << 8) | _buffer[5];
 
-  // _tcounts = (((int16_t)_buffer[6]) << 8) | _buffer[7];
+  _tcounts = (((int16_t)_buffer[6]) << 8) | _buffer[7];
 
   _gxcounts = (((int16_t)_buffer[8]) << 8) | _buffer[9];
   _gycounts = (((int16_t)_buffer[10]) << 8) | _buffer[11];
@@ -319,13 +325,14 @@ compartilhados como o magnetometro */
   // para analise da calibracao
   magTemp << -(float)_hxcounts * _magScaleX, -(float)_hycounts * _magScaleY,
       (float)_hzcounts * _magScaleZ;
+
   *_mag = _sM * (magTemp - _biasMag);
 
   // *_mag = (magTemp - _biasMag).normalized();
   /* @annotation retirado do manual de registros da mpu9250 pag.33*/
   // TEMP_degC = ((TEMP_OUT – RoomTemp_Offset)/Temp_Sensitivity)+ 21degC
   // RoomTemp_Offset = 21; Temp_Sensitivity = 333.87
-  // _t = (float)_tcounts / 333.87f - 20.937101267f;
+  _t = (float)((_tcounts - 21.0f) / 333.87) + 21.0f;
   return 1;
 }
 /**
