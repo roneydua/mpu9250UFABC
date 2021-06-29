@@ -4,7 +4,7 @@
  * @Email:  roneyddasilva@gmail.com
  * @Filename: IMU.h
  * @Last modified by:   roney
- * @Last modified time: 2021-06-29T10:26:55-03:00
+ * @Last modified time: 2021-06-29T17:30:04-03:00
  * @details biblioteca criada com base na biblioteca dinivel no GitHub :
  https://github.com/bolderflight/MPU9250
  */
@@ -80,9 +80,9 @@ public:
   Vector3f _biasMag = Vector3f::Zero();
   /*! Matriz fator de escala. */
   Matrix3f _sM = Matrix3f::Identity();
-  IMU(TwoWire &bus, uint8_t address, uint16_t _sda_port = 21,
-      uint16_t _scl_port = 22);
-  int begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag);
+  IMU(TwoWire &bus, uint8_t address);
+  int begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
+            uint16_t _sda_port = 21, uint16_t _scl_port = 22);
   int readSensor();
   int setDlpfBandwidth(DlpfBandwidth bandwidth);
   int setGyroRange(GyroRange range);

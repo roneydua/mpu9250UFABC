@@ -5,14 +5,12 @@
  * @param bus     classe de comunicacao Wire.
  * @param address Endereço do imu.
  */
-IMU::IMU(TwoWire &bus, uint8_t address, uint16_t _sda_port,
-         uint16_t _scl_port) {
+IMU::IMU(TwoWire &bus, uint8_t address) {
   _i2c = &bus;
   _address = address;
-  // inicializa a biblioteca Wire para comunicacao i2c
-  // _i2c->begin(sda, scl);
-  // _i2c->begin(21, 22);
-  _i2c->begin(_sda_port, _scl_port);
+
+  // Valores padroes _i2c->begin(21, 22);
+
   Serial.println("Imu ok");
 }
 /**
@@ -22,14 +20,16 @@ IMU::IMU(TwoWire &bus, uint8_t address, uint16_t _sda_port,
  * @param  mag  Vetor de medidas do Magnetômetro.
  * @return      inteiro positivo para ok ou negativo para erros.
  */
-int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
+int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag,
+               uint16_t _sda_port, uint16_t _scl_port) {
   _acel = &acel;
   _gyro = &gyro;
   _mag = &mag;
+  // inicializa a biblioteca Wire para comunicacao i2c
+  _i2c->begin(_sda_port, _scl_port);
   // seta a frequencia de comunicacao I2c
   _i2c->setClock(_i2cRate);
   // seleciona o "clock source" do giroscopio
-
   writeRegister(PWR_MGMNT_1, CLOCK_SEL_PLL);
   // habilita o modo master i2c
   writeRegister(USER_CTRL, I2C_MST_EN);
@@ -65,6 +65,7 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
   // check AK8963 WHO AM I register, expected value is 0x48 (decimal 72)
   if (whoAmIAK8963() != 72) {
     return -14;
+    Serial.println("Magnetometro falhou");
   }
   /* get the magnetometer calibration */
   // set AK8963 to Power Down
@@ -104,6 +105,8 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
   readAK8963Registers(AK8963_HXL, 7, _buffer);
 
   return 1;
+
+  calibraGyro();
 }
 /**
  * Configura a sensibilidade de operação do acelerômetro.
@@ -314,10 +317,11 @@ compartilhados como o magnetometro */
   // (float)_hzcounts*_magScaleX;
   // *_mag = _sM * (*_mag - _biasMag);
   // para analise da calibracao
-  magTemp << -(float)_hxcounts * _magScaleX, -(float)_hycounts * _magScaleX,
-      (float)_hzcounts * _magScaleX;
-  // *_mag = _sM * (magTemp - _biasMag);
-  *_mag = (magTemp - _biasMag).normalized();
+  magTemp << -(float)_hxcounts * _magScaleX, -(float)_hycounts * _magScaleY,
+      (float)_hzcounts * _magScaleZ;
+  *_mag = _sM * (magTemp - _biasMag);
+
+  // *_mag = (magTemp - _biasMag).normalized();
   /* @annotation retirado do manual de registros da mpu9250 pag.33*/
   // TEMP_degC = ((TEMP_OUT – RoomTemp_Offset)/Temp_Sensitivity)+ 21degC
   // RoomTemp_Offset = 21; Temp_Sensitivity = 333.87
