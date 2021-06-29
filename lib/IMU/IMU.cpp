@@ -5,9 +5,14 @@
  * @param bus     classe de comunicacao Wire.
  * @param address Endereço do imu.
  */
-IMU::IMU(TwoWire &bus, uint8_t address) {
+IMU::IMU(TwoWire &bus, uint8_t address, gpio_num_t _sda_port,
+         gpio_num_t _scl_port) {
   _i2c = &bus;
   _address = address;
+  // inicializa a biblioteca Wire para comunicacao i2c
+  // _i2c->begin(sda, scl);
+  // _i2c->begin(21, 22);
+  _i2c->begin(_sda_port, _scl_port);
   Serial.println("Imu ok");
 }
 /**
@@ -21,11 +26,6 @@ int IMU::begin(Vector3f &acel, Vector3f &gyro, Vector3f &mag) {
   _acel = &acel;
   _gyro = &gyro;
   _mag = &mag;
-  // para analise da calibracao
-  // inicializa a biblioteca Wire para comunicacao i2c
-  // _i2c->begin(sda, scl);
-  _i2c->begin(21, 22);
-
   // seta a frequencia de comunicacao I2c
   _i2c->setClock(_i2cRate);
   // seleciona o "clock source" do giroscopio

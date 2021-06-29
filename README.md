@@ -7,7 +7,7 @@ Recomendo fortemente para usuários iniciantes a utilização de um IDE como o [
 
 # Utilização
 ## Conexões
-Esta bbilioteca utiliza I2C. Atribua a porta adequada na `linha 27 ` do arquivo `IMU.cpp` da seguinte maneira `_i2c->begin(21, 22);` quando `sda=21` e `scl=22`.
+Esta bilioteca utiliza I2C. As portas padrões são SDA e SCL iguais a 21 e 22 respectivamente. Isto pode ser modificado facilmete fazendo `IMU imu(Wire, 0x68, sua_sda, sua_scl);`
 ## Utilização mínima
 A bibliteca está escrita para utiliza-la como uma subclasse de um eventual estimador de atitude. Para um utilização mínima devese instanciar as referencias dos vetores que armazenarão as medidas em unidades de engenharia sendo acelerômetros em m/s, giroscópio e m rad/s e o magnetômetro em Tesla.
 
