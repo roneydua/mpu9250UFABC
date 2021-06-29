@@ -5,8 +5,8 @@
  * @param bus     classe de comunicacao Wire.
  * @param address Endereço do imu.
  */
-IMU::IMU(TwoWire &bus, uint8_t address, gpio_num_t _sda_port,
-         gpio_num_t _scl_port) {
+IMU::IMU(TwoWire &bus, uint8_t address, uint16_t _sda_port,
+         uint16_t _scl_port) {
   _i2c = &bus;
   _address = address;
   // inicializa a biblioteca Wire para comunicacao i2c
